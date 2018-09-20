@@ -1,0 +1,15 @@
+1    			激活码类型
+0   			是否为通码 0 或1
+2010-1-1 		开启时间，格式yyyy-MM-dd，凌晨过期, 填0表示立即
+2016-12-30 		过期时间，格式yyyy-MM-dd，凌晨过期, 填0表示永不过期
+1:2:3 			限制平台,如果多个,以:划分,例如 342:123
+oihasd23
+kls56nbz
+qioweqwe
+kwhkalks
+oiehksdw
+nxckasio
+389ewkfs
+koiweqla
+klasoiwe
+i2adklow

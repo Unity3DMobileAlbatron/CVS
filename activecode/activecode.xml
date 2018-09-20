@@ -1,0 +1,12 @@
+<configs namespace="cfg.activecode">
+
+	<config name="ActiveCode" input="activecode.xlsx" group="server">
+		<field name="id" type="int"/> 激活码组号, 登陆激活码组号必须为1
+		<field name="file" type="list:string" delimiter=","/>
+		<field name="groupid" type="int"/>
+		<field name="daylimit" type="int"/>
+		<field name="totallimit" type="int"/>
+		<field name="levellimit" type="cfg.cmd.condition.MinMaxLevel"/>
+		<field name="bonus" type="cfg.cmd.action.Bonus"/>
+	</config>
+</configs>
