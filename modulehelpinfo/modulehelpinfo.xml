@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.modulehelpinfo">
+    <struct name="HelpInfo">
+        <field name="title" type="string"/>
+        <field name="content" type="string"/>
+    </struct>
+	<config name="ModuleHelpInfo" input="modulehelpinfo.xlsx">法宝
+		<field name="modulename" type="string"/>
+        <field name="infos" type="map:string:HelpInfo"/>
+	</config>
+</configs>

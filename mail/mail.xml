@@ -1,0 +1,21 @@
+<configs namespace="cfg.mail">
+	<struct name="Consts">
+		<const name="MAX_MAIL_NUM" value="50"/>
+		<const name="ACCESSORY_MAIL_EXPIRE_TIME" value="2592000"/>30天
+		<const name="NO_ACCESSORY_MAIL_EXPIRE_TIME" value="604800"/>7天
+		<const name="GM_MAIL_ID" value="1"/>title与content都来自gm指令
+		<const name="CUSTOM_MAIL_ID" value="2"/>
+	</struct>
+	
+	<enum name="SenderType">
+		<const name="SYSTEM" alias="系统"/>
+		<const name="FAMILY" alias="家族主管"/>
+	</enum>
+	
+	<config name="Mail" input="mail.xlsx">
+		<field name="id" type="int"/>
+		<field name="sender" type="SenderType"/>
+		<field name="title" type="string"/>
+		<field name="content" type="string"/>
+	</config>
+</configs>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<configs namespace="cfg.navmesh">
+	<struct name="Vector3">
+		<field name="x" type="float"/>
+		<field name="y" type="float"/>
+		<field name="z" type="float"/>
+	</struct>
+	<struct name="Convex">
+		<field name="vertexids" type="list:int"/>
+	</struct>
+	<struct name="Mesh">
+		<field name="vertexs" type="list:Vector3"/>
+		<field name="convexs" type="list:Convex"/>
+	</struct>
+
+	<struct name="NavMesh">
+		<field name="name" type="string"/>
+		<field name="mesh" type="Mesh"/>
+	</struct>
+</configs>

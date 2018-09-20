@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.mine">
+	
+	<enum name="MineState">
+		<const name="PROTECTED"/>保护期
+		<const name="NORMAL"/>正常
+		<const name="DIGGING"/>正被采集
+		<const name="DIGGED"/>已被采集
+	</enum>
+	
+	<config name="Mineral" index="id" input="mineral.xlsx">
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="path" type="string" ref="model"/>
+		<field name="costitemid" type="int"/>
+		<field name="costtime" type="float"/>
+		<field name="collectradius" type="float" group="server"/>
+		<field name="showmineralname" type="bool" group="server"/>
+		<field name="disappear" type="bool" group="server"/>
+		<field name="disappeartime" type="float"/>
+		<field name="refreshtime" type="float"/>
+		<field name="protecttime" type="float"/>
+		<field name="dropid" type="int" group="server"/>
+		<field name="canbreak" type="bool"/>
+		<field name="requiretaskid" type="int"/>
+		<field name="showmineralbar" type="bool"/>
+	</config>
+</configs>

@@ -1,0 +1,75 @@
+﻿<configs namespace="cfg.mall">
+	<enum name="DiamondMallPageList">
+		<const name="CU_XIAO" value="1" alias="限购"/>
+		<const name="RI_CHANG" value="2" alias="日常"/>
+		<const name="QIANG_HUA" value="3" alias="强化"/>
+		<const name="BANG_ZUAN" value="4" alias="绑定"/>
+	</enum>
+	<enum name="MallType">
+		<const name="DIAMOND_MALL" value="1" alias="元宝商城"/>
+		<const name="FAMILY_MALL" value="2" alias="家族商店"/>
+		<const name="LINJING_MALL" value="3" alias="灵晶商店"/>
+		<const name="BLACK_MALL" value="4" alias="仙府游商"/>
+		<const name="ARENA_MALL" value="5" alias="竞技场商店"/>
+		<const name="POCKET_SHOP" value="6" alias="随身商店"/>
+		<const name="DAILY_ACTIVITY" value="7" alias="日活"/>
+		<const name="FIRST_CHARGE" value="8" alias="首充"/>
+		<const name="TEAM_FIGHT_SCORE" value="9" alias="天下会武商店"/>
+	</enum>
+	<enum name="BlackShopPageList">
+		<const name="HEI_SHI" value="1" alias="仙府游商"/>
+	</enum>
+	<enum name="ArenaShopPageList">
+		<const name="EXCHANGE" value="1" alias="兑换"/>
+	</enum>
+        <enum name="TeamFightScorePageList">
+		<const name="EXCHANGE" value="1" alias="兑换"/>
+	</enum>
+	<config name="Mall" input="mall.xlsx">
+		<field name="id" type="int"/>
+		<field name="displayorder" type="int"/>
+		<field name="itemid" type="cfg.cmd.action.OneItem"/>
+		<field name="bindtype" type="cfg.cmd.action.BindType"/>
+		<field name="cost" type="cfg.cmd.condition.Currency"/>
+		<field name="introduce" type="string"/>
+		<field name="limitlist" type="cfg.cmd.condition.Limits"/>
+		<struct name="DiamondMall">
+			<field name="page" type="DiamondMallPageList"/>
+		</struct>
+		<struct name="FamilyMall">
+			<field name="minfamilylevel" type="cfg.cmd.condition.MinFamilyShopLevel"/>
+		</struct>
+		<struct name="LingJingMall"/>
+		<struct name="BlackMall">
+			<field name="page" type="BlackShopPageList"/>
+			<field name="openprobability" type="float"/>
+		</struct>
+		<struct name="ArenaMall">
+			<field name="page" type="ArenaShopPageList"/>
+                </struct>
+		<struct name="TeamFightScore">
+			<field name="page" type="TeamFightScorePageList"/>
+		</struct>
+		<struct name="PocketShop" >
+			<field name="requirelevel" type="cfg.cmd.condition.MinLevel"/>
+		</struct>
+	</config>
+	<!--struct name="TimeRange">
+		<field name="starthour" type="int"/>
+		<field name="startminute" type="int"/>
+		<field name="endhour" type="int"/>
+		<field name="endminute" type="int"/>
+	</struct>
+-->
+	<config name="MallNPC" input="mallnpc.xlsx">
+		<const name="DISPLAYTIME" value="5"/>
+		<const name="BLACKMARKETEER" value="23000385"/>  黑市商人NPCId
+		<const name="FEASTMANAGER" value="23000384"/>仙府聚宴管理员
+		<const name="CARRAYSHOP" value="23000454"/>药店
+		<const name="WAREHOUSE" value="23000455"/>仓库
+		<field name="malltype" type="MallType"/>
+		<field name="cornucopianpc" type="int" ref="npc"/>
+		<field name="offset" type="float"/>
+	</config>
+
+</configs>

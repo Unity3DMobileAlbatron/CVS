@@ -1,0 +1,89 @@
+<configs namespace="cfg.friend">
+	<struct name="Const">
+		<const name="MAX_FRIEND_AMOUNT" value="100"/>
+		<const name="BLOCK_LIST_AMOUNT" value="100"/>
+		<const name="FRIEND_GET_MM" value="1"/>
+		<const name="STRANGE_GET_MM" value="0"/>
+	</struct>
+	<struct name="BonusList">
+		<field name="bonusid" type="int"/>
+		<field name="frienddegree" type="int"/>
+		<field name="introduction" type="string"/>
+		<field name="bonus" type="cfg.cmd.action.Items"/>
+	</struct>
+
+	<config name="Idol" input="idol.xlsx">
+		<field name="id" type="long"/>
+		<field name="name" type="string"/>
+		<field name="sign" type="string"/>
+		<field name="guardtalk" type="string"/>
+		<field name="image" type="string"/>
+		<field name="icon" type="string"/>
+		<field name="guardthreshold" type="int"/>
+		<field name="bonuslist" type="list:BonusList" index="bonusid"/>
+		<field name="guardtitleid" type="int"/>
+	</config>
+	<config name="FriendHelpInfo" input="friendhelpinfo.xlsx">
+		<field name="index" type="string"/>
+		<field name="content" type="string"/>
+	</config>
+	<config name="MarrigeConfig" input="marrigeconfig.xlsx" single="true">
+		<field name="marrigepack" type="list:MarrigePackage"/>彩礼包ID，0=普通，1=豪华，下同
+		<field name="requirelevel" type="int"/>需要等级
+		<field name="giftpackid" type="list:int"/>婚礼大礼包ID
+		<field name="giftcurrency" type="list:cfg.cmd.action.Currencys"/>祝福所获得的货币
+		<field name="divorceprice" type="cfg.cmd.condition.YuanBao"/>休书价格
+		<field name="marrigetextlength" type="int"/>结婚宣言字数
+		<field name="divorcetextlength" type="int"/>休书字数
+		<field name="divorceitemid" type="int"/>休书物品ID
+	</config>
+	<struct name="MarrigePackage">
+		<field name="marrigepackid" type="int"/>彩礼包ID，0=普通，1=豪华，下同
+		<field name="marrigepackprice" type="cfg.cmd.condition.FixCurrency"/>
+	</struct>
+	<struct name="FriendBuffInfo">
+		<field name="likability" type="float"/>
+		<field name="buffname" type="string"/>
+		<field name="introduction" type="string"/>
+		<field name="buffid" type="int" ref="buff"/>
+	</struct>
+
+	<enum name="MaimaiRelationshipType">
+		<const name="BanLvNan" value="1"/>
+		<const name="BanLvNv" value="2"/>
+		<const name="YiXiong" value="3"/>
+		<const name="YiJie" value="4"/>
+		<const name="YiDi" value="5"/>
+		<const name="YiMei" value="6"/>
+		<const name="LanYan" value="7"/>
+		<const name="HongYan" value="8"/>
+		<const name="XiongDi" value="9"/>
+		<const name="GuiMi" value="10"/>
+		<const name="SuDi" value="11"/>
+	</enum>
+
+	<enum name="BasicRelationshipType">
+		<const name="Friend" value="1"/>
+		<const name="Enemy" value="2"/>
+	</enum>
+
+	<config name="MaimaiRelationship" input="maimairelationship.xlsx">
+		<field name="relationship" type="MaimaiRelationshipType"/>
+		<field name="gender" type="cfg.role.GenderType"/>
+		<field name="nametext" type="string"/>
+		<field name="deletetext" type="string"/>
+		<field name="reqgender" type="cfg.role.GenderType"/>
+		<field name="maxnum" type="int"/>
+		<field name="correspondingrelationshipmale" type="MaimaiRelationshipType"/>
+		<field name="correspondingrelationshipfemale" type="MaimaiRelationshipType"/>
+		<field name="icon" type="string" refpath="../GameWindows4.2.0/Data/texture/t_*.bundle"/>
+		<field name="basicrelation" type="BasicRelationshipType"/>
+	</config>
+
+	<config name="FriendBattleConfig" input="friendbattleconfig.xlsx" single="true">
+		<field name="likabilitybykill" type="float"/>
+		<field name="likabilitybyectype" type="float"/>
+		<field name="buffinterval" type="float"/>
+		<field name="buffinfo" type="list:FriendBuffInfo"/>
+	</config>
+</configs>

@@ -1,0 +1,3839 @@
+<root type="NavMesh">
+<name>chapter_5_1</name>
+<mesh type="Mesh">
+<vertexs>
+<item type="Vector3">
+<x>17.4</x>
+<y>26.18442</y>
+<z>15.2</z>
+</item>
+<item type="Vector3">
+<x>14</x>
+<y>26.18442</y>
+<z>15.2</z>
+</item>
+<item type="Vector3">
+<x>13.7</x>
+<y>26.18442</y>
+<z>15.6</z>
+</item>
+<item type="Vector3">
+<x>17.8</x>
+<y>26.18442</y>
+<z>15.6</z>
+</item>
+<item type="Vector3">
+<x>8.400001</x>
+<y>26.18442</y>
+<z>15.4</z>
+</item>
+<item type="Vector3">
+<x>8.400001</x>
+<y>26.18442</y>
+<z>16.9</z>
+</item>
+<item type="Vector3">
+<x>8.900001</x>
+<y>26.18442</y>
+<z>19.4</z>
+</item>
+<item type="Vector3">
+<x>13</x>
+<y>26.18442</y>
+<z>15.6</z>
+</item>
+<item type="Vector3">
+<x>12.7</x>
+<y>26.18442</y>
+<z>15.2</z>
+</item>
+<item type="Vector3">
+<x>25.6</x>
+<y>26.18442</y>
+<z>15.2</z>
+</item>
+<item type="Vector3">
+<x>18.8</x>
+<y>26.18442</y>
+<z>15.2</z>
+</item>
+<item type="Vector3">
+<x>18.5</x>
+<y>26.18442</y>
+<z>15.6</z>
+</item>
+<item type="Vector3">
+<x>25.6</x>
+<y>26.18442</y>
+<z>19.5</z>
+</item>
+<item type="Vector3">
+<x>17.8</x>
+<y>26.18442</y>
+<z>15.6</z>
+</item>
+<item type="Vector3">
+<x>13.7</x>
+<y>26.18442</y>
+<z>15.6</z>
+</item>
+<item type="Vector3">
+<x>8.900001</x>
+<y>26.18442</y>
+<z>19.4</z>
+</item>
+<item type="Vector3">
+<x>25.6</x>
+<y>26.18442</y>
+<z>19.5</z>
+</item>
+<item type="Vector3">
+<x>25.6</x>
+<y>26.18442</y>
+<z>19.5</z>
+</item>
+<item type="Vector3">
+<x>18.5</x>
+<y>26.18442</y>
+<z>15.6</z>
+</item>
+<item type="Vector3">
+<x>17.8</x>
+<y>26.18442</y>
+<z>15.6</z>
+</item>
+<item type="Vector3">
+<x>13.7</x>
+<y>26.18442</y>
+<z>15.6</z>
+</item>
+<item type="Vector3">
+<x>13</x>
+<y>26.18442</y>
+<z>15.6</z>
+</item>
+<item type="Vector3">
+<x>8.900001</x>
+<y>26.18442</y>
+<z>19.4</z>
+</item>
+<item type="Vector3">
+<x>25.6</x>
+<y>20.43442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>23.1</x>
+<y>20.43442</y>
+<z>20.1</z>
+</item>
+<item type="Vector3">
+<x>22.6</x>
+<y>20.43442</y>
+<z>20.1</z>
+</item>
+<item type="Vector3">
+<x>7.9</x>
+<y>20.43442</y>
+<z>25.1</z>
+</item>
+<item type="Vector3">
+<x>7.9</x>
+<y>20.43442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>7.5</x>
+<y>20.43442</y>
+<z>20.1</z>
+</item>
+<item type="Vector3">
+<x>7.7</x>
+<y>20.43442</y>
+<z>25</z>
+</item>
+<item type="Vector3">
+<x>7.9</x>
+<y>20.43442</y>
+<z>25.1</z>
+</item>
+<item type="Vector3">
+<x>22.6</x>
+<y>20.43442</y>
+<z>20.1</z>
+</item>
+<item type="Vector3">
+<x>7.5</x>
+<y>20.43442</y>
+<z>20.1</z>
+</item>
+<item type="Vector3">
+<x>22.6</x>
+<y>20.43442</y>
+<z>20.1</z>
+</item>
+<item type="Vector3">
+<x>22.2</x>
+<y>20.43442</y>
+<z>19.7</z>
+</item>
+<item type="Vector3">
+<x>7.7</x>
+<y>20.43442</y>
+<z>19.7</z>
+</item>
+<item type="Vector3">
+<x>23.2</x>
+<y>20.43442</y>
+<z>15.9</z>
+</item>
+<item type="Vector3">
+<x>23.2</x>
+<y>20.43442</y>
+<z>18.7</z>
+</item>
+<item type="Vector3">
+<x>23.6</x>
+<y>20.43442</y>
+<z>19.1</z>
+</item>
+<item type="Vector3">
+<x>25.6</x>
+<y>20.43442</y>
+<z>15.9</z>
+</item>
+<item type="Vector3">
+<x>23.6</x>
+<y>20.43442</y>
+<z>19.6</z>
+</item>
+<item type="Vector3">
+<x>23.1</x>
+<y>20.43442</y>
+<z>20.1</z>
+</item>
+<item type="Vector3">
+<x>25.6</x>
+<y>20.43442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>25.6</x>
+<y>20.43442</y>
+<z>15.9</z>
+</item>
+<item type="Vector3">
+<x>23.6</x>
+<y>20.43442</y>
+<z>19.1</z>
+</item>
+<item type="Vector3">
+<x>23.6</x>
+<y>20.43442</y>
+<z>19.6</z>
+</item>
+<item type="Vector3">
+<x>25.6</x>
+<y>20.43442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>1.9</x>
+<y>20.43442</y>
+<z>26.1</z>
+</item>
+<item type="Vector3">
+<x>1.9</x>
+<y>20.43442</y>
+<z>30.4</z>
+</item>
+<item type="Vector3">
+<x>7.4</x>
+<y>20.43442</y>
+<z>30.4</z>
+</item>
+<item type="Vector3">
+<x>7.5</x>
+<y>20.43442</y>
+<z>26.1</z>
+</item>
+<item type="Vector3">
+<x>8</x>
+<y>20.43442</y>
+<z>31.4</z>
+</item>
+<item type="Vector3">
+<x>8</x>
+<y>20.43442</y>
+<z>40.1</z>
+</item>
+<item type="Vector3">
+<x>17</x>
+<y>20.43442</y>
+<z>48.6</z>
+</item>
+<item type="Vector3">
+<x>25.6</x>
+<y>20.43442</y>
+<z>48.9</z>
+</item>
+<item type="Vector3">
+<x>25.6</x>
+<y>20.43442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>7.9</x>
+<y>20.43442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>7.5</x>
+<y>20.43442</y>
+<z>26.1</z>
+</item>
+<item type="Vector3">
+<x>7.4</x>
+<y>20.43442</y>
+<z>30.4</z>
+</item>
+<item type="Vector3">
+<x>8</x>
+<y>20.43442</y>
+<z>30.9</z>
+</item>
+<item type="Vector3">
+<x>25.6</x>
+<y>20.43442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>25.6</x>
+<y>20.43442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>8</x>
+<y>20.43442</y>
+<z>30.9</z>
+</item>
+<item type="Vector3">
+<x>8</x>
+<y>20.43442</y>
+<z>31.4</z>
+</item>
+<item type="Vector3">
+<x>7.4</x>
+<y>20.43442</y>
+<z>41.1</z>
+</item>
+<item type="Vector3">
+<x>7.4</x>
+<y>20.43442</y>
+<z>48.6</z>
+</item>
+<item type="Vector3">
+<x>8.2</x>
+<y>20.43442</y>
+<z>48.9</z>
+</item>
+<item type="Vector3">
+<x>8</x>
+<y>20.43442</y>
+<z>40.6</z>
+</item>
+<item type="Vector3">
+<x>8</x>
+<y>20.43442</y>
+<z>31.4</z>
+</item>
+<item type="Vector3">
+<x>7.4</x>
+<y>20.43442</y>
+<z>31.9</z>
+</item>
+<item type="Vector3">
+<x>7.4</x>
+<y>20.43442</y>
+<z>39.6</z>
+</item>
+<item type="Vector3">
+<x>8</x>
+<y>20.43442</y>
+<z>40.1</z>
+</item>
+<item type="Vector3">
+<x>8</x>
+<y>20.43442</y>
+<z>40.1</z>
+</item>
+<item type="Vector3">
+<x>16.5</x>
+<y>20.43442</y>
+<z>48.6</z>
+</item>
+<item type="Vector3">
+<x>17</x>
+<y>20.43442</y>
+<z>48.6</z>
+</item>
+<item type="Vector3">
+<x>8.2</x>
+<y>20.43442</y>
+<z>48.9</z>
+</item>
+<item type="Vector3">
+<x>16.2</x>
+<y>20.43442</y>
+<z>48.9</z>
+</item>
+<item type="Vector3">
+<x>16.5</x>
+<y>20.43442</y>
+<z>48.6</z>
+</item>
+<item type="Vector3">
+<x>8</x>
+<y>20.43442</y>
+<z>40.1</z>
+</item>
+<item type="Vector3">
+<x>8</x>
+<y>20.43442</y>
+<z>40.6</z>
+</item>
+<item type="Vector3">
+<x>17</x>
+<y>20.43442</y>
+<z>48.6</z>
+</item>
+<item type="Vector3">
+<x>17.3</x>
+<y>20.43442</y>
+<z>48.9</z>
+</item>
+<item type="Vector3">
+<x>25.6</x>
+<y>20.43442</y>
+<z>48.9</z>
+</item>
+<item type="Vector3">
+<x>43.6</x>
+<y>26.18442</y>
+<z>16.6</z>
+</item>
+<item type="Vector3">
+<x>43.5</x>
+<y>26.18442</y>
+<z>15.4</z>
+</item>
+<item type="Vector3">
+<x>43.3</x>
+<y>26.18442</y>
+<z>15.2</z>
+</item>
+<item type="Vector3">
+<x>38</x>
+<y>26.18442</y>
+<z>15.2</z>
+</item>
+<item type="Vector3">
+<x>43.3</x>
+<y>26.18442</y>
+<z>18.6</z>
+</item>
+<item type="Vector3">
+<x>43.6</x>
+<y>26.18442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>43.6</x>
+<y>26.18442</y>
+<z>23.1</z>
+</item>
+<item type="Vector3">
+<x>38.3</x>
+<y>26.18442</y>
+<z>23.3</z>
+</item>
+<item type="Vector3">
+<x>38.3</x>
+<y>26.18442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>43.6</x>
+<y>26.18442</y>
+<z>23.1</z>
+</item>
+<item type="Vector3">
+<x>38.1</x>
+<y>26.18442</y>
+<z>23.1</z>
+</item>
+<item type="Vector3">
+<x>38.3</x>
+<y>26.18442</y>
+<z>23.3</z>
+</item>
+<item type="Vector3">
+<x>33.1</x>
+<y>26.18442</y>
+<z>15.6</z>
+</item>
+<item type="Vector3">
+<x>32.8</x>
+<y>26.18442</y>
+<z>15.2</z>
+</item>
+<item type="Vector3">
+<x>29.4</x>
+<y>26.18442</y>
+<z>15.2</z>
+</item>
+<item type="Vector3">
+<x>29.1</x>
+<y>26.18442</y>
+<z>15.6</z>
+</item>
+<item type="Vector3">
+<x>28.5</x>
+<y>21.88442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>30.2</x>
+<y>21.88442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>30.1</x>
+<y>23.68442</y>
+<z>23.3</z>
+</item>
+<item type="Vector3">
+<x>28.4</x>
+<y>23.68442</y>
+<z>23.3</z>
+</item>
+<item type="Vector3">
+<x>30.1</x>
+<y>23.68442</y>
+<z>23.3</z>
+</item>
+<item type="Vector3">
+<x>30.3</x>
+<y>23.68442</y>
+<z>23.1</z>
+</item>
+<item type="Vector3">
+<x>28.2</x>
+<y>23.68442</y>
+<z>23.1</z>
+</item>
+<item type="Vector3">
+<x>28.4</x>
+<y>23.68442</y>
+<z>23.3</z>
+</item>
+<item type="Vector3">
+<x>29.1</x>
+<y>26.18442</y>
+<z>15.6</z>
+</item>
+<item type="Vector3">
+<x>25.6</x>
+<y>26.18442</y>
+<z>19.5</z>
+</item>
+<item type="Vector3">
+<x>34.1</x>
+<y>26.18442</y>
+<z>19.4</z>
+</item>
+<item type="Vector3">
+<x>33.1</x>
+<y>26.18442</y>
+<z>15.6</z>
+</item>
+<item type="Vector3">
+<x>44.7</x>
+<y>26.18442</y>
+<z>15.3</z>
+</item>
+<item type="Vector3">
+<x>44.7</x>
+<y>26.18442</y>
+<z>18</z>
+</item>
+<item type="Vector3">
+<x>45</x>
+<y>26.18442</y>
+<z>18.3</z>
+</item>
+<item type="Vector3">
+<x>48.5</x>
+<y>26.18442</y>
+<z>15.7</z>
+</item>
+<item type="Vector3">
+<x>48.2</x>
+<y>26.18442</y>
+<z>15.3</z>
+</item>
+<item type="Vector3">
+<x>29.1</x>
+<y>26.18442</y>
+<z>15.6</z>
+</item>
+<item type="Vector3">
+<x>28.3</x>
+<y>26.18442</y>
+<z>15.6</z>
+</item>
+<item type="Vector3">
+<x>25.6</x>
+<y>26.18442</y>
+<z>19.5</z>
+</item>
+<item type="Vector3">
+<x>48.5</x>
+<y>26.18442</y>
+<z>15.7</z>
+</item>
+<item type="Vector3">
+<x>45</x>
+<y>26.18442</y>
+<z>18.3</z>
+</item>
+<item type="Vector3">
+<x>45</x>
+<y>26.18442</y>
+<z>18.6</z>
+</item>
+<item type="Vector3">
+<x>26.2</x>
+<y>20.43442</y>
+<z>19.7</z>
+</item>
+<item type="Vector3">
+<x>26.2</x>
+<y>20.43442</y>
+<z>19</z>
+</item>
+<item type="Vector3">
+<x>25.6</x>
+<y>20.43442</y>
+<z>15.9</z>
+</item>
+<item type="Vector3">
+<x>25.6</x>
+<y>20.43442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>25.6</x>
+<y>20.43442</y>
+<z>15.9</z>
+</item>
+<item type="Vector3">
+<x>26.6</x>
+<y>20.43442</y>
+<z>18.5</z>
+</item>
+<item type="Vector3">
+<x>27.3</x>
+<y>20.43442</y>
+<z>18.5</z>
+</item>
+<item type="Vector3">
+<x>25.6</x>
+<y>20.43442</y>
+<z>15.9</z>
+</item>
+<item type="Vector3">
+<x>27.3</x>
+<y>20.43442</y>
+<z>18.5</z>
+</item>
+<item type="Vector3">
+<x>27.6</x>
+<y>20.43442</y>
+<z>18.9</z>
+</item>
+<item type="Vector3">
+<x>33.1</x>
+<y>20.43442</y>
+<z>18.9</z>
+</item>
+<item type="Vector3">
+<x>33.1</x>
+<y>20.43442</y>
+<z>15.9</z>
+</item>
+<item type="Vector3">
+<x>26.2</x>
+<y>20.43442</y>
+<z>19</z>
+</item>
+<item type="Vector3">
+<x>26.6</x>
+<y>20.43442</y>
+<z>18.5</z>
+</item>
+<item type="Vector3">
+<x>25.6</x>
+<y>20.43442</y>
+<z>15.9</z>
+</item>
+<item type="Vector3">
+<x>25.6</x>
+<y>20.43442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>27.4</x>
+<y>20.43442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>27.1</x>
+<y>20.43442</y>
+<z>23.9</z>
+</item>
+<item type="Vector3">
+<x>26.2</x>
+<y>20.43442</y>
+<z>19.7</z>
+</item>
+<item type="Vector3">
+<x>27.4</x>
+<y>20.43442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>27.4</x>
+<y>20.43442</y>
+<z>24.6</z>
+</item>
+<item type="Vector3">
+<x>27.1</x>
+<y>20.43442</y>
+<z>23.9</z>
+</item>
+<item type="Vector3">
+<x>28.3</x>
+<y>26.18442</y>
+<z>15.6</z>
+</item>
+<item type="Vector3">
+<x>28</x>
+<y>26.18442</y>
+<z>15.2</z>
+</item>
+<item type="Vector3">
+<x>25.6</x>
+<y>26.18442</y>
+<z>15.2</z>
+</item>
+<item type="Vector3">
+<x>25.6</x>
+<y>26.18442</y>
+<z>19.5</z>
+</item>
+<item type="Vector3">
+<x>27.1</x>
+<y>20.43442</y>
+<z>23.9</z>
+</item>
+<item type="Vector3">
+<x>27.1</x>
+<y>20.43442</y>
+<z>20.1</z>
+</item>
+<item type="Vector3">
+<x>26.6</x>
+<y>20.43442</y>
+<z>20.1</z>
+</item>
+<item type="Vector3">
+<x>27.1</x>
+<y>20.43442</y>
+<z>23.9</z>
+</item>
+<item type="Vector3">
+<x>26.6</x>
+<y>20.43442</y>
+<z>20.1</z>
+</item>
+<item type="Vector3">
+<x>26.2</x>
+<y>20.43442</y>
+<z>19.7</z>
+</item>
+<item type="Vector3">
+<x>38</x>
+<y>26.18442</y>
+<z>15.2</z>
+</item>
+<item type="Vector3">
+<x>33.9</x>
+<y>26.18442</y>
+<z>15.4</z>
+</item>
+<item type="Vector3">
+<x>33.1</x>
+<y>26.18442</y>
+<z>15.6</z>
+</item>
+<item type="Vector3">
+<x>34.1</x>
+<y>26.18442</y>
+<z>19.4</z>
+</item>
+<item type="Vector3">
+<x>43.7</x>
+<y>26.18442</y>
+<z>19.2</z>
+</item>
+<item type="Vector3">
+<x>43.3</x>
+<y>26.18442</y>
+<z>18.6</z>
+</item>
+<item type="Vector3">
+<x>43.7</x>
+<y>26.18442</y>
+<z>21.2</z>
+</item>
+<item type="Vector3">
+<x>44.3</x>
+<y>26.18442</y>
+<z>21.2</z>
+</item>
+<item type="Vector3">
+<x>44.3</x>
+<y>26.18442</y>
+<z>19.2</z>
+</item>
+<item type="Vector3">
+<x>43.7</x>
+<y>26.18442</y>
+<z>19.2</z>
+</item>
+<item type="Vector3">
+<x>34.1</x>
+<y>26.18442</y>
+<z>19.4</z>
+</item>
+<item type="Vector3">
+<x>34.5</x>
+<y>26.18442</y>
+<z>19.9</z>
+</item>
+<item type="Vector3">
+<x>49.3</x>
+<y>26.18442</y>
+<z>15.6</z>
+</item>
+<item type="Vector3">
+<x>48.5</x>
+<y>26.18442</y>
+<z>15.7</z>
+</item>
+<item type="Vector3">
+<x>45</x>
+<y>26.18442</y>
+<z>18.6</z>
+</item>
+<item type="Vector3">
+<x>51.2</x>
+<y>26.18442</y>
+<z>15.3</z>
+</item>
+<item type="Vector3">
+<x>49.5</x>
+<y>26.18442</y>
+<z>15.3</z>
+</item>
+<item type="Vector3">
+<x>49.3</x>
+<y>26.18442</y>
+<z>15.6</z>
+</item>
+<item type="Vector3">
+<x>34.1</x>
+<y>26.18442</y>
+<z>20.5</z>
+</item>
+<item type="Vector3">
+<x>27.7</x>
+<y>23.68442</y>
+<z>20.5</z>
+</item>
+<item type="Vector3">
+<x>27.7</x>
+<y>23.68442</y>
+<z>21.2</z>
+</item>
+<item type="Vector3">
+<x>43.7</x>
+<y>26.18442</y>
+<z>21.2</z>
+</item>
+<item type="Vector3">
+<x>38.1</x>
+<y>26.18442</y>
+<z>23.1</z>
+</item>
+<item type="Vector3">
+<x>43.2</x>
+<y>26.18442</y>
+<z>22.1</z>
+</item>
+<item type="Vector3">
+<x>43.2</x>
+<y>26.18442</y>
+<z>21.8</z>
+</item>
+<item type="Vector3">
+<x>38.1</x>
+<y>26.18442</y>
+<z>23.1</z>
+</item>
+<item type="Vector3">
+<x>43.2</x>
+<y>26.18442</y>
+<z>21.8</z>
+</item>
+<item type="Vector3">
+<x>43.7</x>
+<y>26.18442</y>
+<z>21.2</z>
+</item>
+<item type="Vector3">
+<x>27.7</x>
+<y>23.68442</y>
+<z>21.2</z>
+</item>
+<item type="Vector3">
+<x>30.3</x>
+<y>23.68442</y>
+<z>23.1</z>
+</item>
+<item type="Vector3">
+<x>34.5</x>
+<y>26.18442</y>
+<z>19.9</z>
+</item>
+<item type="Vector3">
+<x>34.5</x>
+<y>26.18442</y>
+<z>20.2</z>
+</item>
+<item type="Vector3">
+<x>43.7</x>
+<y>26.18442</y>
+<z>21.2</z>
+</item>
+<item type="Vector3">
+<x>34.5</x>
+<y>26.18442</y>
+<z>20.2</z>
+</item>
+<item type="Vector3">
+<x>34.1</x>
+<y>26.18442</y>
+<z>20.5</z>
+</item>
+<item type="Vector3">
+<x>43.7</x>
+<y>26.18442</y>
+<z>21.2</z>
+</item>
+<item type="Vector3">
+<x>31.4</x>
+<y>20.43442</y>
+<z>23.8</z>
+</item>
+<item type="Vector3">
+<x>31.2</x>
+<y>20.43442</y>
+<z>23.9</z>
+</item>
+<item type="Vector3">
+<x>31.2</x>
+<y>20.43442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>32.6</x>
+<y>20.43442</y>
+<z>19.9</z>
+</item>
+<item type="Vector3">
+<x>31.4</x>
+<y>20.43442</y>
+<z>20</z>
+</item>
+<item type="Vector3">
+<x>31.4</x>
+<y>20.43442</y>
+<z>23.8</z>
+</item>
+<item type="Vector3">
+<x>38.7</x>
+<y>20.43442</y>
+<z>25.1</z>
+</item>
+<item type="Vector3">
+<x>39</x>
+<y>20.43442</y>
+<z>24.8</z>
+</item>
+<item type="Vector3">
+<x>39</x>
+<y>20.43442</y>
+<z>20.2</z>
+</item>
+<item type="Vector3">
+<x>38.7</x>
+<y>20.43442</y>
+<z>25.1</z>
+</item>
+<item type="Vector3">
+<x>39</x>
+<y>20.43442</y>
+<z>20.2</z>
+</item>
+<item type="Vector3">
+<x>38.7</x>
+<y>20.43442</y>
+<z>19.9</z>
+</item>
+<item type="Vector3">
+<x>32.6</x>
+<y>20.43442</y>
+<z>19.9</z>
+</item>
+<item type="Vector3">
+<x>31.4</x>
+<y>20.43442</y>
+<z>23.8</z>
+</item>
+<item type="Vector3">
+<x>31.2</x>
+<y>20.43442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>31.2</x>
+<y>20.43442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>38.7</x>
+<y>20.43442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>38.7</x>
+<y>20.43442</y>
+<z>25.1</z>
+</item>
+<item type="Vector3">
+<x>43.6</x>
+<y>26.18442</y>
+<z>23.1</z>
+</item>
+<item type="Vector3">
+<x>43.6</x>
+<y>26.18442</y>
+<z>22.6</z>
+</item>
+<item type="Vector3">
+<x>43.2</x>
+<y>26.18442</y>
+<z>22.1</z>
+</item>
+<item type="Vector3">
+<x>38.1</x>
+<y>26.18442</y>
+<z>23.1</z>
+</item>
+<item type="Vector3">
+<x>27.7</x>
+<y>23.68442</y>
+<z>21.2</z>
+</item>
+<item type="Vector3">
+<x>27.7</x>
+<y>23.68442</y>
+<z>23.1</z>
+</item>
+<item type="Vector3">
+<x>28.2</x>
+<y>23.68442</y>
+<z>23.1</z>
+</item>
+<item type="Vector3">
+<x>27.7</x>
+<y>23.68442</y>
+<z>21.2</z>
+</item>
+<item type="Vector3">
+<x>28.2</x>
+<y>23.68442</y>
+<z>23.1</z>
+</item>
+<item type="Vector3">
+<x>30.3</x>
+<y>23.68442</y>
+<z>23.1</z>
+</item>
+<item type="Vector3">
+<x>44.3</x>
+<y>26.18442</y>
+<z>19.2</z>
+</item>
+<item type="Vector3">
+<x>44.3</x>
+<y>26.18442</y>
+<z>21.2</z>
+</item>
+<item type="Vector3">
+<x>44.9</x>
+<y>26.18442</y>
+<z>21.7</z>
+</item>
+<item type="Vector3">
+<x>45</x>
+<y>26.18442</y>
+<z>18.6</z>
+</item>
+<item type="Vector3">
+<x>45</x>
+<y>26.18442</y>
+<z>18.6</z>
+</item>
+<item type="Vector3">
+<x>44.9</x>
+<y>26.18442</y>
+<z>21.7</z>
+</item>
+<item type="Vector3">
+<x>44.9</x>
+<y>26.18442</y>
+<z>22.3</z>
+</item>
+<item type="Vector3">
+<x>51.2</x>
+<y>26.18442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>51.2</x>
+<y>26.18442</y>
+<z>15.3</z>
+</item>
+<item type="Vector3">
+<x>49.3</x>
+<y>26.18442</y>
+<z>15.6</z>
+</item>
+<item type="Vector3">
+<x>44.9</x>
+<y>26.18442</y>
+<z>22.3</z>
+</item>
+<item type="Vector3">
+<x>44.6</x>
+<y>26.18442</y>
+<z>22.5</z>
+</item>
+<item type="Vector3">
+<x>44.6</x>
+<y>26.18442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>51.2</x>
+<y>26.18442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>30.2</x>
+<y>21.88442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>28.5</x>
+<y>21.88442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>28.5</x>
+<y>20.58442</y>
+<z>26.8</z>
+</item>
+<item type="Vector3">
+<x>30.2</x>
+<y>20.48442</y>
+<z>26.9</z>
+</item>
+<item type="Vector3">
+<x>28.5</x>
+<y>20.58442</y>
+<z>26.8</z>
+</item>
+<item type="Vector3">
+<x>27.9</x>
+<y>20.43442</y>
+<z>27</z>
+</item>
+<item type="Vector3">
+<x>30.4</x>
+<y>20.43442</y>
+<z>27.1</z>
+</item>
+<item type="Vector3">
+<x>30.2</x>
+<y>20.48442</y>
+<z>26.9</z>
+</item>
+<item type="Vector3">
+<x>51.2</x>
+<y>26.18442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>44.9</x>
+<y>26.18442</y>
+<z>32</z>
+</item>
+<item type="Vector3">
+<x>44.9</x>
+<y>26.18442</y>
+<z>32.5</z>
+</item>
+<item type="Vector3">
+<x>51.2</x>
+<y>26.18442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>44.6</x>
+<y>26.18442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>44.9</x>
+<y>26.18442</y>
+<z>32</z>
+</item>
+<item type="Vector3">
+<x>38.1</x>
+<y>20.43442</y>
+<z>42.4</z>
+</item>
+<item type="Vector3">
+<x>37.8</x>
+<y>20.43442</y>
+<z>42.4</z>
+</item>
+<item type="Vector3">
+<x>37.8</x>
+<y>20.43442</y>
+<z>48.6</z>
+</item>
+<item type="Vector3">
+<x>38.4</x>
+<y>20.43442</y>
+<z>48.6</z>
+</item>
+<item type="Vector3">
+<x>31.1</x>
+<y>20.43442</y>
+<z>26.2</z>
+</item>
+<item type="Vector3">
+<x>39.2</x>
+<y>20.43442</y>
+<z>26.2</z>
+</item>
+<item type="Vector3">
+<x>38.7</x>
+<y>20.43442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>31.2</x>
+<y>20.43442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>38.2</x>
+<y>26.18442</y>
+<z>33</z>
+</item>
+<item type="Vector3">
+<x>44</x>
+<y>26.18442</y>
+<z>33</z>
+</item>
+<item type="Vector3">
+<x>43.3</x>
+<y>26.18442</y>
+<z>32.6</z>
+</item>
+<item type="Vector3">
+<x>38.2</x>
+<y>26.18442</y>
+<z>33</z>
+</item>
+<item type="Vector3">
+<x>43.3</x>
+<y>26.18442</y>
+<z>32.6</z>
+</item>
+<item type="Vector3">
+<x>43.3</x>
+<y>26.18442</y>
+<z>32</z>
+</item>
+<item type="Vector3">
+<x>38.2</x>
+<y>26.18442</y>
+<z>33</z>
+</item>
+<item type="Vector3">
+<x>43.3</x>
+<y>26.18442</y>
+<z>32</z>
+</item>
+<item type="Vector3">
+<x>43.6</x>
+<y>26.18442</y>
+<z>31.7</z>
+</item>
+<item type="Vector3">
+<x>43.6</x>
+<y>26.18442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>38.3</x>
+<y>26.18442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>44.9</x>
+<y>26.18442</y>
+<z>38.2</z>
+</item>
+<item type="Vector3">
+<x>44.9</x>
+<y>26.18442</y>
+<z>38.7</z>
+</item>
+<item type="Vector3">
+<x>51.2</x>
+<y>26.18442</y>
+<z>47.4</z>
+</item>
+<item type="Vector3">
+<x>44.6</x>
+<y>26.18442</y>
+<z>46.1</z>
+</item>
+<item type="Vector3">
+<x>44.9</x>
+<y>26.18442</y>
+<z>46.4</z>
+</item>
+<item type="Vector3">
+<x>51.2</x>
+<y>26.18442</y>
+<z>47.4</z>
+</item>
+<item type="Vector3">
+<x>44.9</x>
+<y>26.18442</y>
+<z>38.7</z>
+</item>
+<item type="Vector3">
+<x>44.6</x>
+<y>26.18442</y>
+<z>39</z>
+</item>
+<item type="Vector3">
+<x>27.5</x>
+<y>20.43442</y>
+<z>26.7</z>
+</item>
+<item type="Vector3">
+<x>27.4</x>
+<y>20.43442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>25.6</x>
+<y>20.43442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>42.8</x>
+<y>20.43442</y>
+<z>25.8</z>
+</item>
+<item type="Vector3">
+<x>40.2</x>
+<y>20.43442</y>
+<z>25.8</z>
+</item>
+<item type="Vector3">
+<x>39.9</x>
+<y>20.43442</y>
+<z>26.2</z>
+</item>
+<item type="Vector3">
+<x>43.2</x>
+<y>20.43442</y>
+<z>27.1</z>
+</item>
+<item type="Vector3">
+<x>39.2</x>
+<y>20.43442</y>
+<z>26.2</z>
+</item>
+<item type="Vector3">
+<x>31.1</x>
+<y>20.43442</y>
+<z>26.2</z>
+</item>
+<item type="Vector3">
+<x>31.1</x>
+<y>20.43442</y>
+<z>26.9</z>
+</item>
+<item type="Vector3">
+<x>43.2</x>
+<y>20.43442</y>
+<z>27.1</z>
+</item>
+<item type="Vector3">
+<x>39.9</x>
+<y>20.43442</y>
+<z>26.2</z>
+</item>
+<item type="Vector3">
+<x>39.2</x>
+<y>20.43442</y>
+<z>26.2</z>
+</item>
+<item type="Vector3">
+<x>31.1</x>
+<y>20.43442</y>
+<z>26.9</z>
+</item>
+<item type="Vector3">
+<x>30.9</x>
+<y>20.43442</y>
+<z>27.1</z>
+</item>
+<item type="Vector3">
+<x>38.5</x>
+<y>20.43442</y>
+<z>29.9</z>
+</item>
+<item type="Vector3">
+<x>43.2</x>
+<y>20.43442</y>
+<z>29.9</z>
+</item>
+<item type="Vector3">
+<x>43.2</x>
+<y>20.43442</y>
+<z>27.1</z>
+</item>
+<item type="Vector3">
+<x>38.4</x>
+<y>20.43442</y>
+<z>48.6</z>
+</item>
+<item type="Vector3">
+<x>38.6</x>
+<y>20.43442</y>
+<z>48.9</z>
+</item>
+<item type="Vector3">
+<x>42.9</x>
+<y>20.43442</y>
+<z>48.9</z>
+</item>
+<item type="Vector3">
+<x>43.2</x>
+<y>20.43442</y>
+<z>48.6</z>
+</item>
+<item type="Vector3">
+<x>43.2</x>
+<y>20.43442</y>
+<z>42.4</z>
+</item>
+<item type="Vector3">
+<x>38.1</x>
+<y>20.43442</y>
+<z>42.4</z>
+</item>
+<item type="Vector3">
+<x>37.9</x>
+<y>20.43442</y>
+<z>29.9</z>
+</item>
+<item type="Vector3">
+<x>38.5</x>
+<y>20.43442</y>
+<z>29.9</z>
+</item>
+<item type="Vector3">
+<x>43.2</x>
+<y>20.43442</y>
+<z>27.1</z>
+</item>
+<item type="Vector3">
+<x>44.6</x>
+<y>26.18442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>44.6</x>
+<y>26.18442</y>
+<z>31.8</z>
+</item>
+<item type="Vector3">
+<x>44.9</x>
+<y>26.18442</y>
+<z>32</z>
+</item>
+<item type="Vector3">
+<x>38.1</x>
+<y>20.43442</y>
+<z>31</z>
+</item>
+<item type="Vector3">
+<x>37.6</x>
+<y>20.43442</y>
+<z>30.7</z>
+</item>
+<item type="Vector3">
+<x>30.4</x>
+<y>20.43442</y>
+<z>27.1</z>
+</item>
+<item type="Vector3">
+<x>37.9</x>
+<y>20.43442</y>
+<z>29.9</z>
+</item>
+<item type="Vector3">
+<x>43.2</x>
+<y>20.43442</y>
+<z>27.1</z>
+</item>
+<item type="Vector3">
+<x>30.9</x>
+<y>20.43442</y>
+<z>27.1</z>
+</item>
+<item type="Vector3">
+<x>38.1</x>
+<y>20.43442</y>
+<z>42.4</z>
+</item>
+<item type="Vector3">
+<x>43.2</x>
+<y>20.43442</y>
+<z>42.4</z>
+</item>
+<item type="Vector3">
+<x>38.7</x>
+<y>20.43442</y>
+<z>41.8</z>
+</item>
+<item type="Vector3">
+<x>43.2</x>
+<y>20.83442</y>
+<z>41.2</z>
+</item>
+<item type="Vector3">
+<x>38.7</x>
+<y>20.58442</y>
+<z>41.5</z>
+</item>
+<item type="Vector3">
+<x>38.7</x>
+<y>20.43442</y>
+<z>41.8</z>
+</item>
+<item type="Vector3">
+<x>43.2</x>
+<y>20.43442</y>
+<z>42.4</z>
+</item>
+<item type="Vector3">
+<x>43.2</x>
+<y>20.43442</y>
+<z>29.9</z>
+</item>
+<item type="Vector3">
+<x>38.5</x>
+<y>20.43442</y>
+<z>29.9</z>
+</item>
+<item type="Vector3">
+<x>38.7</x>
+<y>20.43442</y>
+<z>30.1</z>
+</item>
+<item type="Vector3">
+<x>38.7</x>
+<y>20.48442</y>
+<z>30.8</z>
+</item>
+<item type="Vector3">
+<x>38.5</x>
+<y>20.48442</y>
+<z>31</z>
+</item>
+<item type="Vector3">
+<x>43.2</x>
+<y>20.68442</y>
+<z>31</z>
+</item>
+<item type="Vector3">
+<x>43.2</x>
+<y>20.68442</y>
+<z>31</z>
+</item>
+<item type="Vector3">
+<x>43.2</x>
+<y>20.43442</y>
+<z>29.9</z>
+</item>
+<item type="Vector3">
+<x>38.7</x>
+<y>20.43442</y>
+<z>30.1</z>
+</item>
+<item type="Vector3">
+<x>38.7</x>
+<y>20.48442</y>
+<z>30.8</z>
+</item>
+<item type="Vector3">
+<x>43.2</x>
+<y>20.83442</y>
+<z>41.2</z>
+</item>
+<item type="Vector3">
+<x>43.2</x>
+<y>20.68442</y>
+<z>31</z>
+</item>
+<item type="Vector3">
+<x>38.5</x>
+<y>20.48442</y>
+<z>31</z>
+</item>
+<item type="Vector3">
+<x>38.1</x>
+<y>20.43442</y>
+<z>41.2</z>
+</item>
+<item type="Vector3">
+<x>37.6</x>
+<y>20.43442</y>
+<z>30.2</z>
+</item>
+<item type="Vector3">
+<x>37.9</x>
+<y>20.43442</y>
+<z>29.9</z>
+</item>
+<item type="Vector3">
+<x>30.9</x>
+<y>20.43442</y>
+<z>27.1</z>
+</item>
+<item type="Vector3">
+<x>38.1</x>
+<y>20.43442</y>
+<z>41.2</z>
+</item>
+<item type="Vector3">
+<x>38.5</x>
+<y>20.48442</y>
+<z>31</z>
+</item>
+<item type="Vector3">
+<x>38.1</x>
+<y>20.43442</y>
+<z>31</z>
+</item>
+<item type="Vector3">
+<x>37.8</x>
+<y>20.43442</y>
+<z>41.2</z>
+</item>
+<item type="Vector3">
+<x>44</x>
+<y>26.18442</y>
+<z>33</z>
+</item>
+<item type="Vector3">
+<x>38.2</x>
+<y>26.18442</y>
+<z>33</z>
+</item>
+<item type="Vector3">
+<x>38.2</x>
+<y>26.18442</y>
+<z>37.8</z>
+</item>
+<item type="Vector3">
+<x>44</x>
+<y>26.18442</y>
+<z>37.8</z>
+</item>
+<item type="Vector3">
+<x>51.2</x>
+<y>26.18442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>44.9</x>
+<y>26.18442</y>
+<z>32.5</z>
+</item>
+<item type="Vector3">
+<x>44.9</x>
+<y>26.18442</y>
+<z>38.2</z>
+</item>
+<item type="Vector3">
+<x>51.2</x>
+<y>26.18442</y>
+<z>47.4</z>
+</item>
+<item type="Vector3">
+<x>44.4</x>
+<y>26.18442</y>
+<z>33</z>
+</item>
+<item type="Vector3">
+<x>44</x>
+<y>26.18442</y>
+<z>33</z>
+</item>
+<item type="Vector3">
+<x>44</x>
+<y>26.18442</y>
+<z>37.8</z>
+</item>
+<item type="Vector3">
+<x>44.4</x>
+<y>26.18442</y>
+<z>37.8</z>
+</item>
+<item type="Vector3">
+<x>43.6</x>
+<y>26.18442</y>
+<z>48</z>
+</item>
+<item type="Vector3">
+<x>43.5</x>
+<y>26.18442</y>
+<z>47.1</z>
+</item>
+<item type="Vector3">
+<x>43.2</x>
+<y>26.18442</y>
+<z>46.8</z>
+</item>
+<item type="Vector3">
+<x>38.2</x>
+<y>26.18442</y>
+<z>48</z>
+</item>
+<item type="Vector3">
+<x>43.6</x>
+<y>26.18442</y>
+<z>41.4</z>
+</item>
+<item type="Vector3">
+<x>43.5</x>
+<y>26.18442</y>
+<z>38.9</z>
+</item>
+<item type="Vector3">
+<x>43.3</x>
+<y>26.18442</y>
+<z>38.3</z>
+</item>
+<item type="Vector3">
+<x>43.2</x>
+<y>26.18442</y>
+<z>46.4</z>
+</item>
+<item type="Vector3">
+<x>43.6</x>
+<y>26.18442</y>
+<z>46</z>
+</item>
+<item type="Vector3">
+<x>43.6</x>
+<y>26.18442</y>
+<z>41.4</z>
+</item>
+<item type="Vector3">
+<x>43.3</x>
+<y>26.18442</y>
+<z>38.3</z>
+</item>
+<item type="Vector3">
+<x>38.2</x>
+<y>26.18442</y>
+<z>37.8</z>
+</item>
+<item type="Vector3">
+<x>38.2</x>
+<y>26.18442</y>
+<z>48</z>
+</item>
+<item type="Vector3">
+<x>43.3</x>
+<y>26.18442</y>
+<z>38.3</z>
+</item>
+<item type="Vector3">
+<x>44</x>
+<y>26.18442</y>
+<z>37.8</z>
+</item>
+<item type="Vector3">
+<x>38.2</x>
+<y>26.18442</y>
+<z>37.8</z>
+</item>
+<item type="Vector3">
+<x>38.2</x>
+<y>26.18442</y>
+<z>48</z>
+</item>
+<item type="Vector3">
+<x>43.2</x>
+<y>26.18442</y>
+<z>46.8</z>
+</item>
+<item type="Vector3">
+<x>43.2</x>
+<y>26.18442</y>
+<z>46.4</z>
+</item>
+<item type="Vector3">
+<x>44.4</x>
+<y>26.18442</y>
+<z>33</z>
+</item>
+<item type="Vector3">
+<x>44.4</x>
+<y>26.18442</y>
+<z>37.8</z>
+</item>
+<item type="Vector3">
+<x>44.9</x>
+<y>26.18442</y>
+<z>38.2</z>
+</item>
+<item type="Vector3">
+<x>44.9</x>
+<y>26.18442</y>
+<z>32.5</z>
+</item>
+<item type="Vector3">
+<x>44.9</x>
+<y>26.18442</y>
+<z>46.8</z>
+</item>
+<item type="Vector3">
+<x>44.6</x>
+<y>26.18442</y>
+<z>47.3</z>
+</item>
+<item type="Vector3">
+<x>51.2</x>
+<y>26.18442</y>
+<z>47.4</z>
+</item>
+<item type="Vector3">
+<x>43.2</x>
+<y>20.83442</y>
+<z>41.2</z>
+</item>
+<item type="Vector3">
+<x>38.1</x>
+<y>20.43442</y>
+<z>41.2</z>
+</item>
+<item type="Vector3">
+<x>38.7</x>
+<y>20.58442</y>
+<z>41.5</z>
+</item>
+<item type="Vector3">
+<x>44.9</x>
+<y>26.18442</y>
+<z>46.4</z>
+</item>
+<item type="Vector3">
+<x>44.9</x>
+<y>26.18442</y>
+<z>46.8</z>
+</item>
+<item type="Vector3">
+<x>51.2</x>
+<y>26.18442</y>
+<z>47.4</z>
+</item>
+<item type="Vector3">
+<x>37.6</x>
+<y>20.43442</y>
+<z>30.7</z>
+</item>
+<item type="Vector3">
+<x>37.6</x>
+<y>20.43442</y>
+<z>30.2</z>
+</item>
+<item type="Vector3">
+<x>30.9</x>
+<y>20.43442</y>
+<z>27.1</z>
+</item>
+<item type="Vector3">
+<x>30.4</x>
+<y>20.43442</y>
+<z>27.1</z>
+</item>
+<item type="Vector3">
+<x>25.6</x>
+<y>20.43442</y>
+<z>48.9</z>
+</item>
+<item type="Vector3">
+<x>26.9</x>
+<y>20.43442</y>
+<z>48.9</z>
+</item>
+<item type="Vector3">
+<x>27.1</x>
+<y>20.43442</y>
+<z>48.6</z>
+</item>
+<item type="Vector3">
+<x>27.9</x>
+<y>20.43442</y>
+<z>27</z>
+</item>
+<item type="Vector3">
+<x>27.5</x>
+<y>20.43442</y>
+<z>26.7</z>
+</item>
+<item type="Vector3">
+<x>25.6</x>
+<y>20.43442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>25.6</x>
+<y>20.43442</y>
+<z>48.9</z>
+</item>
+<item type="Vector3">
+<x>27.1</x>
+<y>20.43442</y>
+<z>48.6</z>
+</item>
+<item type="Vector3">
+<x>37.4</x>
+<y>20.43442</y>
+<z>41.7</z>
+</item>
+<item type="Vector3">
+<x>37.6</x>
+<y>20.43442</y>
+<z>48.9</z>
+</item>
+<item type="Vector3">
+<x>37.8</x>
+<y>20.43442</y>
+<z>48.6</z>
+</item>
+<item type="Vector3">
+<x>37.8</x>
+<y>20.43442</y>
+<z>42.4</z>
+</item>
+<item type="Vector3">
+<x>37.4</x>
+<y>20.43442</y>
+<z>42</z>
+</item>
+<item type="Vector3">
+<x>27.9</x>
+<y>20.43442</y>
+<z>48.6</z>
+</item>
+<item type="Vector3">
+<x>28.1</x>
+<y>20.43442</y>
+<z>48.9</z>
+</item>
+<item type="Vector3">
+<x>37.4</x>
+<y>20.43442</y>
+<z>41.7</z>
+</item>
+<item type="Vector3">
+<x>37.8</x>
+<y>20.43442</y>
+<z>41.2</z>
+</item>
+<item type="Vector3">
+<x>38.1</x>
+<y>20.43442</y>
+<z>31</z>
+</item>
+<item type="Vector3">
+<x>30.4</x>
+<y>20.43442</y>
+<z>27.1</z>
+</item>
+<item type="Vector3">
+<x>27.9</x>
+<y>20.43442</y>
+<z>27</z>
+</item>
+<item type="Vector3">
+<x>27.9</x>
+<y>20.43442</y>
+<z>48.6</z>
+</item>
+<item type="Vector3">
+<x>37.4</x>
+<y>20.43442</y>
+<z>42</z>
+</item>
+<item type="Vector3">
+<x>37.4</x>
+<y>20.43442</y>
+<z>41.7</z>
+</item>
+<item type="Vector3">
+<x>27.1</x>
+<y>20.43442</y>
+<z>48.6</z>
+</item>
+<item type="Vector3">
+<x>59.3</x>
+<y>26.18442</y>
+<z>23.2</z>
+</item>
+<item type="Vector3">
+<x>60.5</x>
+<y>26.18442</y>
+<z>23.2</z>
+</item>
+<item type="Vector3">
+<x>60.8</x>
+<y>26.18442</y>
+<z>23</z>
+</item>
+<item type="Vector3">
+<x>60.8</x>
+<y>26.18442</y>
+<z>15.6</z>
+</item>
+<item type="Vector3">
+<x>60.5</x>
+<y>26.18442</y>
+<z>15.3</z>
+</item>
+<item type="Vector3">
+<x>57.1</x>
+<y>26.18442</y>
+<z>23</z>
+</item>
+<item type="Vector3">
+<x>56.7</x>
+<y>26.18442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>56.7</x>
+<y>26.18442</y>
+<z>24.4</z>
+</item>
+<item type="Vector3">
+<x>56.4</x>
+<y>26.18442</y>
+<z>24.2</z>
+</item>
+<item type="Vector3">
+<x>51.2</x>
+<y>26.18442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>51.2</x>
+<y>26.18442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>56.4</x>
+<y>26.18442</y>
+<z>23.4</z>
+</item>
+<item type="Vector3">
+<x>57.1</x>
+<y>26.18442</y>
+<z>23</z>
+</item>
+<item type="Vector3">
+<x>60.5</x>
+<y>26.18442</y>
+<z>15.3</z>
+</item>
+<item type="Vector3">
+<x>51.2</x>
+<y>26.18442</y>
+<z>15.3</z>
+</item>
+<item type="Vector3">
+<x>51.2</x>
+<y>26.18442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>56.4</x>
+<y>26.18442</y>
+<z>24.2</z>
+</item>
+<item type="Vector3">
+<x>56.4</x>
+<y>26.18442</y>
+<z>23.4</z>
+</item>
+<item type="Vector3">
+<x>56.3</x>
+<y>26.18442</y>
+<z>28.2</z>
+</item>
+<item type="Vector3">
+<x>56.7</x>
+<y>26.18442</y>
+<z>27.9</z>
+</item>
+<item type="Vector3">
+<x>56.7</x>
+<y>26.18442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>51.2</x>
+<y>26.18442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>56.5</x>
+<y>26.18442</y>
+<z>47.3</z>
+</item>
+<item type="Vector3">
+<x>56.7</x>
+<y>26.18442</y>
+<z>47.1</z>
+</item>
+<item type="Vector3">
+<x>56.7</x>
+<y>26.18442</y>
+<z>44.6</z>
+</item>
+<item type="Vector3">
+<x>56.3</x>
+<y>26.18442</y>
+<z>44.3</z>
+</item>
+<item type="Vector3">
+<x>51.2</x>
+<y>26.18442</y>
+<z>47.4</z>
+</item>
+<item type="Vector3">
+<x>56.7</x>
+<y>26.18442</y>
+<z>29.3</z>
+</item>
+<item type="Vector3">
+<x>56.3</x>
+<y>26.18442</y>
+<z>29</z>
+</item>
+<item type="Vector3">
+<x>51.2</x>
+<y>26.18442</y>
+<z>25.6</z>
+</item>
+<item type="Vector3">
+<x>51.2</x>
+<y>26.18442</y>
+<z>47.4</z>
+</item>
+<item type="Vector3">
+<x>56.3</x>
+<y>26.18442</y>
+<z>38.8</z>
+</item>
+<item type="Vector3">
+<x>56.3</x>
+<y>26.18442</y>
+<z>43.6</z>
+</item>
+<item type="Vector3">
+<x>56.7</x>
+<y>26.18442</y>
+<z>43.3</z>
+</item>
+<item type="Vector3">
+<x>56.7</x>
+<y>26.18442</y>
+<z>39.8</z>
+</item>
+<item type="Vector3">
+<x>56.3</x>
+<y>26.18442</y>
+<z>39.5</z>
+</item>
+<item type="Vector3">
+<x>51.2</x>
+<y>26.18442</y>
+<z>47.4</z>
+</item>
+<item type="Vector3">
+<x>56.3</x>
+<y>26.18442</y>
+<z>38.8</z>
+</item>
+<item type="Vector3">
+<x>56.7</x>
+<y>26.18442</y>
+<z>38.5</z>
+</item>
+<item type="Vector3">
+<x>56.7</x>
+<y>26.18442</y>
+<z>29.3</z>
+</item>
+<item type="Vector3">
+<x>51.2</x>
+<y>26.18442</y>
+<z>47.4</z>
+</item>
+<item type="Vector3">
+<x>56.3</x>
+<y>26.18442</y>
+<z>44.3</z>
+</item>
+<item type="Vector3">
+<x>56.3</x>
+<y>26.18442</y>
+<z>43.6</z>
+</item>
+<item type="Vector3">
+<x>51.2</x>
+<y>26.18442</y>
+<z>47.4</z>
+</item>
+<item type="Vector3">
+<x>56.3</x>
+<y>26.18442</y>
+<z>39.5</z>
+</item>
+<item type="Vector3">
+<x>56.3</x>
+<y>26.18442</y>
+<z>38.8</z>
+</item>
+<item type="Vector3">
+<x>56.3</x>
+<y>26.18442</y>
+<z>29</z>
+</item>
+<item type="Vector3">
+<x>56.3</x>
+<y>26.18442</y>
+<z>28.2</z>
+</item>
+<item type="Vector3">
+<x>51.2</x>
+<y>26.18442</y>
+<z>25.6</z>
+</item>
+</vertexs>
+<convexs>
+<item type="Convex">
+<vertexids>
+<item>0</item>
+<item>1</item>
+<item>2</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>0</item>
+<item>2</item>
+<item>3</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>4</item>
+<item>5</item>
+<item>6</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>4</item>
+<item>6</item>
+<item>7</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>4</item>
+<item>7</item>
+<item>8</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>9</item>
+<item>10</item>
+<item>11</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>9</item>
+<item>11</item>
+<item>12</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>13</item>
+<item>14</item>
+<item>15</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>13</item>
+<item>15</item>
+<item>16</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>17</item>
+<item>18</item>
+<item>19</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>20</item>
+<item>21</item>
+<item>22</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>23</item>
+<item>24</item>
+<item>25</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>23</item>
+<item>25</item>
+<item>26</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>23</item>
+<item>26</item>
+<item>27</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>28</item>
+<item>29</item>
+<item>30</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>28</item>
+<item>30</item>
+<item>31</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>32</item>
+<item>33</item>
+<item>34</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>32</item>
+<item>34</item>
+<item>35</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>36</item>
+<item>37</item>
+<item>38</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>36</item>
+<item>38</item>
+<item>39</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>40</item>
+<item>41</item>
+<item>42</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>43</item>
+<item>44</item>
+<item>45</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>43</item>
+<item>45</item>
+<item>46</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>47</item>
+<item>48</item>
+<item>49</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>47</item>
+<item>49</item>
+<item>50</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>51</item>
+<item>52</item>
+<item>53</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>51</item>
+<item>53</item>
+<item>54</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>51</item>
+<item>54</item>
+<item>55</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>56</item>
+<item>57</item>
+<item>58</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>56</item>
+<item>58</item>
+<item>59</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>56</item>
+<item>59</item>
+<item>60</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>61</item>
+<item>62</item>
+<item>63</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>64</item>
+<item>65</item>
+<item>66</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>64</item>
+<item>66</item>
+<item>67</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>68</item>
+<item>69</item>
+<item>70</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>68</item>
+<item>70</item>
+<item>71</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>72</item>
+<item>73</item>
+<item>74</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>75</item>
+<item>76</item>
+<item>77</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>75</item>
+<item>77</item>
+<item>78</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>75</item>
+<item>78</item>
+<item>79</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>80</item>
+<item>81</item>
+<item>82</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>83</item>
+<item>84</item>
+<item>85</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>83</item>
+<item>85</item>
+<item>86</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>83</item>
+<item>86</item>
+<item>87</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>88</item>
+<item>89</item>
+<item>90</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>88</item>
+<item>90</item>
+<item>91</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>92</item>
+<item>93</item>
+<item>94</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>95</item>
+<item>96</item>
+<item>97</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>95</item>
+<item>97</item>
+<item>98</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>99</item>
+<item>100</item>
+<item>101</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>99</item>
+<item>101</item>
+<item>102</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>103</item>
+<item>104</item>
+<item>105</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>103</item>
+<item>105</item>
+<item>106</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>107</item>
+<item>108</item>
+<item>109</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>107</item>
+<item>109</item>
+<item>110</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>111</item>
+<item>112</item>
+<item>113</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>111</item>
+<item>113</item>
+<item>114</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>111</item>
+<item>114</item>
+<item>115</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>116</item>
+<item>117</item>
+<item>118</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>119</item>
+<item>120</item>
+<item>121</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>122</item>
+<item>123</item>
+<item>124</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>122</item>
+<item>124</item>
+<item>125</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>126</item>
+<item>127</item>
+<item>128</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>129</item>
+<item>130</item>
+<item>131</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>129</item>
+<item>131</item>
+<item>132</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>129</item>
+<item>132</item>
+<item>133</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>134</item>
+<item>135</item>
+<item>136</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>137</item>
+<item>138</item>
+<item>139</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>137</item>
+<item>139</item>
+<item>140</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>141</item>
+<item>142</item>
+<item>143</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>144</item>
+<item>145</item>
+<item>146</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>144</item>
+<item>146</item>
+<item>147</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>148</item>
+<item>149</item>
+<item>150</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>151</item>
+<item>152</item>
+<item>153</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>154</item>
+<item>155</item>
+<item>156</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>154</item>
+<item>156</item>
+<item>157</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>154</item>
+<item>157</item>
+<item>158</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>154</item>
+<item>158</item>
+<item>159</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>160</item>
+<item>161</item>
+<item>162</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>160</item>
+<item>162</item>
+<item>163</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>160</item>
+<item>163</item>
+<item>164</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>160</item>
+<item>164</item>
+<item>165</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>166</item>
+<item>167</item>
+<item>168</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>169</item>
+<item>170</item>
+<item>171</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>172</item>
+<item>173</item>
+<item>174</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>172</item>
+<item>174</item>
+<item>175</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>176</item>
+<item>177</item>
+<item>178</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>179</item>
+<item>180</item>
+<item>181</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>179</item>
+<item>181</item>
+<item>182</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>179</item>
+<item>182</item>
+<item>183</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>184</item>
+<item>185</item>
+<item>186</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>187</item>
+<item>188</item>
+<item>189</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>190</item>
+<item>191</item>
+<item>192</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>193</item>
+<item>194</item>
+<item>195</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>196</item>
+<item>197</item>
+<item>198</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>199</item>
+<item>200</item>
+<item>201</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>199</item>
+<item>201</item>
+<item>202</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>199</item>
+<item>202</item>
+<item>203</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>199</item>
+<item>203</item>
+<item>204</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>205</item>
+<item>206</item>
+<item>207</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>208</item>
+<item>209</item>
+<item>210</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>208</item>
+<item>210</item>
+<item>211</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>212</item>
+<item>213</item>
+<item>214</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>215</item>
+<item>216</item>
+<item>217</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>218</item>
+<item>219</item>
+<item>220</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>218</item>
+<item>220</item>
+<item>221</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>222</item>
+<item>223</item>
+<item>224</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>222</item>
+<item>224</item>
+<item>225</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>222</item>
+<item>225</item>
+<item>226</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>222</item>
+<item>226</item>
+<item>227</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>228</item>
+<item>229</item>
+<item>230</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>228</item>
+<item>230</item>
+<item>231</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>232</item>
+<item>233</item>
+<item>234</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>232</item>
+<item>234</item>
+<item>235</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>236</item>
+<item>237</item>
+<item>238</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>236</item>
+<item>238</item>
+<item>239</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>240</item>
+<item>241</item>
+<item>242</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>243</item>
+<item>244</item>
+<item>245</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>246</item>
+<item>247</item>
+<item>248</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>246</item>
+<item>248</item>
+<item>249</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>250</item>
+<item>251</item>
+<item>252</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>250</item>
+<item>252</item>
+<item>253</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>254</item>
+<item>255</item>
+<item>256</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>257</item>
+<item>258</item>
+<item>259</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>260</item>
+<item>261</item>
+<item>262</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>260</item>
+<item>262</item>
+<item>263</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>260</item>
+<item>263</item>
+<item>264</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>265</item>
+<item>266</item>
+<item>267</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>268</item>
+<item>269</item>
+<item>270</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>268</item>
+<item>270</item>
+<item>271</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>268</item>
+<item>271</item>
+<item>272</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>273</item>
+<item>274</item>
+<item>275</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>276</item>
+<item>277</item>
+<item>278</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>276</item>
+<item>278</item>
+<item>279</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>280</item>
+<item>281</item>
+<item>282</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>283</item>
+<item>284</item>
+<item>285</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>283</item>
+<item>285</item>
+<item>286</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>283</item>
+<item>286</item>
+<item>287</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>288</item>
+<item>289</item>
+<item>290</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>291</item>
+<item>292</item>
+<item>293</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>291</item>
+<item>293</item>
+<item>294</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>291</item>
+<item>294</item>
+<item>295</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>291</item>
+<item>295</item>
+<item>296</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>297</item>
+<item>298</item>
+<item>299</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>300</item>
+<item>301</item>
+<item>302</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>303</item>
+<item>304</item>
+<item>305</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>306</item>
+<item>307</item>
+<item>308</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>309</item>
+<item>310</item>
+<item>311</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>312</item>
+<item>313</item>
+<item>314</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>312</item>
+<item>314</item>
+<item>315</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>316</item>
+<item>317</item>
+<item>318</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>319</item>
+<item>320</item>
+<item>321</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>322</item>
+<item>323</item>
+<item>324</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>322</item>
+<item>324</item>
+<item>325</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>326</item>
+<item>327</item>
+<item>328</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>326</item>
+<item>328</item>
+<item>329</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>330</item>
+<item>331</item>
+<item>332</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>333</item>
+<item>334</item>
+<item>335</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>333</item>
+<item>335</item>
+<item>336</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>337</item>
+<item>338</item>
+<item>339</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>337</item>
+<item>339</item>
+<item>340</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>341</item>
+<item>342</item>
+<item>343</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>341</item>
+<item>343</item>
+<item>344</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>345</item>
+<item>346</item>
+<item>347</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>345</item>
+<item>347</item>
+<item>348</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>349</item>
+<item>350</item>
+<item>351</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>349</item>
+<item>351</item>
+<item>352</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>353</item>
+<item>354</item>
+<item>355</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>356</item>
+<item>357</item>
+<item>358</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>356</item>
+<item>358</item>
+<item>359</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>356</item>
+<item>359</item>
+<item>360</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>356</item>
+<item>360</item>
+<item>361</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>362</item>
+<item>363</item>
+<item>364</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>365</item>
+<item>366</item>
+<item>367</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>368</item>
+<item>369</item>
+<item>370</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>368</item>
+<item>370</item>
+<item>371</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>372</item>
+<item>373</item>
+<item>374</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>375</item>
+<item>376</item>
+<item>377</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>378</item>
+<item>379</item>
+<item>380</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>381</item>
+<item>382</item>
+<item>383</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>381</item>
+<item>383</item>
+<item>384</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>385</item>
+<item>386</item>
+<item>387</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>388</item>
+<item>389</item>
+<item>390</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>388</item>
+<item>390</item>
+<item>391</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>388</item>
+<item>391</item>
+<item>392</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>388</item>
+<item>392</item>
+<item>393</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>394</item>
+<item>395</item>
+<item>396</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>394</item>
+<item>396</item>
+<item>397</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>394</item>
+<item>397</item>
+<item>398</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>394</item>
+<item>398</item>
+<item>399</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>400</item>
+<item>401</item>
+<item>402</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>400</item>
+<item>402</item>
+<item>403</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>400</item>
+<item>403</item>
+<item>404</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>405</item>
+<item>406</item>
+<item>407</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>405</item>
+<item>407</item>
+<item>408</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>409</item>
+<item>410</item>
+<item>411</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>409</item>
+<item>411</item>
+<item>412</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>409</item>
+<item>412</item>
+<item>413</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>409</item>
+<item>413</item>
+<item>414</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>415</item>
+<item>416</item>
+<item>417</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>415</item>
+<item>417</item>
+<item>418</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>419</item>
+<item>420</item>
+<item>421</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>419</item>
+<item>421</item>
+<item>422</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>419</item>
+<item>422</item>
+<item>423</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>424</item>
+<item>425</item>
+<item>426</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>427</item>
+<item>428</item>
+<item>429</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>427</item>
+<item>429</item>
+<item>430</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>431</item>
+<item>432</item>
+<item>433</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>431</item>
+<item>433</item>
+<item>434</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>431</item>
+<item>434</item>
+<item>435</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>436</item>
+<item>437</item>
+<item>438</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>436</item>
+<item>438</item>
+<item>439</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>436</item>
+<item>439</item>
+<item>440</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>441</item>
+<item>442</item>
+<item>443</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>441</item>
+<item>443</item>
+<item>444</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>441</item>
+<item>444</item>
+<item>445</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>446</item>
+<item>447</item>
+<item>448</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>449</item>
+<item>450</item>
+<item>451</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>452</item>
+<item>453</item>
+<item>454</item>
+</vertexids>
+</item>
+<item type="Convex">
+<vertexids>
+<item>455</item>
+<item>456</item>
+<item>457</item>
+</vertexids>
+</item>
+</convexs>
+</mesh>
+</root>

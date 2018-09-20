@@ -1,0 +1,118 @@
+﻿<configs namespace="cfg.guide">
+	
+	<enum name="NoviceModuleList">
+		<const name="BAG" alias="背包"/>
+		<const name="ECTYPE" alias="副本"/>
+		<const name="ACTIVITY" alias="活动"/>
+		<const name="FAMILY" alias="家族"/>
+		<const name="BATTLE" alias="战场"/>
+		<const name="HEAD" alias="头像"/>
+		<const name="PARTNER" alias="伙伴"/>
+		<const name="DAILYEXTRAEXP" alias="每日额外经验"/>
+		<const name="IDOL" alias="偶像"/>
+	</enum>
+	
+	<enum name="Direction">
+		<const name="NONE" value="0" alias="无"/>
+		<const name="UP" value="1" alias="上"/>
+		<const name="DOWN" value="2" alias="下"/>
+		<const name="LEFT" value="3" alias="左"/>
+		<const name="RIGHT" value="4" alias="右"/>
+	</enum>
+	
+	<enum name="BorderType">
+		<const name="NONE" value="0" alias="无"/>
+		<const name="RECTANGLE" value="1" alias="矩形"/>
+		<const name="CIRCLE" value="2" alias="圆形"/>		
+	</enum>
+	<config name="NoviceGuideSet" input="noviceguideset.xlsx">
+		<field name="id" type="int"/>
+		<field name="subset" type="list:int" delimiter=","/>
+	</config>
+	<struct name="GuideEffect">
+		<struct name="NPC">
+			<field name="type" type="int"/>0:带头像提示框   1:不带头像提示框
+			<field name="dialogpos" type="list:float" delimiter=","/>对话框位置
+			<field name="text" type="string"/>			
+		</struct>
+		<struct name="LockUI">
+			<field name="controlobject" type="int"/>
+			<field name="controlboxcollider" type="int"/>
+		</struct>
+		<struct name="ClickOver"/>点击任意位置结束
+		<struct name="Display">展示
+			<field name="istexture" type="bool"/>
+			<field name="icon" type="string"/>
+			<field name="desc" type="string"/>
+			<field name="desc1" type="string"/>
+			<field name="target" type="NoviceModuleList"/>
+		</struct>
+		<struct name="DisplaySkill">
+			<field name="desc" type="list:int" delimiter=","/>
+		</struct>
+		<struct name="Slider">滑动
+			<field name="type" type="int"/>滑动类型(0:视角旋转)
+			<field name="pos" type="list:float" delimiter=","/>位置
+			<field name="fromRotation" type="float"/>旋转初始值
+			<field name="toRotation" type="float"/>旋转目标值
+		</struct>
+	</struct>		
+	<config name="NoviceGuide" input="noviceguide.xlsx">
+		<const name="CONTROLLER" value="2"/>
+		<const name="TOTALFINDOBJECTTIMES" value="80"/>
+		<const name="TRIGGERNEXTGUIDETIME" value="300"/>触发下一个指引查询时间
+		<const name="FINDOBJINTERVAL" value="1"/>
+		<const name="NONMANDOTORYTIME" value="10"/>非强制指引结束时间
+		<const name="OPENDISPLAYTIME" value="3"/>活动开启自动消失时间
+		<const name="OPENFORCETIME" value="2"/>活动开启强制展示时间
+		<const name="TARGETPANELDEPTH" value="701"/>目标层级
+		<const name="TALISMANGUIDEID" value="1210"/>法宝指引id
+		<field name="id" type="int"/>
+		<field name="isinectype" type="bool"/>是否在副本中触发（FALSE不触发，TRUE触发）
+		<field name="issavepoint" type="bool"/>是否保存点（FALSE否，TRUE是）
+		<field name="ismandatory" type="bool"/>是否强制（TRUE强制，FALSE非强制）
+		<field name="isdisskipbutton" type="bool"/>是否显示跳过指引的按钮（TRUE显示，FALSE不显示）
+		<field name="ispause" type="bool"/>是否暂停（FALSE不暂停，TRUE暂停）
+		<field name="islocked" type="bool"/>是否锁定（TRUE锁定，FALSE不锁定）
+		<field name="delaytime" type="float"/>延迟锁定时间
+		<field name="audio" type="int"/>语音id
+		<field name="overaudio" type="int"/>完成语音提示
+		<field name="guideeffect" type="list:GuideEffect"/>指引显示		
+		<field name="triggerconditions" type="list:cfg.cmd.condition.Condition"/>触发条件
+		<field name="completeconditions" type="list:cfg.cmd.condition.Condition"/>完成条件
+	</config>
+	
+	<config name="LockObject" index="id" input="lockobject.xlsx">
+		<const name="STRECHOPEN" value="106"/>加号按钮展开
+		<const name="STRECHCLOSE" value="186"/>加号按钮关闭
+		<const name="JOYSTICK" value="101"/>摇杆
+		<const name="TASK" value="201"/>任务
+		<field name="id" type="int"/>		
+		<field name="controldlg" type="string"/>	
+		<field name="controluiobject" type="string"/>
+		<field name="handtype" type="Direction"/>手型方向
+		<field name="arrowtype" type="Direction"/>箭头方向		
+		<field name="bordertype" type="BorderType"/>高亮形状
+		<field name="scale" type="list:float" delimiter=","/>高亮区域缩放大小（宽高）
+		<field name="fixorbind" type="bool"/>箭头位置固定或绑定（FALSE：固定；TRUE：绑定）
+		<field name="offset" type="list:float" delimiter=","/>偏移位置
+		<field name="addcomponent" type="bool"/>添加组件（TRUE:添加；FALSE：不添加）
+		<field name="needclip" type="bool"/>Panel是否需要裁剪
+		<field name="clipoffset" type="list:float" delimiter=","/>裁剪偏移（x,y）
+		<struct name="Normal"/>普通控件
+		<struct name="List">列表
+			<field name="index" type="int"/>
+		</struct>
+		<struct name="WidgetOfList">列表中控件
+			<field name="index" type="int"/>
+			<field name="widgetname" type="string"/>
+		</struct>
+		<struct name="ItemOfList">根据id查找列表中控件
+			<field name="itemid" type="list:int" delimiter=","/>
+		</struct>
+	</config>
+	<config name="NoviceGuideText" input="noviceguidetext.xlsx">
+		<field name="id" type="int"/>
+		<field name="desc" type="string"/>
+	</config>
+</configs>

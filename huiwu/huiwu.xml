@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.huiwu">
+
+	<config name="HuiWu" input="huiwu.xlsx" single="true">
+		<const name="ELIMINATE_RANK" type = "int" value="3088"/>
+		<const name="BAOSONG_RANK" type = "int" value="12"/>
+		<const name="DIRECT_ELECTION" type = "int" value="4"/>
+		<const name="PRESELECT_BROCAST_TERMINAL" type = "int" value="4"/>
+		
+		<const name="HUIWU_PRESELECTION1_SUCC_MAILID" value="4"/>进入预选 奖励邮件
+		<const name="HUIWU_PRESELECTION1_FAIL_MAILID" value="5"/>筛选被淘汰
+		<const name="HUIWU_PRESELECTION2_SUCC_MAILID" value="6"/>进入决赛
+		<const name="HUIWU_PRESELECTION2_FAIL_MAILID" value="7"/>预选被淘汰
+		<const name="HUIWU_BATTLE_FAIL_MAILID" value="8"/>决赛被淘汰
+		<const name="HUIWU_BATTLE_WIN_MAILID" value="14"/>决赛胜利
+		<const name="HUIWU_CHAMPION_MAILID" value="9"/>冠军
+		<const name="HUIWU_CONTINUE_CHAMPION_MAILID" value="10"/>蝉联冠军
+
+		<const name="CHAMPION_CTX_CELEBRITY" type = "int" value="1"/>冠军信息供名人堂界面使用
+		<const name="CHAMPION_CTX_MAIN" type = "int" value="2"/>冠军信息供会武主界面使用
+
+		<field name="ectypeid" type="int" ref="ectypebasic"/>
+		<field name="requirelevel" type="cfg.cmd.condition.MinLevel"/>
+		<field name="areaid" type="int"/>
+		
+		<field name="player1bornposition" type="cfg.map.Vector2" group="server"/>玩家出生坐标
+		<field name="player2bornposition" type="cfg.map.Vector2" group="server"/>玩家出生坐标
+		<field name="countdown" type="int"/>倒计时
+		
+		<field name="ectypetime" type="int"/>
+		<field name="preselect1num" type="int"/>
+		<field name="preselect2num" type="int"/>
+		<field name="preselect2priornum" type="int"/>
+		<field name="preselect2luckynum" type="int"/>
+		<field name="specialranks" type="list:int"/>
+		<field name="specialpositions" type="list:int"/>
+		<field name="enrollopen" type="cfg.common.WeekTime"/>
+		<field name="enrollend" type="cfg.common.WeekTime"/>
+		<field name="preselectopen1" type="cfg.common.WeekTime"/>
+		<field name="preselectend1" type="cfg.common.WeekTime"/>
+		<field name="preselectopen2" type="cfg.common.WeekTime"/>
+		<field name="preselectend2" type="cfg.common.WeekTime"/>
+		<field name="battleopen" type="cfg.common.WeekTime"/>
+    <field name="mainregionid" type="int"/>
+		<field name="battletime" type="list:BattleTimeControler"/>
+		<field name="daiylyworshiptimes" type="cfg.cmd.condition.DayLimit"/>
+		<field name="dailyworshipaward" type="cfg.cmd.action.MultiBonus"/>
+		<field name="guessaward" type="cfg.cmd.action.MultiBonus"/>
+		<field name="enrollaward" type="cfg.cmd.action.MultiBonus"/>
+		<field name="preselectaward" type="cfg.cmd.action.MultiBonus"/>
+		<field name="battleaward" type="list:rankAward"/>
+		<field name="continuitytimes" type="int"/>
+		<field name="continuityaward" type="cfg.cmd.action.MultiBonus"/>
+	</config>
+	<struct name="BattleTimeControler"> 
+		<field name="round" type="int" />
+		<field name="wait" type="int" />
+		<field name="battle" type="int" />
+		<field name="relax" type="int"/>
+	</struct>
+	<struct name="rankAward"> 
+		<field name="rank" type="int" />
+		<field name="award" type="cfg.cmd.action.MultiBonus" />
+	</struct>
+	
+	<enum name="Stage">
+		<const name="BEFORE_ENROLL"/>     0
+		<const name="BEGIN_ENROLL"/>      1
+		<const name="END_ENROLL"/>        2
+		<const name="BEGIN_PRESELECT1"/>  3
+		<const name="END_PRESELECT1"/>    4
+		<const name="BEGIN_PRESELECT2"/>  5
+		<const name="END_PRESELECT2"/>    6
+		<const name="BEGIN_BATTLE"/>      7
+		<const name="END_BATTLE"/>        8
+	</enum>
+	
+	<enum name="RoundStage">
+		<const name="ROUND_PREPARE"/>
+		<const name="ROUND_FIGHT"/>
+		<const name="ROUND_REST"/>
+	</enum>
+	
+	<enum name="BattleState">
+		<const name="WIN"/>
+		<const name="LOSE"/>
+	</enum>
+
+</configs>

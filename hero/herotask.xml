@@ -1,0 +1,123 @@
+﻿<configs namespace="cfg.herotask">
+	<enum name="HeroChallengeType">
+		<const name="COMMON" value="1" alias="普通类型"/>击杀一定波数小怪，杀死boss。
+		<const name="COOPERATE" value="2" alias="小怪不断出现boss技能配合"/>小怪保持一定数量不断刷新。多个Boss直接出现，boss之间技能相互配合。杀死boss副本胜利。
+		<const name="LIMIT" value="3" alias="小怪源源不断"/>小怪保持一定数量不断刷新，击杀一定数量后副本胜利。
+		<const name="ABBOSS" value="4" alias="多个boss相互关联"/>Boss采用AB怪机制，A怪不死，B怪无敌。
+		<const name="MANYBOSS" value="5" alias="多个boss挂buff"/>多个boss，若干小boss和一个大boss。每死一个小boss，就给大boss加一个buff提升大boss实力，同时给予玩家一个debuff。
+	</enum>
+	<enum name="HeroAwardlevel">
+		<const name="FIRSTLEVEL" value="10" alias="第一奖励段"/>从1到最大值的次数为第一奖励段。
+		<const name="SECONDLEVEL" value="20" alias="第二奖励段"/>从第一奖励段后的一次到最大值的次数为第二奖励段。
+	</enum>	
+	<struct name="herotaskaward">
+		<field name="level" type="int"/>
+		<field name="exp" type="int"/>经验和钱要乘以副本奖励倍率，如果是2人打的话还要乘以2人副本奖励倍率
+		<field name="gold" type="int"/>
+		<field name="extrabonus" type="cfg.cmd.action.Bonus"/>这个是打完每一个副本发的奖励
+	</struct>
+	<struct name="captianherotaskaward">
+		<field name="level" type="int"/>
+		<field name="extrabonus" type="cfg.cmd.action.Bonus"/>
+	</struct>
+
+	<struct name="TaskLibInfo">
+		<field name="ident" type="int"/>唯一副本标识
+		<field name="npcid" type="int"/>
+		<field name="challengetype" type="HeroChallengeType"/>
+		<field name="ectypeid" type="int"/>
+		<field name="introduction" type="string"/>
+		<field name="npcdialogue" type="string"/>
+	</struct>
+
+	<config name="HeroTaskLib" input="herotasklib.xlsx">
+		<field name="level" type="int"/>
+		<field name="taskinfo" type="list:TaskLibInfo"/>
+	</config>
+
+	<struct name="MonsterInfo">
+		<field name="region" type="int"/>
+		<field name="monster" type="map:int:int"/>
+	</struct>
+	<struct name="HeroBossInfo">
+		<field name="id" type="int"/>
+		<field name="position" type="cfg.map.Vector2"/>
+		<field name="monsterid" type="int"/>
+	</struct>
+	<struct name="HeroAbBossInfo">
+		<field name="level" type="int"/>
+		<field name="bosslist" type="list:HeroBossInfo"/>
+	</struct>
+	<struct name="HeroCooperateInfo">
+		<field name="level" type="int"/>
+		<field name="bosslist" type="list:HeroBossInfo"/>
+		<field name="monsterlist" type="list:MonsterInfo"/>
+	</struct>
+	<struct name="HeroCommonInfo">
+		<field name="level" type="int"/>
+		<field name="monsterlist" type="list:MonsterInfo"/>
+	</struct>
+	<struct name="HeroManyBossInfo">
+		<field name="level" type="int"/>
+		<field name="bosslist" type="list:HeroBossInfo"/>
+	</struct>
+	<struct name="HeroLimitInfo">
+		<field name="level" type="int"/>
+		<field name="monsterlist" type="list:MonsterInfo"/>
+	</struct>
+	<config name="herotaskconfig" input="herotaskconfig.xlsx" single="true">一条龙配置
+		<field name="openlevel" type="int"/>开启等级
+		<field name="ectypeamount" type="int"/>
+		<field name="maxbonustimes" type="cfg.cmd.condition.DayLimit"/>
+		<field name="maxcaptianbonustimes" type="cfg.cmd.condition.DayLimit"/>
+		<field name="npcid" type="int" ref="npc"/>
+		<field name="mintmemberamount" type="int"/>
+		<field name="unitylevel" type="string"/>档位层次
+		<field name="mapid" type="int"/>地图ID
+		<field name="npctalk" type="string"/>开启活动npc说话
+		<field name="beginreg" type="int"/>进入副本范围
+		<field name="bonusrate" type="list:float"/>每10个副本读一个数
+		<field name="bonusrate2" type="float"/>2人组队时额外倍率
+		<field name="displaybonus" type="list:int" ref="itembasic"/>
+		<field name="basicaward" type="list:herotaskaward"/>
+		<field name="captianaward" type="list:captianherotaskaward"/>
+		<field name="descriptions" type="list:string"/>
+	</config>
+
+	<config name="HeroCommon" index="ectypeid" input="herocommon.xlsx">
+		<field name="ectypeid" type="int"/>
+		<field name="mainregionid" type="int"/>
+		<field name="monsterlist" type="list:HeroCommonInfo"/>
+	</config>
+
+	<config name="HeroLimit" index="ectypeid" input="herolimit.xlsx">
+		<field name="ectypeid" type="int"/>
+		<field name="mainregionid" type="int"/>
+		<field name="requirekill" type="int"/>
+		<field name="interval" type="int"/>
+		<field name="monsterinfo" type="list:HeroLimitInfo"/>
+	</config>
+
+	<config name="HeroAbBoss" index="ectypeid" input="heroabboss.xlsx">
+		<field name="ectypeid" type="int"/>
+		<field name="mainregionid" type="int"/>
+		<field name="buffid" type="int"/>
+		<field name="monsterinfo" type="list:HeroAbBossInfo"/>
+	</config>
+
+	<config name="HeroManyboss" index="ectypeid" input="heromanyboss.xlsx">1号是大boss
+		<field name="ectypeid" type="int"/>
+		<field name="mainregionid" type="int"/>
+		<field name="buff" type="int"/>
+		<field name="debuff" type="int"/>
+		<field name="monsterinfo" type="list:HeroManyBossInfo"/>
+	</config>
+
+
+	<config name="HeroCooperate" index="ectypeid" input="herocooperate.xlsx">
+		<field name="ectypeid" type="int"/>
+		<field name="mainregionid" type="int"/>
+		<field name="interval" type="int"/>
+		<field name="monsterinfo" type="list:HeroCooperateInfo"/>
+	</config>
+</configs>

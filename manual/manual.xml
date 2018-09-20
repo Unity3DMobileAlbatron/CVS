@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.manual">
+	
+	<enum name="PropertyType">
+		<const name="HUMAN" alias="角色" value="0"/>
+		<const name="PET" alias="伙伴" value="1"/>
+	</enum>
+
+	<struct name="StageStarData">
+		<field name="stagestarlevel" type="int"/>
+		<field name="desc" type="string"/>
+		<field name="propertytype" type="PropertyType"/>
+		<field name="property" type="list:cfg.equip.EquipPropertyData"/>
+		<field name="costitems" type="int"/>
+	</struct>
+	<struct name="AwakeData">
+		<field name="awakelevel" type="int"/>
+		<field name="desc" type="string"/>
+		<field name="propertytype" type="PropertyType"/>
+		<field name="property" type="list:cfg.equip.EquipPropertyData"/>
+		<field name="costitems" type="int"/>
+	</struct>
+	
+	<config name="PetStageStarBonus" input="petstagestarbonus.xlsx">
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="propertylist" type="list:StageStarData" index="stagestarlevel"/>
+	</config>
+	
+	<config name="PetAwakeBonus" input="petawakebonus.xlsx">
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="propertylist" type="list:AwakeData" index="awakelevel"/>
+	</config>
+	
+	<config name="PetDescribe" input="petdescribe.xlsx">
+		<field name="id" type="int" ref="petbasicstatus"/>
+		<field name="name" type="string"/>
+		<field name="shortdescribe" type="string"/>
+		<field name="describe" type="string"/>
+		<field name="petskilllist" type="list:string"/>
+		<field name="skilldescribelist" type="list:string"/>
+	</config>
+	<config name="MaunalConfig" input="manualconfig.xlsx" single="true">
+		<field name="petcostitemid" type="int" ref="itembasic"/>
+	</config>
+</configs>

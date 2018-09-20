@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.monster">
+
+	<struct name="DefaultAIParam">
+		<field name="ai" type="int" ref="ai"/>
+		<field name="proactive" type="bool"/>是否为主动怪
+		<field name="guardradius" type="int"/>警戒半径
+		<field name="traceradius" type="int"/>战斗追踪半径
+		<field name="hostilitytype" type="cfg.ai.HostilityType"/>仇恨类型
+		<field name="walkbackhealhprate" type="int"/>脱离战斗返回出生点时回血速度(xx/秒)
+		<field name="walkbackhealhppercentrate" type="float"/>脱离战斗返回出生点时百分比回血速度(xx/秒,50%填0.5而不是50)
+	</struct>
+	<struct name="MultiRoundDrop">
+		<field name="drop" type="cfg.cmd.action.Drop"/>
+		<field name="num" type="int"/>
+	</struct>
+	<enum name="MonsterType">
+		<const name="NORMAL" alias="普通" value="1"/>
+		<const name="ELITE" alias="精英" value="2"/>
+		<const name="BOSS" alias="boss" value="3"/>
+	</enum>
+	<config name="Monster" index="id" input="monster.xlsx:monstertest.xlsm">
+		<const name="DROP_CURRENCY_TYPE" value="cfg.currency.CurrencyType.XuNiBi"/>掉落货币类型是 虚拟币
+		<const name="TEAM_SHARE_EXP_RADIUS" value="50"/>
+		<const name="MONSTER_LEAVE_DELAY_WHEN_DEAD" value="5"/>怪物死亡后从地图上消失的时间
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="level" type="int"/>
+		<field name="type" type="string"/>
+		<field name="lockedbywho" type="string" group="server"/>
+		<field name="hpstrength" type="float" group="server"/>陆承用的，不要删
+		<field name="atkstrength" type="float" group="server"/>同上
+		<field name="defstrength" type="float" group="server"/>同上
+		<field name="title" type="string" group="server"/>
+		<field name="camp" type="cfg.fight.CampType"/>
+		<field name="owner" type="string" group="server"/>负责人，策划用，程序不要处理
+		<field name="introduce" type="string" group="server"/>怪物介绍，策划用，程序不要处理
+		<field name="monstertype" type="MonsterType"/>
+		<field name="battletalk" type="list:string"/>
+		<field name="battletalkprobability" type="float"/>
+		<field name="attackvoice" type="int"/>攻击音效
+		<field name="beattackvoice" type="int"/>被击音效
+		<field name="deadvoice" type="int"/>死亡音效
+		<field name="patrolvoice" type="int"/>待机音效
+		<field name="modelname" type="string" ref="model,skillmodelbind" desc = "ref:character/model.xlsx"/>
+		<field name="scale" type="float"/>
+		<field name="beattackedlight" type="int" group="server"/>
+		<field name="ifxuetiao" type="bool" group="server"/>
+		<field name="defaultai" type="DefaultAIParam" group="server"/>
+		<field name="weight" type="int" group="server"/>
+		<field name="playborneffect" type="bool"/>
+		<field name="playerbornaction" type="bool" group="server"/>
+		<field name="bornprotecttime" type="int"  group="server"/>
+		<field name="attr" type="cfg.fight.Attr" group="server"/>
+		<field name="patrolspeed" type="float" group="server"/>
+		<field name="dropexp" type="int" group="server"/>
+		<field name="dropcurrencynum" type="int" group="server"/>
+		<field name="drops" type="list:MultiRoundDrop" group="server"/>
+	</config>
+	<config name="SkillModelBind" index="modelname" input="skillModelBind.xlsm">
+		<field name="modelname" type="string" ref="model" desc = "ref:character/model.xlsx"/>
+		<field name="attackrange" type="float"/>
+		<field name="skills" type="list:int" ref="skilldmg|passiveskill"/>
+	</config>
+	<config name="MonsterVoice" index="voiceid" input="monstervoice.xlsx">
+		<field name="voiceid" type="int"/>喊叫id
+		<field name="voicetype" type="string"/>适用类型
+		<field name="voicelist" type="list:int"/>喊叫声
+		<field name="playrate" type="float"/>播放机率
+		<field name="minvolume" type="float"/>最小音量
+		<field name="maxvolume" type="float"/>最大音量
+	</config>
+
+</configs>

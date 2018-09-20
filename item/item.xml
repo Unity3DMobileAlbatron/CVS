@@ -1,0 +1,188 @@
+﻿<configs namespace="cfg.item">
+	<enum name="EItemMedicineType">
+		<const name="HEAL_HP" value="1"/>加血
+		<const name="HEAL_MP" value="2"/>加蓝
+		<const name="HEAL_HP_PERCENT" value="3"/>加血%（1为回满）
+	</enum>
+	<enum name="EItemBindType">绑定类型
+		<const name="BOUND" alias="拾取后绑定" value="0" />
+		<const name="NOT_BOUND" alias="不绑定" value="1"/>
+	</enum>
+	<enum name="EItemColor">物品品质
+		<const name="WHITE" alias="白" value="0"/>
+		<const name="GREEN" alias="绿" value="1"/>
+		<const name="BLUE" alias="蓝" value="2"/>
+		<const name="PURPLE" alias="紫" value="3"/>
+		<const name="ORANGE" alias="橙" value="4"/>
+		<const name="RED" alias="红" value="5"/>
+	</enum>
+	<enum name="MedicineType">
+		<const name="WHITE" alias="HP" value="0"/>
+		<const name="GREEN" alias="MP" value="1"/>
+	</enum>
+	<struct name="ItemEntry">礼包表的具体物品
+		<field name="itemid" type="int"/>
+		<field name="number" type="int"/>
+	</struct>
+	<enum name="EItemType">物品类型
+		<const name="COMMON" alias="普通" value="1"/>
+		<const name="MEDICINE" alias="消耗品" value="2"/>
+		<const name="CURRENCY" alias="元宝" value="3"/>
+		<const name="GIFTPACK" alias="礼包" value="4"/>
+		<const name="ENHANCE"  alias="强化道具" value="5"/>
+		<const name="OTHER"  alias="其他道具" value="6"/>
+		<const name="QUEST" alias="任务物品" value="7"/>
+        <const name="FLOWER" alias="鲜花" value ="8"/>
+		<const name="JEWELRY" alias="宝石" value="9"/>
+		<const name="FASHION" alias="时装" value="10"/>
+		<const name="RIDING" alias="坐骑" value="11"/>
+		<const name="EXPITEM" alias="经验道具" value="12"/>
+		<const name="TITLE" alias="称号" value="13"/>
+		<const name="FRAGMENT" alias="碎片" value="14"/>
+		<const name="PETFRAGMENT" alias="伙伴碎片" value="15"/>
+		<const name="PET" alias="伙伴" value="16"/>
+		<const name="TALISMAN" alias="法宝" value="17"/>
+		<const name="BANGLE" alias="手镯" value="18"/>
+		<const name="NECKLACE" alias="项链" value="19"/>
+		<const name="RING" alias="戒指" value="20"/>
+		<const name="WEAPON" alias="武器" value="21"/>
+		<const name="CLOTH" alias="衣服" value="22"/>
+		<const name="HAT" alias="帽子" value="23"/>
+		<const name="SHOE" alias="鞋子" value="24"/>
+		<const name="SKIN" alias="皮肤" value="25"/>
+		<const name="REDPACKET" alias="红包" value="26"/>
+	</enum>
+	<enum name="LevelUpType">
+		<const name="ROLE_LEVEL" value="1"/>
+		<const name="PET_LEVEL" value="2"/>
+		<const name="TALISMAN_LEVEL" value="3"/>
+	</enum>
+	
+	
+	<enum name="FlowerType">
+		<const name="NPC" value="1"/>
+		<const name="PLAYER" value="2"/>
+	</enum>
+	<enum name="GemstoneType1">
+		<const name="ATTACK" alias="攻击" value="1"/>
+		<const name="DEFENCE" alias="防御" value="2"/>
+	</enum>
+	<enum name="GemstoneType2">
+		<const name="BASIC" alias="基础" value="1"/>
+		<const name="ADVANCED" alias="高级" value="2"/>
+	</enum>
+  <struct name="ItemSortOrder" >
+  	<const name="ITEM_SORT_ORDER" type="string" value="level,quality,number"/>
+  	<const name="ITEM_SORT_RULE" type="string"  value="desc,desc,asc"/>
+  </struct>
+	<config name="ItemBasic" index="id" input="item.xlsx">
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="owner" type="string" group="server"/>策划多人编辑用
+		<field name="itemtype" type="EItemType"/> 物品类型
+		<field name="displayitemtype" type="string"/>显示给玩家看的物品类型
+		<field name="icon" type="string"/>图标
+		<field name="level" type="int"/>物品等级
+		<field name="quality" type="EItemColor"/>物品品质
+		<field name="prize" type="int"/>卖出价格
+		<field name="gender" type="cfg.cmd.condition.Gender"/>性别限制
+		<field name="professionlimit" type="cfg.cmd.condition.ProfessionLimit"/>职业限制
+		<field name="bindtype" type="cfg.cmd.action.BindType"/>绑定类型
+		<field name="introduction" type="string"/>介绍
+		<field name="levellimit" type="cfg.cmd.condition.MinMaxLevel"/>
+		<field name="maxpile" type="int"/>最大堆叠
+		<field name="batch" type="bool"/>是否可以批量使用
+		<field name="cansell" type="bool"/>是否可以卖店
+		<field name="daylimit" type="cfg.cmd.condition.DayLimit"/>每日限制次数
+		<struct name="ItemMedicine">
+			<field name="buffid" type="int"/>
+			<field name="hp" type="int"/>
+			<field name="mp" type="int"/>
+			<field name="cdgroup" type="cfg.cmd.condition.GroupCoolDown"/>
+			<field name="medicinetype" type="MedicineType"/>
+			<field name="roundicon" type="string"/>图标
+		</struct>
+		<struct name="ItemGemstone">宝石
+			<field name="previd" type="int" ref="itembasic"/>
+			<field name="composecost" type="int"/>
+			<field name="type1" type="GemstoneType1"/>
+			<field name="type2" type="GemstoneType2"/>
+			<field name="property" type="cfg.equip.EquipPropertyData"/>
+		</struct>
+		<struct name="ItemExperience">
+			<field name="effect" type="cfg.cmd.action.AddExperience"/>
+		</struct>
+		<struct name="ItemGiftPack">
+			<field name="itempacklist" type="cfg.cmd.action.MultiBonus" />
+		</struct>
+		<struct name="ItemEnhance">
+			<field name="sprite" type="string"/>
+		</struct>
+		<struct name="ItemTask">
+		</struct>
+		<struct name="ItemScene">
+			<field name="mineralid" type="int" ref="mineral"/>mineral表里id
+			<field name="actionname" type="string"/>对应播放动作
+			<field name="posoffset" type="int"/>距离玩家正面的偏移值
+		</struct>
+		<struct name="ItemOther" />
+		<struct name="ItemFlower">鲜花，好友系统用的
+			<field name="flowertype" type="FlowerType"/>
+			<field name="frienddegree" type="int"/>获得好感度
+			<field name="charmdegree" type="int"/>获得魅力值
+			<field name="image" type="string"/>
+		</struct>
+		<struct name="ItemLevelUp">
+			<field name="leveluptype" type="LevelUpType"/>
+			<field name="lvl" type="int"/>
+		</struct>
+		<struct name="ItemDress">
+			<field name="dressid" type="int"/>
+			<field name="effectiveime" type="int"/>有效时间，单位：分钟(默认为永久)
+		</struct>
+		<struct name="ItemRiding">
+			<field name="ridingid" type="int"/>
+			<field name="effectiveime" type="int"/>有效时间，单位：分钟(默认为永久)
+		</struct>
+		<struct name="ItemCurrency">货币，供客户端展示用，服务器不要处理
+			<field name="currencytype" type="cfg.currency.CurrencyType"/>
+			<field name="amount" type="int"/>
+			<field name="sprite" type="string"/>
+		</struct>
+		<struct name="ItemTitle"/>
+
+		<struct name="ItemRedPacket">
+		</struct>
+	</config>
+
+	<struct name="SourceInfo" >
+		<field name="desc" type="string"/>
+		<field name="dlgname" type="string" ref="dialog"/>
+		<field name="tabindex1" type="int"/> 界面中第1层tab索引
+		<field name="tabindex2" type="int"/> 界面中第2层tab索引
+		<field name="tabindex3" type="int"/> 界面中第3层tab索引
+	</struct>
+
+	<config name="ItemSource" input="itemsource.xlsx">
+		<field name="id" type="int" ref="itembasic|petbasicstatus|talismanbasic|equip|fragment|petfragment"/> 物品id
+		<field name="name" type="string"/> 物品名字
+		<struct name="DirectBuy"/>
+		<struct name="SingleSource">
+			<field name="source" type="SourceInfo"/>
+		</struct>
+		<struct name="MultiSource" >
+			<field name="sourcelist" type="list:SourceInfo" /> 获取途径列表
+		</struct>
+	</config>
+	<config name="EquipSource" input="equipsource.xlsx">
+		<field name="type" type="EItemType"/> 
+		<field name="sourcelist" type="list:SourceInfo"/> 获取途径列表
+	</config>
+	<config name="ItemCompose" input="itemcompose.xlsx">
+		<field name="id" type="int"/>
+		<field name="targetid" type="int" ref="itembasic|petbasicstatus|talismanbasic|equip|fragment|petfragment"/>展示的时候展示这个物品，实际不一定获得这个物品。
+		<field name="requireitem" type="cfg.cmd.condition.Items"/>需要的物品列表
+		<field name="getbonus" type="cfg.cmd.action.Bonus"/>实际获得的物品（bonus）
+	</config>
+
+</configs>

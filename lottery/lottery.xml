@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf8"?>
+<configs namespace="cfg.lottery">
+	  <config name="HighLottery" input="highlottery.xlsx" >
+        <field name="id" type="int"/>
+        <field name="requirecurrency" type="cfg.cmd.condition.Currency"/>
+        <field name="requireitem" type="cfg.cmd.condition.OneItem"/>
+		<field name="requireitem2" type="cfg.cmd.condition.OneItem"/>10连抽兑换券
+		<field name="refreshtimes" type="cfg.cmd.condition.DayLimit"/>刷新免费抽卡次数
+		<field name="refreshinterval" type="cfg.cmd.condition.CoolDown"/>刷新免费抽卡机会的时间
+        <field name="recievedcurrency" type="cfg.cmd.action.Currency"/>
+        <field name="lotterylist" type="list:HighLotteryDetail"/>
+    </config>
+
+    <enum name="HighLotteryType">
+		<const name="Null" value="0"/> 
+    	<const name="HUOBAN_HIGH_ONE" alias="伙伴高配额单抽" value="1"/> 
+        <const name="HUOBAN_HIGH_TEN" alias="伙伴高配额十连抽" value="2"/>
+        <const name="HUOBAN_HIGH_FREE_ONE" alias="伙伴高配额免费单抽" value="3"/>
+        <const name="HUOBAN_HIGH_FREE_TEN" alias="伙伴高配额免费十抽" value="12"/>
+        <const name="HUOBAN_LOW_ONE" alias="伙伴低配额单抽" value="4"/>
+        <const name="HUOBAN_LOW_TEN" alias="伙伴低配额十连抽" value="5"/>
+        <const name="HUOBAN_LOW_FREE" alias="伙伴低配额免费抽" value="6"/>
+        <const name="FABAO_ONE" alias="法宝元宝单抽" value="7"/>
+        <const name="FABAO_TEN" alias="法宝元宝十连抽" value="8"/>
+        <const name="FABAO_FREE_ONE" alias="法宝免费单抽" value="9"/>
+        <const name="FABAO_FREE_TEN" alias="法宝免费十抽" value="13"/>
+        <const name="FABAO_XUNIBI_ONE" alias="法宝虚拟币单抽" value="10"/>
+        <const name="FABAO_XUNIBI_TEN" alias="法宝虚拟币十抽" value="11"/>
+
+    </enum>
+
+    <config name="LotteryTypeToCfg" input="lotterytypetocfg.xlsx">
+    	<field name="type" type="int"/>
+    	<field name="cfgid" type="int"/>
+    </config>
+	
+	<config name="LotteryItemOffset" input="lotteryitemoffset.xlsx">
+        <field name="itemid" type="int" />
+		
+		<field name="x" type="float" />
+		<field name="y" type="float"/>
+		<field name="z" type="float" />
+		<field name="scale" type="float" />
+		
+    </config>
+	
+	<struct name="HighLotteryDetail">
+		<field name="lotterycount" type="int"/>
+		<field name="requiremultiple" type="int"/>需要被这个数字整除
+        <field name="bonuslist" type="cfg.cmd.action.MultiBonus"/>
+	</struct>
+
+	<config name="LotteryTexture" input="lotterytexture.xlsx">
+        <field name="recievedcurrency" type="cfg.currency.CurrencyType" />获得的积分类型
+		<field name="name" type="string" />活动类型名称
+		<field name="order" type="int"/>
+		<field name="recievedwholecardbgicon" type="string" />获得整卡的背景图
+		<field name="exchangeicon" type="string" refpath="..\GameWindows4.2.0\Data\texture\t_*.bundle;"/>兑换图标
+		<field name="levels" type="map:LotterLevel:LotteryTextureLevel"/>
+		
+    </config>
+	
+	
+	<struct name = "LotteryTextureLevel"> LotteryTextures
+		<field name="pickcardtimes" type="string" />剩余次数统计（对应SPickcardTimes协议）
+		<field name="texturedetail" type="map:LotterType:LotteryTextureDetail"/>
+	</struct>
+	
+	<struct name = "LotteryTextureDetail" index = "requirecurrency" > LotteryTexture
+		<field name="showdesc" type = "bool" /> 是否显示文字描述
+		<field name="desc" type="string" />主页文字描述
+		<field name="freetype" type = "HighLotteryType"  /> 
+		<field name="type" type = "HighLotteryType"  /> 
+		<field name="iscooldown" type="bool" />是否有冷却时间
+		<field name="isdaylimit" type="bool" />是否每日次数限制
+		<field name="canuseitem" type="bool" />是否可以使用抽卡道具
+	</struct>
+	
+	<enum name="LotterLevel">
+        <const name="LOW" alias="低档" value="1"/> 
+        <const name="HIGH" alias="高档" value="2"/>
+    </enum>
+	
+    <enum name="LotterType">
+        <const name="ONE_LOTTERY" alias="单抽" value="1"/> 
+        <const name="TEN_LOTTERY" alias="十连抽" value="2"/>
+    </enum>
+    <enum name="PickType">
+        <const name="HUO_BAN" alias="伙伴" value="1"/>
+        <const name="FA_BAO" alias="法宝" value="2"/>
+        <const name="HUO_BAN_TEN" alias="伙伴十抽" value="3"/>
+        <const name="FA_BAO_TEN" alias="法宝十抽" value="4"/>
+    </enum>
+	<struct name="Exchange">
+        <field name="id" type="int"/>
+        <field name="item" type="cfg.cmd.action.Item"/>
+		<field name="requirecurrency" type="cfg.cmd.condition.Currency"/>
+		<field name="daylimit" type="cfg.cmd.condition.DayLimit"/>
+		<field name="desc" type = "string"/>
+	</struct>
+    <config name="GradeExchange" input="gradeexchange.xlsx">
+        <field name="cost" type="PickType"/>
+		<field name="currencytype" type="cfg.currency.CurrencyType"/>
+		<field name="exchangelist" type="list:Exchange"/>
+    </config>
+</configs>

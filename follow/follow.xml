@@ -1,0 +1,11 @@
+
+<configs namespace="cfg.follow">
+    <config name="followsetting" input="followsetting.xlsx" single="true">
+        <field name="maxfollowtimes" type="int"/>
+        <field name="followduration" type="float"/>
+        <field name="followcost" type="cfg.cmd.condition.Currency"/>
+        <field name="descriptioncan" type="string"/>
+        <field name="descriptioncannot" type="string"/>
+        <field name="descriptioncontinue" type="string"/>
+    </config>
+</configs>
