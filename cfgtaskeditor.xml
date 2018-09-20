@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg">
+	<group name="server:client:designer:editor"/>
+
+	<import input="ai/ai.xml"/>
+	<import input="role/role.xml"/>
+	<import input="skill/skill.xml"/>
+	<import input="fight/fight.xml"/>
+	<import input="monster/monster.xml"/>
+	<import input="mine/mine.xml"/>
+	<import input="npc/npc.xml"/>
+	<import input="map/map.xml"/>
+	<import input="pet/pet.xml"/>
+	<import input="equip/equip.xml"/>
+	<import input="item/item.xml"/>
+	<import input="currency/currency.xml"/>
+	<import input="bonus/bonus.xml"/>
+	<import input="common/common.xml"/>
+	<import input="broadcast/broadcast.xml"/>
+	<import input="exchange/exchange.xml"/>
+	<import input="controller/controller.xml"/>
+	<import input="cmd/cmd.xml"/>
+
+</configs>

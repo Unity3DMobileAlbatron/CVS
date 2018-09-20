@@ -1,0 +1,45 @@
+<configs namespace="cfg.timelottery">
+	<struct name="FigureShow">
+		<field name="petID" type="int"/>
+		<field name="petName" type="string"/>
+    <field name="figuretype" type="FigureType"/>
+	</struct>
+  
+  <enum name="FigureType">
+    <const name="Pet" value="0" alias="伙伴"/>
+    <const name="Talisman" value="1" alias="法宝"/>
+  </enum>
+  
+	<struct name="BonusInfo">
+		<field name="pos" type="int"/>
+		<field name="showbonusid" type="int"/>
+		<field name="amount" type="int"/>
+		<field name="weight" type="int"/>
+		<field name="bonus" type="cfg.cmd.action.MultiBonus"/>
+	</struct>
+
+	<struct name="VipFree">
+		<field name="level" type="int"/>
+		<field name="limit" type="cfg.cmd.condition.DayLimit"/>
+	</struct>
+	
+	<config name="Timelottery" input="timelottery.xlsx">
+		<field name="id" type="int"/>
+		<field name="desc" type="string"/>
+		<field name="datetime" type="cfg.common.DateTimeRange"/>
+		<field name="figureshow" type="FigureShow"/>
+		<field name="vipfree" type="list:VipFree" index="level"/>
+		<field name="costs" type="cfg.cmd.condition.Currencys"/>
+		<field name="bonus" type="list:BonusInfo" index="pos"/>
+		<field name="scorebonus" type="int" />
+		<field name="scoreexchange" type="list:ScoreExchange" index="needscore"/>
+	</config>
+
+	<struct name="ScoreExchange">
+		<field name="needscore" type="int"/>
+		<field name="iconunlock" type="string"/>
+		<field name="iconlocked" type="string"/>
+		<field name="bonus" type="cfg.cmd.action.MultiBonus"/>
+	</struct>
+
+</configs>

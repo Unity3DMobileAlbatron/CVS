@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<configs namespace="cfg">
+	<group name="server:client:designer:editor"/>
+
+	<import input="error/error.xml"/>
+	<import input="achievement/achievement.xml"/>
+	<import input="active/active.xml"/>
+	<import input="role/role.xml"/>
+	<import input="ai/ai.xml"/>
+	<import input="skill/skill.xml"/>
+	<import input="fight/fight.xml"/>
+	<import input="monster/monster.xml"/>
+	<import input="mine/mine.xml"/>
+	<import input="npc/npc.xml"/>
+	<import input="map/map.xml"/>
+	<import input="ectype/ectype.xml"/>
+	<import input="task/task.xml"/>
+	<import input= "pet/pet.xml"/>
+	<import input="buff/buff.xml"/>
+	<import input="equip/equip.xml"/>
+	<import input="item/item.xml"/>
+	<import input="commoneffect/commoneffect.xml"/>
+	<import input="chat/chat.xml"/>
+	<import input="currency/currency.xml"/>
+	<import input="bonus/bonus.xml"/>
+	<import input="mall/mall.xml"/>
+	<import input="mail/mail.xml"/>
+	<import input="common/common.xml"/>
+	<import input="dailyactivity/dailyactivity.xml"/>
+	<import input="lottery/lottery.xml"/>
+	<import input="arena/arena.xml"/>
+	<import input="broadcast/broadcast.xml"/>
+	<import input="exchange/exchange.xml"/>
+	<import input="controller/controller.xml"/>
+	<import input="team/team.xml"/>
+	<import input="cmd/cmd.xml"/>
+	<import input="plot/plottalk.xml"/>
+	<import input="plot/plotindex.xml"/>
+	<import input="talisman/talisman.xml"/>
+	<import input="family/family.xml"/>
+	<import input="friend/friend.xml"/>
+	<import input="ui/ui.xml"/>
+	<import input="audio/audio.xml"/>
+	<import input="huiwu/huiwu.xml"/>
+	<import input="bag/bag.xml"/>
+	<import input="character/character.xml"/>
+	<import input="operationalactivity/operationalactivity.xml"/>
+	<import input="storynote/storynote.xml"/>
+	<import input="pathfly/paths.xml"/>
+	<import input="shakemoneytree/shakemoneytree.xml"/>
+	<import input="navmesh/navmesh.xml"/>
+	<import input="guide/guide.xml"/>
+	<import input="pay/pay.xml"/>
+	<import input="activecode/activecode.xml"/>
+	<import input="modulehelpinfo/modulehelpinfo.xml"/>
+	<import input="tips/tips.xml"/>
+	<import input="system/system.xml"/>
+	<import input="setting/setting.xml"/>
+	<import input="timelottery/timelottery.xml"/>
+	<import input="reborn/reborn.xml"/>
+	<import input="manual/manual.xml"/>
+	<import input="follow/follow.xml"/>
+	<import input="hero/herotask.xml"/>
+	<import input="redpacket/redpacket.xml"/>
+	<import input="timegift/timegift.xml"/>
+	<import input="localized/localized.xml"/>
+	<import input="pureair/pureair.xml"/>
+	<import input="dharmakaya/dharmakaya.xml"/>
+	<enum name="Const">
+		<const name="FALSE" alias="否" value="0"/>
+		<const name="TRUE" alias="是" value="1"/>
+	</enum>
+</configs>

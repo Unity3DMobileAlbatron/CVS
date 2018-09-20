@@ -1,0 +1,14 @@
+<configs namespace="cfg.storynote">
+	<config name="StoryNote" input="storynote.xlsx">
+		<field name="chapterid" type="int"/>
+		<field name="chaptername" type="string"/>
+		<field name="openlevel" type="cfg.cmd.condition.MinLevel"/>
+		<field name="chapterbgicon" type="string"/>
+		<field name="noteinfo" type="list:NoteInfo" index="noteid"/>
+	</config>
+	<struct name="NoteInfo">
+		<field name="noteid" type="int"/>
+		<field name="requireitemlist" type="cfg.cmd.condition.Items"/>
+		<field name="addproperty" type="cfg.equip.EquipPropertyData"/>
+	</struct>
+</configs>

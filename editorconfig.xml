@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg">
+	<import input="monster/monster.xml:npc/npc.xml:map/scene.xml:skill/skill.xml:role/role.xml:fight/fight.xml:currency/currency.xml"/>
+	<import input="item/item.xml"/>
+        <import input="common/common.xml"/>
+	<import input="bonus/bonus.xml"/>
+	<import input="mine/mine.xml"/>
+	<import input="navmesh/navmesh.xml"/>
+</configs>

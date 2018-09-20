@@ -1,0 +1,25 @@
+<configs namespace="cfg.timegift">
+	<struct name="DayBonusInfo">
+		<field name="day" type="int"/>
+		<field name="showday" type="string"/>
+		<field name="para" type="string"/>
+		<field name="parabig" type="int"/>
+		<field name="dailybonus" type="list:DailyBonus"/>
+	</struct>
+
+	<struct name="DailyBonus">
+		<field name="time" type="int"/>
+		<field name="bonus" type="cfg.cmd.action.MultiBonus"/>
+	</struct>
+	
+	<config name="timegift" input="timegift.xlsx">
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="desc" type="string"/>
+		<field name="datetime" type="cfg.common.DateTimeRange"/>
+		<field name="background" type="string"/>
+		<field name="logindaydecs" type="string"/>
+		<field name="daybonus" type="list:DayBonusInfo" index="day"/>
+	</config>
+
+</configs>

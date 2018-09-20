@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.ui">
+
+	<enum name="BackgroundType">
+		<const name="None"/>
+		<const name="LeftRight"/>
+		<const name="Center"/>
+	</enum>
+
+	<enum name="DotType">
+		<const name="NONE"/>无红点
+		<const name="ONCE"/>满足条件后出现一次
+		<const name="ALWAYS"/>满足条件后一直出现
+	</enum>
+
+	<enum name="FunctionList">
+		<const name="NONE" alias="无"/>
+		<const name="BAG" alias="背包"/>
+		<const name="WELFARE" alias="福利"/>
+		<const name="SHOP" alias="商城"/>
+		<const name="MOUNT" alias="坐骑"/>
+		<const name="FASHION" alias="时装"/>
+		<const name="TITLE" alias="称号"/>
+		<const name="MAIL" alias="邮件"/>
+		<const name="ACHIEVEMENT" alias="成就"/>
+		<const name="CORNUCOPIA" alias="聚宝盆"/>
+		<const name="ECTYPE" alias="副本"/>
+		<const name="ACTIVITY" alias="活动"/>
+		<const name="FAMILY" alias="家族"/>
+		<const name="SKILL" alias="技能"/>
+		<const name="ROLE" alias="角色"/>
+		<const name="BATTLE" alias="战场"/>
+		<const name="PRAY" alias="祈福"/>
+		<const name="EXCHANGE" alias="交易行"/>
+		<const name="HEAD" alias="头像"/>
+		<const name="SHIELDUI" alias="屏蔽UI"/>
+		<const name="MOUNTSHORTCUT" alias="坐骑快捷"/>
+		<const name="PARTNER" alias="伙伴"/>
+		<const name="TFBOYS" alias="青春修炼手册"/>
+		<const name="FRIEND" alias="好友"/>
+		<const name="RANKLIST" alias="排行榜"/>
+		<const name="PHARMACY" alias="药店"/>
+		<const name="WAREHOUSE" alias="仓库"/>
+		<const name="MAIMAI" alias="脉脉"/>
+		<const name="SPACE" alias="空间"/>
+		<const name="SETTING" alias="设置"/>
+		<const name="DAILYEXTRAEXP" alias="每日额外经验"/>
+		<const name="PLUSSIGN" alias="加号"/>
+		<const name="LIVENESS" alias="活跃"/>
+		<const name="VIPLEVEL" alias="特权"/>
+		<const name="IDOL" alias="偶像"/>
+		<const name="FIRSTCHARGE" alias="首充"/>
+		<const name="RECHARGE" alias="充值"/>
+    <const name="LOTTERY" alias="抽奖"/>
+		<const name="ILLUSTRATION" alias="图鉴"/>
+    <const name="SPRINGFESTIVAL" alias="春节登录礼包"/>
+    <const name="SENDREDPACKET" alias="发红包"/>
+    <const name="RECEIVEREDPACKET" alias="收红包"/>
+	<const name="SPRINGBONUS" alias="新春利是"/>
+	</enum>
+
+	<enum name="FunctionOpenType">
+		<const name="UNLOCK"/>解锁方式
+		<const name="APPEAR"/>显隐方式
+	</enum>
+	<config name="UIMainRedDot" index="functionname" input="reddot.xlsx">
+		<field name="id" type="int"/>
+		<field name="functionname" type="FunctionList"/>功能名称
+		<field name="opentype" type="FunctionOpenType"/>功能开启类型
+		<field name="conid" type="int"/>条件id（索引moduleunlockcond表，为0表示无条件）
+		<field name="dottype" type="DotType"/>红点类型
+		<field name="desc" type="string"/>描述
+	</config>
+
+	<enum name="UIFunctionList">
+		<const name="BAG_AMULET" alias="背包护符"/>
+		<const name="BAG_JADE" alias="背包玉佩"/>
+		<const name="BAG_GANGQI" alias="背包罡气"/>
+		<const name="BAG_FASHEN" alias="背包法身"/>
+		<const name="EQUIP_PERFUSE" alias="装备灌注"/>
+		<const name="EQUIP_UPGRADE" alias="装备神器进阶"/>
+		<const name="ACCESSORY_WASH" alias="首饰洗炼"/>
+		<const name="ACCESSORY_TRANSFER" alias="首饰转移"/>
+		<const name="TALISMAN_STARORDER" alias="法宝星阶"/>
+		<const name="TALISMAN_AWAKE" alias="法宝觉醒"/>
+		<const name="TALISMAN_WUXING" alias="法宝炼化"/>
+		<const name="TALISMAN_DECOMPOSITION" alias="法宝归元"/>
+		<const name="PET_STAGESTAR" alias="伙伴升星"/>
+		<const name="PET_AWAKE" alias="伙伴觉醒"/>
+		<const name="PET_WASH" alias="伙伴洗炼"/>
+	</enum>
+
+	<config name="UIFunctionOpen" index="functionname" input="uifunctionopen.xlsx" group="client">
+		<field name="id" type="int"/>
+		<field name="functionname" type="UIFunctionList"/>功能名称
+		<field name="opentype" type="FunctionOpenType"/>功能开启类型
+		<field name="conid" type="int"/>条件id（索引moduleunlockcond表，为0表示无条件）
+		<field name="desc" type="string"/>描述
+	</config>
+
+	<config name="moduleunlockcond" index="id" input="moduleunlockcond.xlsx">
+		<field name="id" type="int"/>从1开始
+		<field name="openlevel" type="int"/>
+		<field name="opentaskid" type="int"/>
+		<field name="desc" type="string"/>描述
+	</config>
+
+	<config name="nextfunctiontips" index="id" input="nextfunctiontips.xlsx">
+		<field name="id" type="int"/>从1开始
+		<field name="name" type="string"/>名称
+		<field name="icon" type="string"/>显示icon
+		<field name="conid" type="int"/>条件id（索引moduleunlockcond表，为0表示无条件）
+		<field name="coniddesc" type="string"/>开启条件描述
+		<field name="functiondesc" type="string"/>功能描述
+	</config>
+
+	<struct name = "Tab">
+		<field name="tabname" type="string"/>
+		<field name="hide" type="bool"/>
+	</struct>
+
+	<struct name = "TabGroup">
+		<field name = "tabgroupname" type = "string"/>
+		<field name = "tabgroupicon" type = "string"/>
+		<field name = "backgroundtype" type = "BackgroundType"/>
+		<field name = "conid" type="int"/>条件id（索引moduleunlockcond表，为0表示无条件）
+		<field name = "tabs" type = "list:Tab"/>
+	</struct>
+
+	<config name="Dialog" index="dlgname" input="dialog.xlsx" group="client">
+		<field name="dlgname" type="string"/>
+		<field name="parenttype" type="FunctionList"/>
+		<field name="showreturn" type="bool"/>
+		<field name="showcurrency" type="bool"/>
+		<field name="showcurrency0" type="cfg.currency.CurrencyType"/>
+		<field name="showcurrency1" type="cfg.currency.CurrencyType"/>
+		<field name="showcurrency2" type="cfg.currency.CurrencyType"/>
+		<field name="showcurrency3" type="cfg.currency.CurrencyType"/>
+		<field name="showedgebackground" type="bool"/>
+		<field name="backgroundtype" type="BackgroundType"/>
+		<field name="tabgroups" type="list:TabGroup"/>
+	</config>
+
+
+
+	<enum name="DlgLimitMode">
+		<const name="ModeNone" value="0"/>
+		<const name="ModeAllow" value="1"/>
+		<const name="ModeForbid" value="2"/>
+		<const name="ModeAll" value="3"/>
+	</enum>
+
+	<config name="DlgShowMode" index="index" input="dlgshowmode.xlsx" group="client">
+		<field name="index" type="string"/>
+		<field name="showlimitmode" type="DlgLimitMode"/>
+		<field name="showlimitdlgs" type="list:string"/>
+		<field name="hidelimitmode" type="DlgLimitMode"/>
+		<field name="hidelimitdlgs" type="list:string"/>
+	</config>
+
+
+	<enum name="UIMainAreaType">
+		<const name="HEAD" value="0"/>
+		<const name="FUNCTION" value="1"/>
+		<const name="SKILL" value="2"/>
+		<const name="CHAT" value="3"/>
+		<const name="JOYSTICK" value="4"/>
+		<const name="TASK" value="5"/>
+	</enum>
+
+	<config name="uiarea" index="id" input="uiarea.xlsx" group="client">
+		<field name="id" type="int"/>
+		<field name="areatype" type="UIMainAreaType"/>
+		<field name="posleftbuttom" type="cfg.map.Vector2"/>
+		<field name="posrightup" type="cfg.map.Vector2"/>
+	</config>
+
+	<struct name = "Vector2">
+		<field name="x" type="float"/>
+		<field name="y" type="float"/>
+	</struct>
+
+	<struct name = "Vector3">
+		<field name="x" type="float"/>
+		<field name="y" type="float"/>
+		<field name="z" type="float"/>
+	</struct>
+
+	<struct name = "Vector4">
+		<field name="x" type="float"/>
+		<field name="y" type="float"/>
+		<field name="z" type="float"/>
+		<field name="w" type="float"/>
+	</struct>
+
+	<struct name = "Rect">
+		<field name="left" type="float"/>
+		<field name="top" type="float"/>
+		<field name="width" type="float"/>
+		<field name="height" type="float"/>
+	</struct>
+
+
+	<struct name = "Transform">
+		<field name = "position" type = "Vector3"/>
+		<field name = "eularangles" type = "Vector3"/>
+		<field name = "scale" type = "Vector3"/>
+	</struct>
+
+	<struct name = "Color">
+		<field name = "a" type = "float"/>
+		<field name = "b" type = "float"/>
+		<field name = "g" type = "float"/>
+		<field name = "r" type = "float"/>
+	</struct>
+
+	<struct name = "Keyframe">
+		<field name = "time" type = "float"/>
+		<field name = "value" type = "float"/>
+		<field name = "tangentMode" type = "int"/>
+		<field name = "inTangent" type = "float"/>
+		<field name = "outTangent" type = "float"/>
+	</struct>
+
+	<struct name = "AnimationCurve">
+		<field name = "keys" type = "list:Keyframe"/>
+		<field name = "postWrapMode" type = "string" desc = "enum:WrapMode"/>
+		<field name = "preWrapMode" type = "string"  desc = "enum:WrapMode"/>
+	</struct>
+
+
+
+	<struct name = "ContentUIBase">
+		<field name = "path" type = "string" />
+		<field name = "pathlist" type = "list:int" />
+		<field name = "transform" type = "Transform" />
+
+		<struct name = "ContentUITransform">
+			<!-- 此类用作保存UI Transform 或者GameObject -->
+		</struct>
+
+
+		<struct name = "ContentUIPanel">
+			<field name = "alpha" type = "float" />
+			<field name = "depth" type = "int" />
+			<field name = "clipping" type = "string" />
+			<field name = "clipOffset" type = "Vector2" />
+			<field name = "baseClipRegion" type = "Vector4" />
+			<field name = "clipSoftness" type = "Vector2" />
+			<field name = "clipTexture" type = "string" />
+
+
+			<field name = "renderQueue" type = "string" />
+			<field name = "sortingOrder" type = "int" />
+			<field name = "generateNormals" type = "bool" />
+			<field name = "cullWhileDragging" type = "bool" />
+			<field name = "alwaysOnScreen" type = "bool" />
+			<field name = "softBorderPadding" type = "bool" />
+			<field name = "anchorOffset" type = "bool" />
+			<field name = "widgetsAreStatic" type = "bool" />
+			<field name = "showInPanelTool" type = "bool" />
+		</struct>
+
+		<struct name = "ContentUIWidgetBase">
+			<field name = "depth" type = "int" />
+			<field name = "width" type = "int" />
+			<field name = "height" type = "int" />
+			<field name = "pivot" type = "string" />
+			<field name = "color" type = "Color" />
+			<field name = "autoResizeBoxCollider" type = "bool" />
+
+			<struct name = "ContentUIWidget">
+
+			</struct>
+
+			<struct name = "ContentUILabel">
+				<field name = "fontType" type = "string" />
+				<field name = "font" type = "string" />
+				<field name = "fontSize" type = "int" />
+				<field name = "fontStyle" type = "string" />
+				<field name = "material" type = "string" />
+				<field name = "text" type = "string" />
+				<field name = "overflowMethod" type = "string" />
+				<field name = "mMaxWidth" type = "int" />
+				<field name = "alignment" type = "string" />
+				<field name = "keepCrispWhenShrunk" type = "string" />
+				<field name = "applyGradient" type = "bool" />
+				<field name = "gradientTop" type = "Color" />
+				<field name = "gradientBottom" type = "Color" />
+				<field name = "effectStyle" type = "string" />
+				<field name = "effectColor" type = "Color" />
+				<field name = "effectDistance" type = "Vector2" />
+				<field name = "useFloatSpacing" type = "bool" />
+				<field name = "spacingX" type = "int" />
+				<field name = "spacingY" type = "int" />
+				<field name = "floatSpacingX" type = "float" />
+				<field name = "floatSpacingY" type = "float" />
+				<field name = "maxLineCount" type = "int" />
+				<field name = "supportEncoding" type = "bool" />
+				<field name = "symbolStyle" type = "string" />
+
+			</struct>
+
+			<struct name = "ContentUIBasicSprite">
+				<field name = "type" type = "string" />
+				<field name = "flip" type = "string" />
+				<field name = "centerType" type = "string" />
+				<field name = "leftType" type = "string" />
+				<field name = "rightType" type = "string" />
+				<field name = "bottomType" type = "string" />
+				<field name = "topType" type = "string" />
+				<field name = "fillDirection" type = "string" />
+				<field name = "fillAmount" type = "float" />
+				<field name = "invert" type = "bool" />
+
+				<struct name = "ContentUISprite">
+					<field name = "atlas" type = "string" />
+					<field name = "sprite" type = "string" />
+				</struct>
+
+				<struct name = "ContentUITexture">
+					<field name = "mainTexture" type = "string" />
+					<field name = "material" type = "string" />
+					<field name = "shader" type = "string" />
+					<field name = "uvRect" type = "Rect" />
+					<field name = "fixedAspect" type = "bool" />
+					<field name = "border" type = "Vector4" />
+				</struct>
+
+
+
+			</struct>
+
+
+
+
+		</struct>
+
+
+		<struct name = "ContentUIButton">
+			<field name = "tweenTarget" type = "ContentUITransform" />
+			<field name = "dragHighlight" type = "bool" />
+			<field name = "duration" type = "float" />
+			<field name = "hover" type = "Color" />
+			<field name = "pressed" type = "Color" />
+			<field name = "disabledColor" type = "Color" />
+
+			<field name = "hoverSprite2D" type = "string" />
+			<field name = "pressedSprite2D" type = "string" />
+			<field name = "disabledSprite2D" type = "string" />
+		</struct>
+
+		<struct name = "ContentUIButtonScale">
+			<field name = "tweenTarget" type = "ContentUITransform" />
+			<field name = "hover" type = "Vector3" />
+			<field name = "pressed" type = "Vector3" />
+			<field name = "duration" type = "float" />
+		</struct>
+
+		<struct name = "ContentUIToggle">
+			<field name = "group" type = "int" />
+			<field name = "optionCanBeNone" type = "bool" />
+			<field name = "value" type = "bool" />
+			<field name = "activeSprite" type = "ContentUITransform" />
+			<field name = "activeAnimation" type = "string" />
+			<field name = "instantTween" type = "bool" />
+
+		</struct>
+
+		<struct name = "ContentUITable">
+			<field name = "columns" type = "int" />
+			<field name = "direction" type = "string" />
+			<field name = "sorting" type = "string" />
+			<field name = "pivot" type = "string" />
+			<field name = "cellAlignment" type = "string" />
+			<field name = "hideInactive" type = "bool" />
+			<field name = "keepWithinPanel" type = "bool" />
+			<field name = "padding" type = "Vector2" />
+		</struct>
+
+		<struct name = "ContentUIGrid">
+			<field name = "arrangement" type = "string" />
+			<field name = "style" type = "string" />
+			<field name = "cellWidth" type = "float" />
+			<field name = "cellHeight" type = "float" />
+			<field name = "maxPerLine" type = "int" />
+			<field name = "animateSmoothly" type = "bool" />
+			<field name = "hideInactive" type = "bool" />
+			<field name = "keepWithinPanel" type = "bool" />
+		</struct>
+
+		<struct name = "ContentUIProgressBarBase">
+			<field name = "value" type = "float" />
+			<field name = "alpha" type = "float" />
+			<field name = "numberOfSteps" type = "int" />
+			<field name = "backgroundWidget" type = "ContentUITransform" desc = "type:Widget"/>
+			<field name = "foregroundWidget" type = "ContentUITransform" desc = "type:Widget"/>
+			<field name = "thumb" type = "ContentUITransform" desc = "type:Transform"/>
+			<field name = "fillDirection" type = "string" desc = "enum:UIProgressBar.FillDirection" />
+
+			<struct name = "ContentUIProgressBar">
+			</struct>
+
+			<struct name = "ContentUISlider">
+			</struct>
+
+			<struct name = "ContentUIScrollBar">
+				<field name = "barSize" type = "float" />
+			</struct>
+		</struct>
+
+		<struct name = "ContentUIScrollView">
+			<field name = "contentPivot" type = "string" desc = "enum:UIWidget.Pivot" />
+			<field name = "movement" type = "string" desc = "enum:UIScrollView.Movement" />
+			<field name = "dragEffect" type = "string" desc = "enum:UIScrollView.DragEffect" />
+			<field name = "scrollWheelFactor" type = "float" />
+			<field name = "momentumAmount" type = "float" />
+			<field name = "restrictWithinPanel" type = "bool" />
+			<field name = "disableDragIfFits" type = "bool" />
+			<field name = "smoothDragStart" type = "bool" />
+			<field name = "iOSDragEmulation" type = "bool" />
+		</struct>
+
+		<struct name = "ContentUIPlaySound">
+			<field name = "audioClip" type = "string" desc = "asset:AudioClip" />
+			<field name = "trigger" type = "string" desc = "enum:UIPlaySound.Trigger" />
+			<field name = "volume" type = "float" />
+			<field name = "pitch" type = "float" />
+		</struct>
+
+		<struct name = "ContentUITween">
+			<field name = "style" type = "string" desc = "enum:UITweener.Style" />
+			<field name = "animationCurve" type = "AnimationCurve" />
+			<field name = "duration" type = "float" />
+			<field name = "delay" type = "float" />
+			<field name = "tweenGroup" type = "int" />
+			<field name = "ignoreTimeScale" type = "bool" />
+			<struct name = "ContentUITweenPosition">
+				<field name = "from" type = "Vector3" />
+				<field name = "to" type = "Vector3" />
+			</struct>
+			<struct name = "ContentUITweenRotation">
+				<field name = "from" type = "Vector3" />
+				<field name = "to" type = "Vector3" />
+			</struct>
+			<struct name = "ContentUITweenScale">
+				<field name = "from" type = "Vector3" />
+				<field name = "to" type = "Vector3" />
+			</struct>
+			<struct name = "ContentUITweenTransform">
+				<field name = "from" type = "ContentUITransform" />
+				<field name = "to" type = "ContentUITransform" />
+				<field name = "parentWhenFinished" type = "bool" />
+			</struct>
+			<struct name = "ContentUITweenAlpha">
+				<field name = "from" type = "float" />
+				<field name = "to" type = "float" />
+			</struct>
+			<struct name = "ContentUITweenColor">
+				<field name = "from" type = "Color" />
+				<field name = "to" type = "Color" />
+			</struct>
+		</struct>
+
+		<struct name = "ContentUIListItem">
+			<field name = "m_nIndex" type = "int"  />
+			<field name = "m_uiSpriteIcon" type = "ContentUITransform" desc = "type:UISprite" />
+			<field name = "m_uiSpriteRank" type = "ContentUITransform" desc = "type:UISprite"/>
+			<field name = "m_uiTextureIcon" type = "ContentUITransform" desc = "type:UITexture"/>
+		</struct>
+
+		<struct name = "ContentUIList">
+			<field name = "m_prefabListItem" type = "ContentUITransform" desc = "type:UIListItem"/>
+		</struct>
+
+
+	</struct>
+
+
+
+
+
+	<config name="ExportUIContents" index="dlgname" input="exportngui/exportuicontent" group = "editor">
+		<field name = "dlgname" type="string"/>
+		<field name = "path" type = "string" />
+		<field name = "uipanels" type = "list:ContentUIPanel"/>
+		<field name = "uiwidgets" type = "list:ContentUIWidget"/>
+		<field name = "uisprites" type = "list:ContentUISprite"/>
+		<field name = "uitextures" type = "list:ContentUITexture"/>
+		<field name = "uilabels" type = "list:ContentUILabel"/>
+		<field name = "uibuttons" type = "list:ContentUIButton"/>
+		<field name = "uibuttonscales" type = "list:ContentUIButtonScale"/>
+		<field name = "uitoggles" type = "list:ContentUIToggle"/>
+		<field name = "uitables" type = "list:ContentUITable"/>
+		<field name = "uigrids" type = "list:ContentUIGrid"/>
+		<field name = "uiprogressbars" type = "list:ContentUIProgressBar"/>
+		<field name = "uisliders" type = "list:ContentUISlider"/>
+		<field name = "uiscrollbars" type = "list:ContentUIScrollBar"/>
+		<field name = "uiscrollviews" type = "list:ContentUIScrollView"/>
+		<field name = "uitweenpositions" type = "list:ContentUITweenPosition"/>
+		<field name = "uitweenrotations" type = "list:ContentUITweenRotation"/>
+		<field name = "uitweenscales" type = "list:ContentUITweenScale"/>
+		<field name = "uitweentransforms" type = "list:ContentUITweenTransform"/>
+		<field name = "uitweenalphas" type = "list:ContentUITweenAlpha"/>
+		<field name = "uitweencolors" type = "list:ContentUITweenColor"/>
+		<field name = "uilistitems" type = "list:ContentUIListItem"/>
+		<field name = "uilists" type = "list:ContentUIList"/>
+	</config>
+
+	<struct name = "ContentUIAtlasSpriteData">
+		<field name = "name" type = "string"  />
+		<field name = "x" type = "int"  />
+		<field name = "y" type = "int"  />
+		<field name = "width" type = "int"  />
+		<field name = "height" type = "int"  />
+		<field name = "borderLeft" type = "int"  />
+		<field name = "borderRight" type = "int"  />
+		<field name = "borderTop" type = "int"  />
+		<field name = "borderBottom" type = "int"  />
+		<field name = "paddingLeft" type = "int"  />
+		<field name = "paddingRight" type = "int"  />
+		<field name = "paddingTop" type = "int"  />
+		<field name = "paddingBottom" type = "int"  />
+	</struct>
+
+	<config name="ExportUIAtlas" index="atlasname" input="exportngui/exportuiatlas" group = "editor">
+		<field name = "atlasname" type="string"/>
+		<field name = "path" type = "string" />
+		<field name = "material" type = "string" desc= "type:Material" />
+		<field name = "spriteList" type = "list:ContentUIAtlasSpriteData"  />
+	</config>
+
+	<config name="EctypeGrade" input="ectypegrade.xlsx">
+		<field name="index" type="string"/>
+		<field name="time" type="float"/>
+	</config>
+
+	<config name="QQClubMember" input="moulajiqudao.xlsx">
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="items" type="cfg.cmd.action.Items" ref="itembasic,petbasicstatus"/>
+	</config>
+</configs>

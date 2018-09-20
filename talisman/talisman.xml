@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.talisman">
+	<struct name="Const">
+		<const name="BAG_DEFAULT_SIZE" value="100"/>
+		<const name="BAG_DEFAULT_UNLOCK_SIZE" value="40"/>
+	</struct>
+	<struct name="AwakeInfo">法宝觉醒信息
+		<field name="talismancost" type="int"/>法宝觉醒消耗同名法宝数量
+		<field name="displaytext" type="string"/>客户端用描述觉醒的显示文字
+		<field name="effect" type="list:AwakeEffect"/>
+	</struct>
+	<struct name="AwakeEffect">
+		<struct name="Property">
+			<field name="gainability" type="list:cfg.equip.EquipPropertyData"/>获得的属性和属性值
+		</struct>
+		<struct name="GetBuff">
+			<field name="buffid" type="int" ref="buff"/>获益的技能buff信息
+		</struct>
+	</struct>
+	<enum name="LuckType">法宝运势
+		<const name="LUCKLVL_1" alias="大吉" value="1"/>
+		<const name="LUCKLVL_2" alias="中吉" value="2"/>
+		<const name="LUCKLVL_3" alias="小吉" value="3"/>
+		<const name="LUCKLVL_4" alias="小凶" value="4"/>
+		<const name="LUCKLVL_5" alias="大凶" value="5"/>
+	</enum>
+	<config name="TalismanBasic" input="talisman.xlsx">法宝
+		<const name="PUBLIC_SKILL_CD" value="10"/>法宝的公共CD，上阵之后需要这个时间之后才能放技能
+		<const name="BAG_SIZE" value="30"/>
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="introduction" type="string"/>
+		<field name="canuse" type="bool"/>
+		<field name="quality" type="cfg.item.EItemColor"/>
+		<field name="icon" type="string" refpath="../GameWindows4.2.0/Data/texture/t_*.bundle"/>
+		<field name="modelpath" type="string" ref="model"/>客户端用模型路径
+		<field name="bindtype" type="cfg.cmd.action.BindType"/>
+		<field name="qualityexp" type="int"/>
+		<field name="maturerate" type="cfg.pet.Maturerate"/>成长率列表
+		<field name="attr" type="cfg.fight.BasicAttr"/>法宝基本属性
+		<field name="specialattackrate" type="float"/>法宝的属性攻击成长率
+		<field name="uisize" type="float"/>
+		<field name="uipositionx" type="float"/>
+		<field name="uipositiony" type="float"/>
+		<field name="uipositionz" type="float"/>
+	</config>
+	<config name="TalismanExp" input="talismanexp.xlsx">
+		<field name="level" type="int"/>
+		<field name="requireexp" type="int"/>
+		<field name="maturerate" type="float"/>随等级提升的法宝成长率
+		<field name="specialattackrate" type="float"/>随等级提升的法宝属性攻击成长率
+	</config>
+	<config name="TalismanEvlove" input="talismanevlove.xlsx">
+		<field name="level" type="int"/>
+		<field name="name" type="string"/>
+		<field name="maturerate" type="float"/>随品阶提升的法宝品阶成长率
+		<field name="requireexp" type="int"/>所需的品阶经验值
+		<field name="levellimit" type="int"/>玩家等级限制
+	</config>
+	<config name="TalismanAwake" input="talismanawake.xlsx">
+		<const name="AWAKE_COST" type="int" value="0"/>
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="awakeinfo" type="list:AwakeInfo"/>觉醒具体信息
+	</config>
+	<config name="TalismanFeed" input="talismanfeed.xlsx">
+		<const name="WASH_COST" type="int" value="0"/>
+		<const name="REQUIRE_ITEM" type="int" value="10400012"/>五色补天石ID
+		<const name="REQUIRE_ITEM_NUM" type="int" value="1"/>五色补天石数量
+		<const name="CHANGE_PROPERTY_COST" type="int" value="100"/>换属性所需消耗，消耗的是造化值
+		<const name="FREE_CHANGE_LUCK_TIMES" type="int" value="2"/>每天免费转运次数
+		<const name="WASH_LUCK_COST" type="int" value="10"/>转运所需元宝
+		<const name="BEST_LUCK_COST" type="int" value="30"/>必然大吉所需元宝
+		<const name="BEST_LUCK_ID" value="1"/>大吉对应的Id
+		<const name="DEFAULT_LUCK_ID" value="3"/>初始幸运id
+		<const name="DEFAULT_WUXING" value="cfg.fight.AttackType.METAL"/>默认五行类型
+		<const name="WUXING_OPEN_LEVEL" value="50"/>法宝五行开启所需的法宝等级
+		<field name="id" type="int"/>
+		<field name="name" type="LuckType"/>
+		<field name="luckname" type="string"/>
+		<field name="lowerbound" type="int" group="server"/>洗练基础值下限
+		<field name="upperbound" type="int" group="server"/>洗练基础值上限
+		<field name="criticallowerbound" type="float" group="server"/>暴击下限
+		<field name="criticalupperbound" type="float" group="server"/>暴击上限
+		<field name="criticalrate" type="float" group="server"/>暴击机率
+		<field name="maxusetime" type="int"/>最大洗练次数，洗练完毕这个次数之后重新随机运势
+		<field name="probability" type="float"/>运势被随机出来的机率
+		<field name="decribe" type="string"/>
+	</config>
+	<config name="TalismanSkill" input="talismanskill.xlsx">
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="skillid" type="list:int" ref="skilldmg|passiveskill"/>
+	</config>
+	<struct name="RecycleExp">
+		<field name="itemkey" type="int"/>
+	</struct>
+	<config name="TalismanRecycle" input="talismanrecycle.xlsx" single="true">
+		<field name="expitemid" type="list:RecycleExp"/>
+		<field name="qualitytalismanid" type="list:RecycleExp"/>
+		<field name="allexpitemid" type="list:int"/>
+	</config>
+	<config name="TalismanConsume" input="talismanconsume.xlsx">
+		<field name="consumetype" type="string"/>
+		<field name="itemid" type="list:int"/>
+	</config>
+	<config name="TalismanHelpInfo" input="talismanhelpinfo.xlsx">
+		<field name="indexname" type="string"/>
+		<field name="helpinfo" type="string"/>
+	</config>
+</configs>

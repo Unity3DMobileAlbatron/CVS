@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.tips">
+
+	<enum name="LocationType">位置类型
+		<const name="CENTER" alias="中间"/>
+		<const name="RIGHT_DOWN" alias="右下角"/>
+		<const name="CENTER_SCROLL" alias="跑马灯"/>
+		<const name="ALERT" alias="对话框"/>
+	</enum>
+
+	<config name="TipsContent" input="tips.xlsx">tips内容
+		<field name="id" type="TipsCode"/>
+		<field name="content" type="string" />内容，用来展示的地方，由策划填写
+	</config>
+
+	<config name="BroadcastCfg" input="broadcast.xlsx" single="true">
+		<field name="rolelevelup" type="list:int"/>
+		<field name="minanneal" type="int"/>
+		<field name="perfuse" type="list:int"/>
+		<field name="mintalismanstar" type="int"/>
+		<field name="minpetawake" type="int"/>最小红色伙伴觉醒
+		<field name="minorangepetawake" type="int"/>最小橙色伙伴觉醒
+		<field name="mintalismanawake" type="int"/>最小红色法宝觉醒
+		<field name="minorangetalismanawake" type="int"/>最小橙色法宝觉醒
+	</config>
+
+	<enum name="TipsCode">
+		<const name="PLAYER_ALREADY_IN_TEAM" value="10"/>   10-27是为了跟客户端保持一致，以后版本可以去掉
+		<const name="PLAYER_TEAM_FULL" value="11"/>
+		<const name="MY_TEAM_FULL" value="12"/>
+		<const name="ALREADY_IN_TEAM" value="13"/>
+		<const name="NOT_LEADER" value="14"/>
+		<const name="NOT_IN_TEAM" value="15"/>
+		<const name="TEAM_FULL" value="16"/>
+		<const name="OPERATION_LATER" value="17"/>
+		<const name="INVITE_SUCC" value="18"/>
+		<const name="BAG_FULL_TRANSFER_2_MAIL" value="19"/>
+		<const name="BAG_FULL" value="20"/>
+		<const name="MAKE_TEAM_SUCC" value="21"/>
+		<const name="JOIN_TEAM" value="22"/>
+		<const name="OFFLINE" value="23"/>
+		<const name="DEPOT_FULL" value="24"/>
+		<const name="TEAM_MEMBER_ALREADY_APPLY" value="25"/>
+		<const name="EXCEED_LIMIT" value="26"/>
+		<const name="MODULE_IS_LOCK" value="27"/>
+		<const name="NOT_SAME_LEVEL_SEC"/>
+
+
+		<const name="HUIWU_CHAMPINION_QINGYUN"/>
+		<const name="HUIWU_CHAMPINION_TIANYIN"/>
+		<const name="HUIWU_CHAMPINION_GUIWANG"/>
+
+		<const name="COMBATPOWER_CHAMPION_LOGIN"/>
+		<const name="LEVEL_CHAMPION_LOGIN"/>
+		<const name="TALISMAN_CHAMPION_LOGIN"/>
+		<const name="PET_CHAMPION_LOGIN"/>
+		<const name="XUNIBI_CHAMPION_LOGIN"/>
+		<const name="FLOWER_CHAMPION_LOGIN"/>
+		<const name="FAMILY_CHAMPION_LOGIN"/>
+		<const name="MEILI_CHAMPION_LOGIN"/>
+
+		<const name="ANNEAL_UP_RED_BROADCAST"/>
+		<const name="ANNEAL_UP_ORANGE_BROADCAST"/>
+		<const name="PERFUSE_UP_RED_BROADCAST"/>
+		<const name="PERFUSE_UP_ORANGE_BROADCAST"/>
+		<const name="MYSTERY_EQUIP_BROADCAST"/> 神器
+		<const name="RECRUIT_RED_BROADCAST"/> 招募红色品质
+		<const name="RECRUIT_ORANGE_BROADCAST"/> 招募橙色品质
+		<const name="STAR_UP_RED_BROADCAST"/>
+		<const name="STAR_UP_ORANGE_BROADCAST"/>
+		<const name="AWAKE_RED_BROADCAST"/>
+		<const name="AWAKE_ORANGE_BROADCAST"/>
+		<const name="LEVEL_UP_BROADCAST"/>
+		<const name="IDOL_TITLE_BROADCAST"/>
+		<const name="LOGIN_FORBIDEN"/>
+		<const name="ONLINE_ROLE_FULL"/>
+		<const name="BECOME_IDOL_PROTECTOR"/>
+		<const name="IDOL_PROTECTOR_LOGIN"/>
+
+		<const name="SOMEONE_INVITE_JOIN_TEAM"/>
+		<const name="SOMEONE_JOIN_TEAM"/>
+		<const name="LEAVE_TEAM"/>
+		<const name="SOMEONE_LEAVE_TEAM"/>
+		<const name="SOMEONE_INVITE_JOIN_FAMILY"/>
+
+		<const name="ITEM_NOT_ENOUGH"/>
+		<const name="SEND_IDOL_FLOWER"/>一次性送偶像某种花大于99朵
+		<const name="SEND_FRIEND_FLOWER"/>一次性送好友某种花大于99朵
+
+		<const name="ACTIVITY_NOT_OPEN"/> 带时间限制的活动不在活动时间内
+		
+		<const name="FAMILY_WAR_ACCEPT"/>
+		<const name="FAMILY_WAR_REFUSE"/>
+		<const name="FAMILY_WAR_WIN"/>
+		<const name="FAMILY_WAR_DRAW"/>
+		<const name="TEAM_SPEED_HOLD"/>
+
+		<const name="EQUIP_BAG_FULL"/>
+		<const name="ITEM_BAG_FULL"/>
+		<const name="TALISMAN_BAG_FULL"/>
+		<const name="FRAGMENT_BAG_FULL"/>
+		<const name="DEPOT_EQUIP_BAG_FULL"/>
+		<const name="DEPOT_ITEM_BAG_FULL"/>
+		<const name="DEPOT_TALISMAN_BAG_FULL"/>
+		<const name="DEPOT_FRAGMENT_BAG_FULL"/>
+		<const name="FAMILY_DEPOT_FULL"/>
+
+		<const name="TEAM_MEMBER_IN_OTHER_MATCH"/>
+		<const name="IN_OTHER_MATCH"/>
+
+		<const name="ROLE_EQUIP_BAG_FULL"/>
+		<const name="JOIN_FAMILY_LESS_THEN_A_WEEK"/>
+		<const name="GIVE_EQUIP_FROM_FAMILY_DEPOT"/>
+		
+		<const name="GIVE_REDPACKET_INFO"/>
+		<const name="RECIVE_REDPACKET_INFO"/>
+		<const name="GIVE_REDPACKET_BROCAST"/>
+		
+		<const name="GIFTBAG_BOARDCAST"/>
+	</enum>
+	
+	<config name="GiftBagBroadcast" input="giftbagbroadcast.xlsx">
+		<field name="giftbagid" type="int" ref="itembasic"/>
+		<field name="needbroadcastitemids" type="set:int" ref="itembasic|petbasicstatus|talismanbasic|equip|fragment|petfragment|keybonusactivity"/>
+	</config>
+
+</configs>

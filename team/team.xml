@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.team">
+	<config name="team" input="teamconfig.xlsx" single="true">
+		<const name="ReFollowTime" alias="跟随重定位时间" value="1"/>
+		<const name="FollowDistance" alias="跟随间距" value="2"/>
+		<field name="requirelevel" type="int"/>
+		<field name="teammembermaxcount" type="int"/>
+		<field name="findnearbyteammaxcount" type="int" group="server"/>
+		<field name="findnearbyplayermaxcount" type="int" group="server"/>
+		<field name="findradius" type="int" group="server"/>
+	</config>
+</configs>

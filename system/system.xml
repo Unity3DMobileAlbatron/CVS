@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.system">
+
+	<config name="SystemConfig" input="systemconfig.xlsx" single="true">
+		<field name="dayidlehour" type="int"/>
+		<field name="keepaliveinterval" type="int"/>
+	</config>
+	
+	<config name="RobotChats" input="chatlib.xlsx">
+		<field name="id" type="int"/>
+		<field name="content" type="string"/>
+		<field name="gender" type="cfg.role.GenderType"/>
+	</config>
+
+	<config name="ChatRobotCfg" input="chatcfg.xlsx" single="true">
+		<field name="levelmin" type="int"/>
+		<field name="levelmax" type="int"/>
+		<field name="viplevelmin" type="int"/>
+		<field name="viplevelmax" type="int"/>
+		<field name="robotnum" type="int"/>
+		<field name="initdelay" type="int"/>
+		<field name="chatinterval" type="int"/>
+	</config>
+</configs>
