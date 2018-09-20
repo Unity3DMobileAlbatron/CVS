@@ -1,0 +1,14 @@
+<configs namespace="cfg.shakemoneytree">
+	<config name="ShakeMoneyTree" input="shakemoneytree.xlsx" single="true">
+		<field name="viplimit" type="cfg.cmd.condition.VipLimitsLite"/>
+		<field name="shakeinfo" type="list:ShakeDetail"/>
+	</config>
+	<struct name="ShakeDetail">
+		<field name="shaketimes" type="int" />第几次摇
+		<field name="cost" type="cfg.cmd.condition.YuanBao"/>花费多少元宝
+		<field name="getmoney" type="cfg.cmd.action.XuNiBi"/>得到多少金币
+		<field name="criticalrate" type="float" group="server"/>暴击率是多少。出现暴击的时候给予金币变多
+		<field name="criticalvalue" type="float" group="server"/>暴击倍数。出现暴击时获得的金币数量乘以这个暴击倍数
+		<field name="limit" type="cfg.cmd.condition.MinVipLevel"/>需要的最小vip倍数
+	</struct>
+</configs>

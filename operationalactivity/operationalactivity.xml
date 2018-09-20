@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.operationalactivity">
+
+	<config name="OperationalActivityIndex" input="index.xlsx" single="true">
+		<field name="index" type="list:int"/> 取operationalactivity.xlsx中的typeid
+	</config>
+
+	<config name="OperationalActivity" input="operationalactivity.xlsx">
+		<field name="type" type="int"/> 活动模板类型
+		<field name="displayorder" type="int"/>显示顺序
+		<field name="title" type="string"/> 活动标题
+		<field name="content" type="string"/> 活动内容
+		<field name="showreddot" type="bool"/> 是否显示红点
+		<field name="texture" type="string" refpath="../GameWindows4.2.0/Data/texture/t_*.bundle"/> 活动图片
+		<field name="unfinishlabel" type="string"/>
+		<field name="finishedlabel" type="string"/>
+		<field name="currencyname" type="string"/>
+		<field name="currencytype" type="cfg.currency.CurrencyType"/>
+		<field name="timerange" type="cfg.common.DateTimeRange"/>活动时间
+		<field name="receivetimerange" type="cfg.common.DateTimeRange"/>领取时间
+		<field name="intervalday" type="int"/> 间隔天数，只有在timetype = TimeType.REAPEAT_INTERVAL时会用到
+		<field name="timetype" type="TimeType"/>时间类型
+		<field name="relativestarttime" type="int"/>相对开服时间的活动开始时间，天数,具体计算时会取到当天的0点
+		<field name="relativeendtime" type="int"/>相对开服时间的活动结束时间
+		<field name="activityinfo" type="list:ActivityEntry" index="id" />   信息
+	</config>
+
+	<enum name="TimeType">
+			<const name="FIXED_TIME_RANGE" alias="固定时间段" />
+		<const name="OPEN_SERVER_ACTIVITY" alias="开服活动" />
+		<const name="REAPEAT_INTERVAL" alias="间隔开启" />
+		<const name="REAPEAT_MONTH" alias="每月活动" />
+	</enum>
+
+	<struct name="ActivityEntry"> 条目
+		<field name="id" type="int"/>   唯一id
+		<field name="condition" type="ActivityCondition"/>   条件
+		<field name="reward" type="cfg.cmd.action.MultiBonus"/> 奖励
+	</struct>
+	<enum name="ConditionType">
+		<const name="Upgrade" value="1"/>
+		<const name="Collection" value="2"/>
+		<const name="Charge" value="3"/>
+		<const name="GiftBag" value="4"/>
+		<const name="UpgradeParams" value="5"/>
+	</enum>
+	<struct name="ActivityCondition">
+		<field name="conditiontype" type="ConditionType"/>
+		<field name="description1" type="string"/>
+		<field name="description2" type="string"/>
+		<struct name="SimpleCondition">提升等级
+			<field name="num" type="int"/>
+
+			<struct name="RoleLevel" />提升等级
+			<struct name="RoleCombatPower" />提升战力
+			<struct name="TalismanStar" />法宝星阶
+			<struct name="TalismanAwake" />法宝觉醒
+			<struct name="TotalCost" />累计消费
+			<struct name="EquipAnnealMax" /> 装备炼器等级
+			<struct name="EquipAnnealTotal"/>总炼器等级
+			<struct name="EquipPerfuseMax" /> 最高灌注等级
+			<struct name="EquipPerfuseTotal" /> 总灌注等级
+			<struct name="AchievementPoints" /> 成就点数
+			<!-- 7.20 -->
+			<struct name="PetMaxStar" /> 伙伴最高星阶
+			<struct name="PetMaxAwake" /> 伙伴最高觉醒
+			<struct name="PetMaxLevel" /> 伙伴最高等级
+			<struct name="PetTotalStar" /> 上阵伙伴总星阶
+			<struct name="PetTotalAwake" /> 上阵伙伴总觉醒
+			<struct name="PetTotalLevel" /> 上阵伙伴总等级
+			<struct name="TalismanMaxLevel" /> 法宝最高等级
+			<struct name="JadeLevel" /> 玉佩等级
+			<struct name="StoryNoteLevel" /> 风华录等级
+			<struct name="KillWorldBoss" /> 击杀世界boss
+			<struct name="ArenaWin" /> 竞技场胜场
+			<struct name="ArenaRanking" /> 竞技场排名
+			<struct name="TeamSpeed" /> 鸿蒙争霸胜场
+			<struct name="TeamFight" /> 天下会武胜场
+			<struct name="ClimbTower" /> 幻月洞府最高层数
+			<struct name="RechargeRank" /> 充值排行
+			<struct name="TotalRecharge" /> 累计充值
+		</struct>
+
+		<struct name="CollectItem">收集物品类型
+			<field name="daylimit" type="cfg.cmd.condition.DayLimit"/> 每日兑换次数
+			<field name="totallimit" type="cfg.cmd.condition.Limit"/> 总兑换次数(必须是LifeLong)
+			<field name="items" type="cfg.cmd.condition.Items"/>
+		</struct>
+
+		<struct name="PetQuality">提升伙伴品质
+			<field name="qulity" type="cfg.item.EItemColor"/>
+			<field name="num" type="int"/>
+		</struct>
+
+		<struct name="TalismanQuality">法宝品质
+			<field name="qulity" type="cfg.item.EItemColor"/>
+			<field name="num" type="int"/>
+		</struct>
+
+		<struct name="DailyRecharge" >每日充值
+			<field name="daylimit" type="cfg.cmd.condition.DayLimit"/>
+			<field name="num" type="int"/>
+		</struct>
+
+		<struct name="RechargeShop">充值积分商店
+			<field name="limit" type="cfg.cmd.condition.Limit"/> 每日限购次数
+			<field name="cost" type="cfg.cmd.condition.ChongZhiJiFen"/> 积分类型待定
+		</struct>
+		<struct name="DailyGift">每日礼包购买
+			<field name="viplimit" type="cfg.cmd.condition.MinVipLevel"/>
+			<field name="daylimit" type="cfg.cmd.condition.DayLimit"/> 每日限购次数
+			<field name="totallimit" type="cfg.cmd.condition.Limit"/> 总限购次数(必须是LifeLong)
+			<field name="original" type="cfg.cmd.condition.YuanBao"/>原价
+			<field name="off" type="cfg.cmd.condition.YuanBao"/>打折后
+		</struct>
+		<struct name="EquipQuality"> 装备品质奖励
+			<field name="level" type="int"/> //装备等级
+			<field name="qulity" type="cfg.item.EItemColor"/>
+			<field name="num" type="int"/>
+		</struct>
+
+		<struct name="AccessoryQuality"> 饰品品质奖励
+			<field name="level" type="int"/> //装备等级
+			<field name="qulity" type="cfg.item.EItemColor"/>
+			<field name="num" type="int"/>
+		</struct>
+
+		<struct name="Rank"> 排行榜
+			<field name="type" type="cfg.bonus.RankType"/>  排行榜类型
+			<field name="ranking" type="int"/>  达到的名次
+		</struct>
+	</struct>
+
+	<enum name="OperationStatus">
+		<const name="NOT_COMPLETE" value="0"/>
+		<const name="COMPLETE" value="1"/>
+		<const name="GETREWARD" value="2"/>
+	</enum>
+
+</configs>

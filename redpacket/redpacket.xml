@@ -1,0 +1,27 @@
+<configs namespace="cfg.redpacket">
+	
+	<struct name="RedpacketInfo" >
+		<field name="id" type="int"/>
+		<field name="needitemid" type="int" ref="itembasic"/>
+		<field name="currencytype" type="cfg.currency.CurrencyType"/>
+		<field name="amount" type="int"/>
+		<field name="usernumber" type="int"/>
+		<field name="isbrocast" type="bool"/>
+		<field name="returnbonus" type="cfg.cmd.action.MultiBonus"/>
+	</struct>
+	
+	<config name="Redpacket" input="redpacket.xlsx" single="true">
+		<const name="MAX_SHOW_NUM" alias="红包缓存上限" value="30"/>
+		<field name="datetime" type="cfg.common.DateTimeRange"/>
+		<field name="closepic" type="string"/>
+		<field name="openpic" type="string"/>
+		<field name="sucpic" type="string"/>
+		<field name="faildecs" type="string"/>
+		<field name="updecs" type="string"/>
+		<field name="givelimit" type="cfg.cmd.condition.DayLimit"/>
+		<field name="recievelimit" type="cfg.cmd.condition.DayLimit"/>
+		<field name="redpacketinfo" type="list:RedpacketInfo" index="id"/>
+	</config>
+
+	
+</configs>

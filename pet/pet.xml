@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.pet">
+	<struct name="PetSkillCostInfo">
+		<field name="requirelvl" type="int"/>需求伙伴等级
+		<field name="cost" type="int"/>升级消耗
+	</struct>
+
+	<struct name="QualityTexture">
+		<field name="qualitytexture" type="map:cfg.item.EItemColor:string"/>
+	</struct>
+
+	<struct name="AwakeBackgroundTexture">
+		<field name="awakelevel" type="int"/>
+		<field name="backgroundtexture" type="QualityTexture"/>
+	</struct>
+
+	<enum name="StarKarmaType">
+		<const name="XINGJIE" alias="星阶" value="1"/>
+		<const name="JUEXING" alias="觉醒" value="2"/>
+	</enum>
+	<enum name="PetType">
+		<const name="GONGJI" alias="攻击" value="0"/>
+		<const name="FANGYU" alias="防御" value="1"/>
+		<const name="FUZHU" alias="辅助" value="2"/>
+	</enum>
+	<struct name="Maturerate">成长率
+		<field name="hpmaturerate" type="float"/>
+		<field name="mpmaturerate" type="float"/>
+		<field name="minatkmaturerate" type="float"/>
+		<field name="maxatkmaturerate" type="float"/>
+		<field name="defmaturerate" type="float"/>
+		<field name="hitmaturerate" type="float"/>
+		<field name="hitresistmaturerate" type="float"/>
+	</struct>
+
+	<struct name="FollowInfo">
+		<field name="degree" type="float"/>
+		<field name="distance" type="float"/>
+	</struct>
+	<config name="PetAi" index="id" input="petai.xlsx">
+		<const name="PET_CHECK_AREA_1" value="8"/>
+		<const name="PET_CHECK_AREA_2" value="15"/>
+		<const name="PET_CHECK_TERMINAL" value="1"/>
+		<const name="PET_ATK_AREA" value="8"/>
+		<const name="PET_ATK_CHECK_TERMINAL" value="1"/>
+		<field name="id" type="int"/>
+		<field name="ai" type="list:int"/> --从petskill表普攻开始算
+	</config>
+	<struct name="PetFollow">
+		<field name="petamount" type="int"/>
+		<field name="followlist" type="list:FollowInfo"/>
+	</struct>
+	<config name="PetConfig" input="petconfig.xlsx" single="true">
+		<field name="petslotopenlevel" type="list:int"/>
+		<field name="equipcd" type="cfg.cmd.condition.CoolDown"/>
+		<field name="deadcd" type="int"/>
+		<field name="attackcd" type="float"/>
+		<field name="follownearradius" type="float"/>
+		<field name="followfarradius" type="float"/>
+		<field name="guardradius" type="float"/>
+		<field name="followcheckinterval" type="float"/>
+		<field name="attackspace" type="float"/>
+		<field name="idlespace" type="float"/>
+		<field name="follow" type="list:PetFollow" index="petamount"/>
+		<field name="awaketexture" type="list:AwakeBackgroundTexture" index="awakelevel"/>
+		<field name="qualitycolor" type="map:cfg.item.EItemColor:string"/>
+		<field name="washopenlevel" type="cfg.cmd.condition.MinLevel"/>洗炼开启等级
+		<field name="transferrate1" type="float"/>
+		<field name="transferrate2" type="float"/>
+		<field name="notskilltimeafterrevive" type="int"/>伙伴复活后不能释放技能的时间
+	</config>
+
+	<config name="PetBasicStatus" input="petbasicstatus.xlsx">伙伴属性表
+		<const name="TURN_PET_INTO_FRAGMENT_RATE" type="float" value="0.7"/>伙伴换成碎片的话打几折
+		<const name="INITIALIZE_RETURN_RATE" type="float" value="200"/>伙伴仙豆返还，用目前洗炼得到的HP来处以这个数就是返还量
+		<field name="id" type="int" ref="petawake,petkarma,petskill"/>
+		<field name="name" type="string"/>
+		<field name="introduction" type="string"/>
+		<field name="displayorder" type="int"/>显示顺序
+		<field name="icon" type="string"/>
+		<field name="ai" type="int"/>
+		<field name="modelname" type="string" ref="model" desc = "ref:character/model.xlsx"/>
+		<field name="fashionpath" type="list:int"/>
+		<field name="bindtype" type="cfg.item.EitemBindType"/>
+		<field name="canwish" type="bool" group="server"/>是否可以许愿
+		<field name="basiccolor" type="cfg.item.EItemColor"/>伙伴品质颜色
+		<field name="fragmentid" type="int"/>对应的碎片ID
+		<field name="battletalk" type="list:string"/>
+		<field name="pettype" type="PetType"/>
+		<field name="feature" type="string"/>伙伴特征
+		<field name="featurelist" type="list:int"/>伙伴五维图
+		<field name="matureratelist" type="Maturerate" group="server"/>成长率列表
+		<field name="attr" type="cfg.fight.Attr" group="server"/>伙伴基本属性
+	</config>
+	<config name="PetStageStar" index="qualitylevel" input="petstagestar.xlsx">伙伴升阶表
+		<field name="qualitylevel" type="int"/>品阶等级
+		<field name="introduction" type="string"/>该品阶介绍(废弃字段)
+		<field name="qualitymaturerate" type="float" group="server"/>该品阶对应的成长率
+		<field name="requirepetlvl" type="int"/>所需伙伴等级
+		<field name="requireitem" type="list:cfg.cmd.condition.Item"/>所需物品
+		<field name="requirexunibi" type="cfg.cmd.condition.XuNiBi"/>
+	</config>
+	<config name="PetExp" input="petexp.xlsx">伙伴经验表
+		<field name="level" type="int"/>
+		<field name="exp" type="long"/>所需经验
+		<field name="levelmaturerate" type="float" group="server"/>该等级对应的成长率
+		<field name="enhancerate" type="float" group="server"/>该等级对应的洗练上限比例值
+	</config>
+
+	<struct name="AwakeInfo">
+		<field name="awakeid" type="int"/>
+		<field name="requirepetlevel" type="int"/>觉醒需要的伙伴等级
+		<field name="petfragmentcost" type="int"/>升觉醒时需要的同名伙伴碎片消耗
+		<field name="requirexunibi" type="cfg.cmd.condition.XuNiBi"/>
+		<field name="displaytext" type="string"/>客户端用的描述文字
+		<field name="effect" type="list:AwakeEffect"/>
+	</struct>
+	<struct name="AwakeEffect">
+		<struct name="Property">
+			<field name="gainability" type="list:cfg.equip.EquipPropertyData"/>获得的属性和属性值
+		</struct>
+		<struct name="GetBuff">
+			<field name="buffid" type="int" ref="buff"/>获益的技能buff信息
+		</struct>
+		<struct name="GetSkill">
+			<field name="skillid" type="int" ref="skilldmg|passiveskill"/>获得新技能（该技能可以升级）
+		</struct>
+	</struct>
+	<config name="PetAwake" input="petawake.xlsx">伙伴觉醒表
+		<field name="id" type="int" ref="petbasicstatus"/>
+		<field name="name" type="string"/>
+		<field name="awakelvlup" type="list:AwakeInfo" index="awakeid"/>
+	</config>
+	<config name="PetSkill" index="petid" input="petskill.xlsx">伙伴技能表
+		<field name="petid" type="int" ref="petbasicstatus"/>
+		<field name="name" type="string"/>
+		<field name="skilllist" type="list:int" ref="skilldmg|passiveskill"/>
+		<field name="awakeskill" type="list:int" ref="skilldmg|passiveskill"/>
+	</config>
+	<struct name="PetSkillLvlupData">
+		<field name="requirepetlvl" type="int"/>
+		<field name="cost" type="map:int:long"/>
+	</struct>
+	<config name="PetWash" index="feedid" input="petwash.xlsx">伙伴洗炼表
+		<const name="COST_ITEM_ID" value="10400013"/>仙豆的ID
+		<const name="WASH_XUNIBI_KEY" value="1"/>
+		<const name="WASH_YUANBAO_KEY" value="2"/>
+		<field name="feedid" type="int"/>
+		<field name="name" type="string"/>
+		<field name="cost" type="cfg.cmd.condition.MultiCondition"/>
+		<field name="hp" type="list:int" group="server"/>浮动都是取第一个元素做最小浮动，第二个元素做最大浮动
+		<field name="mp" type="list:int" group="server"/>
+		<field name="minatk" type="list:int" group="server"/>
+		<field name="maxatk" type="list:int" group="server"/>
+		<field name="defence" type="list:int" group="server"/>
+		<field name="hitrate" type="list:int" group="server"/>
+		<field name="hitresist" type="list:int" group="server"/>
+	</config>
+	<config name="PetKarma" index="id" input="petkarma.xlsx">伙伴缘分表
+		<field name="id" type="int" ref="petbasicstatus"/>
+		<field name="petname" type="string"/>
+		<field name="petkarmas" type="list:Karma"/>
+	</config>
+
+	<struct name="Karma">和其他伙伴有关的缘分
+		<field name="karmaname" type="string"/>
+		<field name="introduction" type="string"/>缘分介绍，客户端显示文字
+		<field name="petkeys" type="list:int" ref="petbasicstatus"/>触发缘分的其他伙伴的ID
+		<field name="carmatype" type="StarKarmaType"/>触发了星阶缘还是觉醒缘
+		<field name="prop" type="list:KarmaProp" index="level"/>触发了星阶缘还是觉醒缘
+	</struct>
+
+	<struct name="KarmaProp">
+		<field name="level" type="int"/>具体需要的星阶/觉醒等级
+		<field name="karmadata" type="list:cfg.equip.EquipPropertyData"/>获得的属性和属性值
+	</struct>
+
+	<config name="PetSkin" input="petskin.xlsx">
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="icon" type="string"/>icon资源地址
+		<field name="displayorder" type="int"/>显示顺序
+		<field name="gain" type="string"/>获取途径说明
+		<field name="detail" type="string"/>可替换外形说明
+		<field name="price" type="cfg.cmd.condition.YuanBao"/>价格
+		<field name="quality" type="cfg.item.EItemColor"/>品质
+		<field name="petid" type="int" ref="petbasicstatus"/>
+		<field name="modelname" type="string" ref="model"/>
+	</config>
+	<config name="PetFragment" index="id" input="petfragment.xlsx">伙伴碎片表
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="icon" type="string"/>
+		<field name="level" type="int"/>
+		<field name="quality" type="cfg.item.EItemColor"/>
+		<field name="prize" type="int"/>
+		<field name="professionlimit" type="cfg.cmd.condition.ProfessionLimit"/>职业限制
+		<field name="bindtype" type="cfg.cmd.action.BindType"/>
+		<field name="introduction" type="string"/>
+		<field name="maxpile" type="int"/>
+		<field name="cansell" type="bool"/>
+		<field name="petID" type="int"/>
+		<field name="number" type="int"/>
+	</config>
+	<config name="PetConsume" single="true" input="petconsume.xlsx">
+		<field name="consumeitem" type="list:int" ref="itembasic"/>显示的时候从左到右排列
+	</config>
+	
+</configs>

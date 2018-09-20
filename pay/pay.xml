@@ -1,0 +1,73 @@
+<configs namespace="cfg.pay">
+	<config name="Charge" input="charge.xlsx">
+		<field name="chargeid" type="int"/>
+		<field name="displayorder" type="int"/>
+		<field name="price" type="int"/>充值的软妹币金额
+		<field name="platform" type="map:int:int"/>
+		<struct name="NormalCharge">
+			<field name="getyuanbao" type="cfg.cmd.action.YuanBao"/>充值获得的元宝
+			<field name="firstgetbindyuanbao" type="cfg.cmd.action.BindYuanBao"/>首次充值该档获得的绑定元宝
+			<field name="getbindyuanbao" type="cfg.cmd.action.BindYuanBao"/>充值该档获得的绑定元宝
+			<field name="firstdescribetext" type="string" group="server"/>首次充值的展示文字
+			<field name="describetext" type="string" group="server"/>充值展示文字
+			<field name="notetext" type="string"/>
+			<field name="backgourndimage" type="string"/>
+		</struct>
+		<struct name="ActiveCharge">
+			<field name="getyuanbao" type="cfg.cmd.action.YuanBao"/>充值获得的元宝
+			<field name="firstgetbindyuanbao" type="cfg.cmd.action.BindYuanBao"/>首次充值该档获得的绑定元宝
+			<field name="getbindyuanbao" type="cfg.cmd.action.BindYuanBao"/>充值该档获得的绑定元宝
+			<field name="firstdescribetext" type="string" group="server"/>首次充值的展示文字
+			<field name="describetext" type="string" group="server"/>充值展示文字
+			<field name="notetext" type="string"/>
+			<field name="backgourndimage" type="string"/>
+			<field name="daylimit" type="cfg.cmd.condition.DayLimit"/>
+			<field name="extrabonus" type="cfg.cmd.action.MultiBonus"/>
+			<field name="clientshowitem" type="cfg.cmd.action.MultiBonus"/>
+		</struct>
+		<struct name="MonthCard">
+			<field name="getyuanbao" type="cfg.cmd.action.YuanBao"/>充值马上获得的元宝
+			<field name="getbindyuanbao" type="cfg.cmd.action.BindYuanBao"/>充值后每天获得的绑定元宝
+			<field name="days" type="int" group="server"/>月卡持续天数
+			<field name="describetext1" type="string" group="server"/>展示文字1
+			<field name="describetext2" type="string" group="server"/>展示文字2
+			<field name="notetext" type="string"/>
+			<field name="backgourndimage" type="string"/>
+		</struct>
+		<struct name="GrowPlan">
+			<field name="growplantype" type="GrowPlanType"/>类型，用1，2, 3表示
+			<field name="startdayindex" type="int"/>从growplan表里第几列开始取奖品
+			<field name="totalday" type="int"/>每档成长计划显示天数
+			<field name="notetext" type="string"/>
+		</struct>
+	</config>
+	<config name="FirstCharge" input="firstcharge.xlsx" single="true">
+		<field name="bonus" type="cfg.cmd.action.Bonus"/>
+		<field name="rmbtojifen" type="int"/>
+	</config>
+
+	<enum name="GrowPlanType">
+		<const name="FIRSTTYPE" value="1"/>
+		<const name="SECONDTYPE" value="2"/>
+		<const name="THIRDTYPE" value="3"/>
+	</enum>
+
+	<config name="DayChargeBonusIndex" input="index.xlsx" single="true">
+		<field name="index" type="list:int"/> 取operationalactivity.xlsx中的typeid
+	</config>
+
+	<config name="DayChargeBonus" input="daychargebonus.xlsx">
+		<field name="id" type="int"/>
+		<field name="groupid" type="int"/>
+		<field name="description" type="string"/>
+		<field name="unfinishlabel" type="string"/>
+		<field name="finishedlabel" type="string"/>
+		<field name="num" type="int"/>
+		<field name="reward" type="cfg.cmd.action.MultiBonus"/>
+	</config>
+	
+	<config name="ActiveChargeBonus" input="activechargebonus.xlsx">
+		<field name="day" type="int"/>
+		<field name="bonus" type="cfg.cmd.action.MultiBonus"/>
+	</config>
+</configs>

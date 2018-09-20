@@ -1,0 +1,6 @@
+{PlayerRoleName}   人物名字
+{PlayerRoleTitle}  人物当前称号
+
+{Sex=1} 根据性别判定的第1个称呼
+
+[00CC00]你好[-] 你好的颜色为绿色（00CC00表示颜色，为RGB按照16进制组合）

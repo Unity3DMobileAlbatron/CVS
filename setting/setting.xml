@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.setting">
+	
+	<config name="SettingConfig" input="setting.xlsx" single="true">
+
+    <field name="graphicsettings" type="list:GraphicSetting"/>画质设定
+    <field name="sceneobjectlayermap" type="map:SceneObjectType:int"/>场景物体类型与layer对应表：key-场景元素类型，value-layer，layer值由美术制作场景时设置变更时要更新此处配置        
+    <field name="defaultfogsettings" type="list:FogSetting"/>雾效设定
+    <field name="scenefogsettings" type="map:string:LinearFogSettingList"/>场景专属的四档雾距设置
+    <field name="ignorefogscenes" type="list:string"/>忽略雾效的场景
+    <field name="androidmemthreshold" type="list:int"/>android配置分档阈值
+		<field name="iosmemthreshold" type="list:int"/>ios配置分档阈值
+	</config>
+
+  <struct name="GraphicSetting">
+    <field name="camerafarclip" type="int"/>                   相机远裁面距离
+    <field name="scenestriplist" type="list:SceneObjectType"/>         场景内剥离的元素类型列表
+    <field name="hideeffectlist" type="list:CharacterEffectType"/>    特效隐藏类型列表
+    <field name="hideothernamehp" type="bool"/>                       是否隐藏其他玩家怪物的血条和名字
+    <field name="hideflytextlist" type="list:FightFlyTextType"/>      飘字隐藏类型列表
+    <field name="loddistancemap" type="map:SceneObjectType:int"/>      lod距离map：key是场景元素类型，value是lod距离
+    <field name="fogsettingid" type="int"/>                   雾效设置
+  </struct>
+
+  <struct name="FogSetting">
+    <field name="enable" type="bool"/>  是否开启雾效
+    <field name="mode" type="FogMod"/>  雾效模式
+    <field name="density" type="float"/>密度：只对EXPONENTIAL和EXPONENTIALSQUARED模式生效
+    <field name="colorred" type="int"/>   颜色
+    <field name="colorgreen" type="int"/>   颜色
+    <field name="colorblue" type="int"/>   颜色
+    <field name="coloralpha" type="int"/>   颜色
+    <field name="startdistance" type="int"/>  雾效开始距离：只对LINEAR模式生效
+    <field name="enddistance" type="int"/>    雾效结束距离：只对LINEAR模式生效
+  </struct>
+
+  <struct name="LinearFogSettingList">
+    <field name="linearfogsettinglist" type="list:LinearFogSetting"/>
+  </struct>
+  
+  <struct name="LinearFogSetting">
+    <field name="startdistance" type="int"/>  雾效开始距离：只对LINEAR模式生效
+    <field name="enddistance" type="int"/>    雾效结束距离：只对LINEAR模式生效
+  </struct>
+  
+  <enum name="FogMod">雾效类型
+    <const name="LINEAR" alias="线性" value="1"/>
+    <const name="EXPONENTIAL" alias="指数" value="2"/>
+    <const name="EXPONENTIALSQUARED" alias="平方指数" value="3"/>
+  </enum>
+
+  <enum name="SceneObjectType">场景内剥离的元素类型
+    <const name="LIGHT" alias="光" value="1"/>
+    <const name="BUILDING" alias="建筑" value="2"/>
+    <const name="STAIRS" alias="楼梯" value="3"/>
+    <const name="CLOUD" alias="云" value="4"/>
+    <const name="WATER" alias="水" value="5"/>
+    <const name="TREE" alias="树" value="6"/>
+    <const name="GRASS" alias="草" value="7"/>
+    <const name="STONE" alias="山石" value="8"/>
+    <const name="SFX" alias="特效" value="9"/>
+    <const name="GROUND" alias="地面" value="10"/>
+    <const name="SOUND" alias="声效" value="11"/>
+  </enum>
+
+  <enum name="CharacterEffectType">特效隐藏类型
+    <const name="SELF" alias="主角特效" value="1"/>
+    <const name="PLAYER" alias="其他玩家特效" value="2"/>
+    <const name="MONSTER" alias="怪物特效" value="3"/>
+  </enum>
+
+  <enum name="FightFlyTextType">飘字隐藏类型
+    <const name="SELF" alias="主角战斗飘字" value="1"/>
+    <!--<const name="PLAYER" alias="其他玩家战斗飘字" value="2"/>-->目前与主角无关伤害默认设定不飘字
+  </enum>
+</configs>

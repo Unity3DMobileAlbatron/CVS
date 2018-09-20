@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.role">
+	<enum name="NamePosition">
+		<const name="FROND" alias="前"/>
+		<const name="MIDDLE" alias="中"/>
+		<const name="END" alias="后"/>
+	</enum>
+	<struct name="Names">
+		<field name="names" type="list:string"/>
+	</struct>
+	<struct name="DecorateName">
+		<field name="name" type="string"/>
+		<field name="position" type="NamePosition"/>
+		<field name="weight" type="int"/>
+	</struct>
+	<config name="Name" input="name.xlsx" single="true">
+		<field name="firstnames" type="list:Names"/>
+		<field name="lastnames" type="Names"/>
+		<field name="deconames" type="list:DecorateName"/>
+	</config>
+
+	<struct name="Const">
+		<const name="MAX_LEVEL" value="150" />
+		<const name="PLAYER_SELECT_TARGET_RADIUS" type="float" value="15"/>玩家选择目标距离
+		<const name="PLAYER_LOSE_TARGET_RADIUS" type="float" value="20"/>玩家丢失目标距离
+		<const name="SMART_ATTACK" type="int" value="1"/>是否开启智能施法模式
+		<const name="LOCAL_NAVMESH" type="int" value="1"/>
+	</struct>
+	<enum name="EProfessionType">
+		<const name="QINGYUNMEN" alias="青云门"  value="1"/>
+		<const name="TIANYINSI" alias="天音寺"  value="2"/>
+		<const name="GUIWANGZONG" alias="鬼王宗"  value="3"/>
+		<const name="HEHUANPAI" alias="合欢派"  value="4"/>
+	</enum>
+	<enum name="GenderType">
+		<const name="MALE" alias="男" value="0"/>
+		<const name="FEMALE" alias="女" value="1"/>
+	</enum>
+
+	<config name="Profession" input="profession.xlsx">
+		<field desc="门派" name="faction" type="EProfessionType" />
+		<field desc="名称" name="name" type="string" />
+		<field desc="图标" name="icon" type="string" refpath="../Unity/Assets/Interface/Resource/Bitmap/ICON/?.png"/>
+		<field desc="职业是否开放" name="isopen" type="bool" />
+		<field name="modelname" type="string" ref="model" desc = "ref:character/model.xlsx" />男用模型
+		<field name="modelname2" type="string" ref="model" desc = "ref:character/model.xlsx" />女用模型
+		<field name="weight" type="int"/>
+		<field desc="法宝技能动作" name="talismanactionname" type="string" />
+		<field name="defaultweaponid" type="int"/>角色空手时表现的武器id
+		<field name="createweaponid" type="int"/>创建角色时表现的武器id
+		<field name="createarmourid" type="int"/>创建角色时表现的防具id
+	</config>
+
+	<enum name="TitleType">
+		<const name="TASK" alias="任务" value="1"/>
+		<const name="IDOL" alias="偶像" value="2"/>
+		<const name="ACHIEVEMENT" alias="成就" value="3"/>
+		<const name="ACTIVITY" alias="活动" value="4"/>
+		<const name="RANK" alias="排行榜" value="5"/>
+		<const name="ARENA" alias="战场" value="6"/>
+	</enum>
+	<enum name="TitleShowType">
+		<const name="Text" alias="文字" value="1"/>
+		<const name="Sprite" alias="图集" value="2"/>
+		<const name="Texture" alias="图片" value="3"/>
+		<const name="Prefab" alias="预制体" value="4"/>
+		<const name="SpliceText" alias="拼接文字" value="5"/>
+	</enum>
+	<enum name="TitleShowMode">
+		<const name="Normal" alias="默认显示" value="1"/>
+		<const name="ShowAfterGet" alias="获得后显示" value="2"/>
+	</enum>
+	<config name="Title" input="title.xlsx">
+		<const name="OPEN_LEVEL" value="0"/>
+		<const name="TitlePrefabGroupPath" type="string" value="dlgheadtitle"/>
+		<field desc="称号ID" name="id" type="int" />
+		<field desc="称号类型" name="titletype" type="TitleType" />
+		<field desc="称号显示方式" name="showtype" type="TitleShowType" />
+		<field desc="显示模式" name="showmode" type="TitleShowMode"/>
+		<field desc="类型名称" name="titletypename" type="string" />
+		<field desc="称号名称" name="name" type="string" />
+		<field desc="资源Id" name="path" type="string" />
+		<field desc="称号获得条件" name="condition" type="string" />
+		<field desc="称号时效" name="titletime" type="int"/>    * &lt; 0 永久称号 * ==0 每日0点回收 * (0, 7] 周x0点回收 * &gt; 7 称号有效时间 单位 s
+        <field desc="称号描述" name="description" type="string"/>
+		<field desc="获得属性" name="property" type="list:cfg.equip.EquipPropertyData"/>
+	</config>
+	<config name="TitleTypeName" input="titletype.xlsx">
+		<field name="typeid" type="int"/>
+		<field name="typename" type="string"/>
+	</config>
+	<config name="ExpTable" input="exptable.xlsx">
+		<field name="level" type="int" />
+		<field name="exp" type="long" />
+		<field name="bonusexp" type="long"/>每日杀怪额外经验
+		<field name="partyexp" type="int"/>仙府聚会每跳经验
+		<field name="offlineexp" type="int"/>每分钟的离线经验
+	</config>
+
+	<config name="BasicStatus" input="basicstatus.xlsx" index="career" group="server">
+		<field name="career" type="EProfessionType"/>
+		<field name="levelstatusinfo" type="list:LevelStatusInfo" index="level"/>
+	</config>
+
+	<struct name="LevelStatusInfo">
+		<field name="level" type="int"/>
+		<field name="attr" type="cfg.fight.Attr"/>
+	</struct>
+
+	<config name="Revive" input="revive.xlsx" single="true">
+		<const name="AUTOREVIVETIME" alias="自动复活时间" value="30"/>
+		<field name="viprevivetimes" type="cfg.cmd.condition.VipLimitsLite"/>
+		<field name="reviveYuanBao" type="cfg.cmd.condition.YuanBao"/>
+		<field name="reviveitem" type="cfg.cmd.condition.OneItem"/>
+		<field name="revivecost" type="list:int"/>
+	</config>
+
+	<struct name="BroadcastLimit">
+		<field name="maxtotalremain" type="int"/>
+		<field name="maxsendpersecond" type="int"/>
+		<field name="addremainpersecond" type="int"/>
+	</struct>
+
+	<struct name="PkInfo">
+		<field name="level" type="cfg.cmd.condition.MinLevel"/>
+	</struct>
+	<struct name="SkillPriorityConfig">
+		<field name="career" type="EProfessionType"/>
+		<field name="skillpriority" type="list:int"/>
+	</struct>
+	<config name="RoleConfig" input="roleconfig.xlsx" single="true">
+		<field name="bornmap" type="int" group="server"/>
+		<field name="bornposition" type="cfg.map.Vector2" group="server"/>
+		<field name="bornorientrotation" type="float" group="server"/>
+		<field name="multiplayermapinnersightradius" type="int" group="server"/>
+		<field name="multiplayermapoutersightradius" type="int" group="server"/>
+		<field name="oneplayermapinnersightradius" type="int" group="server"/>
+		<field name="oneplayermapoutersightradius" type="int" group="server"/>
+		<field name="skillperformsightradius" type="int" group="server"/>此距离内的agent释放技能能被玩家看到
+
+		<field name="worldbonus" type="float" group="server"/>大地图杀怪加倍收益
+		<field name="duegonbonus" type="float" group="server"/>地宫杀怪加倍收益
+		<field name="pkinfo" type="PkInfo"/>Pk开启等级,玩家小于此等级时,不能被其他玩家pk所伤害
+
+		<field name="createrolelevel" type="int" group="server"/>
+		<field name="createroleyuanbao" type="int" group="server"/>
+		<field name="createrolebindyuanbao" type="int" group="server"/>
+		<field name="createrolexnb" type="int" group="server"/>
+		<field name="createroletasks" type="list:int" ref="task" group="server"/>
+		<field name="usermaxrolenum" type="int"/>
+
+		<field name="maxtili" type="int"/>
+		<field name="levelupgaintili" type="cfg.cmd.action.TiLi"/>
+		<field name="addonetiliinterval" type="int"/>
+		<field name="buyaddtili" type="cfg.cmd.action.TiLi"/>
+		<field name="tilidanid" type="int" ref="itembasic"/>
+		<field name="buytilicost" type="cfg.cmd.condition.VipLimits"/>
+		<field name="renamecost" type="cfg.cmd.condition.VipLimits"/>
+
+		<field name="reconecttimeout" type="int" group="server"/>
+		<field name="attackeffecttime" type="int" group="server"/>标记攻击状态的时间
+		<field name="batchsynckillmonsterdelay" type="float" group="server"/>合并处理击杀怪物事件的延迟时间
+		<field name="hpbroadcastinterval" type="float" group="server"/>属性变化时广播间隔
+		<field name="movebroadcastinterval" type="float" group="server"/>移动变化广播间隔
+
+		<field name="broadcastlimit" type="BroadcastLimit" group="server"/>
+
+		<field name="maxtotalremainsend" type="int" group="server"/>
+		<field name="maxremainsendpersecond" type="int" group="server"/>
+		<field name="maxaddremainpersecond" type="int" group="server"/>
+
+		<field name="checkmoveinterval" type="int" group="server"/>移动反作弊的检查间隔
+		<field name="initmovedelta" type="float" group="server"/>初始容忍偏差值
+		<field name="addmovedeltapersecond" type="float" group="server"/>每秒增加容忍偏差值
+		<field name="maxpositiondelta" type="float" group="server"/>客户端与服务器最大容忍位置偏差值
+
+
+		<field name="minnamelength" type="int"/>
+		<field name="maxnamelength" type="int"/>
+		<field name="playeramount" type="list:int"/>同屏玩家数目
+		<field name="monsteramount" type="list:int"/>同屏怪物数目
+		<field name="cameraposition" type="list:float"/>相机距离
+<!--
+    <field name="graphicsettings" type="list:GraphicSetting"/>画质设定
+    <field name="sceneobjectlayermap" type="map:SceneObjectType:int"/>场景物体类型与layer对应表：key-场景元素类型，value-layer，layer值由美术制作场景时设置变更时要更新此处配置
+    <field name="fogsettings" type="list:FogSetting"/>雾效设定
+		<field name="androidmemthreshold" type="list:int"/>android配置分档阈值
+		<field name="iosmemthreshold" type="list:int"/>ios配置分档阈值
+-->
+
+    <field name="autobanskill" type="map:EProfessionType:int"/>自动战斗屏蔽掉什么技能
+
+	<field name="invitecooldown" type="cfg.cmd.condition.CoolDown"/>
+
+	<field name="minspeaklevel" type="int"/>最低发言等级
+	<field name="minreportlevel" type="int"/>最低举报等级
+	<field name="everydayreportnum" type="int"/>每天举报次数
+	<field name="basicspeakinterval" type="int"/>基础发言间隔
+	<field name="bereportednum" type="list:int"/>不同VIP被举报次数
+	<field name="silenttime" type="list:int"/>不同vip禁言时长
+	<field name="intervalreducebyvip" type="list:int"/>不同vip发言间隔缩短量
+	<field name="intervallevel" type="list:int"/>等级段
+	<field name="intervalreducebylevel" type="list:int"/>不同等级发言间隔缩短量，和上面的列表对应
+	<field name="pinyinsensecount" type="int"/>拼音敏感词检查强度
+	<field name="pvpdamage" type="float"/>pvp的伤害减免强度
+
+	<field name="autobattleradius" type="list:float"/>五档自动战斗的归还范围
+	<field name="defaultradius" type="int"/>默认使用第几档挂机范围
+	<field name="aotoskillpriority" type="list:SkillPriorityConfig"/>自动挂机的技能使用策略
+	<field name="offlinecalculatetime" type="int"/>计算离线经验所需的下线时间
+	<field name="offlinemaxtime" type="int"/>离线经验统计的最大时长
+
+	<field name="maxsendflowerlist" type="int"/>送花日志显示条数
+	<field name="maxreceiveflowerlist" type="int"/>收花日志显示条数
+	<field name="legalwordlevel" type="int"/>
+	<field name="legalwordviplevel" type="int"/>
+	<field name="maxillegalvoiceduration" type="int"/>
+	<field name="minaccumulatedailyvoicesize" type="int"/>
+	<field name="dailyillegalvoicesize" type="cfg.cmd.condition.DayLimit"/>
+
+	<field name="renamecardid" type="int"/>
+
+	<field name="familyrenamecardid" type="int"/>家族改名卡id
+	<field name="familyrenamecost" type="list:int"/>家族改名花费
+
+	<field name="medicalnpcid" type="int"/>药店npcid
+	<field name="warehousenpcid" type="int"/>仓库npcid
+	</config>
+
+	<config name="SenseWord" input="senseword.csv" single="true" group="server">
+		<field name="words" type="list:string"/>
+	</config>
+
+	这个表是模糊匹配表只要顺序出现过串中的所有字,就会判定为非法
+	比如说  习\近*平  会判定为非法
+	<config name="SenseWord2" input="senseword2.csv" single="true" group="server">
+		<field name="words" type="list:string"/>
+	</config>
+
+	<config name="LegalWord" input="legalword.csv" single="true" group="server">
+		<field name="words" type="list:string"/>
+	</config>
+
+	<config name="PinYinSenseWords" input="pinyingsensewords.xlsx" group="server">
+		<field name="pinyin" type="string"/>
+		<field name="groupid" type="int"/>
+		<field name="weight" type="int"/>
+	</config>
+
+	<config name="PlatIdToDetail" input="platform.xlsx" group="server">
+		<field name="id" type="int"/>
+		<field name="shortname" type="string"/>
+		<field name="detail" type="string"/>
+		<field name="android" type="string"/>
+		<field name="ios" type="string"/>
+	</config>
+
+	<config name="Paomadeng" input="paomadeng.xlsx" single="true">
+		<field name="rolelevelup" type="list:int"/>
+		<field name="minanneal" type="int"/>
+		<field name="perfuse" type="list:int"/>
+		<field name="mintalismanstart" type="int"/>
+		<field name="minpetawake" type="int"/>
+	</config>
+
+	<config name="WorldLevel" input="worldlevel.xlsx" single="true">
+		<field name="worldlevelrank" type="int"/>
+		<field name="fixlevel" type="int"/>
+		<field name="startlevel" type="int"/>
+		<field name="exprate" type="list:WorldExpRate"/>
+	</config>
+
+	<struct name="WorldExpRate">
+		<field name="leveldisparity" type="int"/>
+		<field name="extraexprate" type="float"/>
+		<field name="monsterexprate" type="float"/>
+	</struct>
+
+
+	<enum name="StatisticType">
+		<const name="TOTAL"/>
+		<const name="SEND"/>
+		<const name="NECESSARY"/>
+		<const name="OTHER"/>
+		<const name="UNNECESSARY"/>
+		<const name="SEND_UNNECESSARY"/>
+
+		<const name="MOVE"/>
+		<const name="SKILL_PERFROM"/>
+		<const name="SKILL_ATTACK"/>
+		<const name="SKILL_INTERRUPT"/>
+		<const name="ATTR"/>
+		<const name="BUFF"/>
+	</enum>
+
+	<config name="MonsterExpActivity" input="monsterexpactivity.xlsx">
+		<field name="id" type="int"/>
+		<field name="openrange" type="cfg.common.DateTimeRange"/>
+		<field name="addexpendtime" type="cfg.common.DateTime"/>
+		<field name="dailyaddexps" type="map:int:long"/>
+	</config>
+	
+	<struct name="IndexBonus">
+		<field name="index" type="int"/>
+		<field name="bonus" type="cfg.cmd.action.MultiBonus"/>
+	</struct>
+
+	<config name="CallbackLoginBonusActivity" input="callback.xlsx">
+		<field name="id" type="int"/>
+		<field name="notloginday" type="int"/>
+		<field name="levellimit" type="cfg.cmd.condition.MinLevel"/>
+		<field name="viplevellimit" type="cfg.cmd.condition.MinVipLevel"/>
+		<field name="openrange" type="cfg.common.DateTimeRange"/>
+		<field name="mailtitle" type="string"/>
+		<field name="mailcontent" type="string"/>
+		<field name="firstlogincommonbonus" type="cfg.cmd.action.MultiBonus"/>
+		<field name="firstloginbonusbylevel" type="list:IndexBonus"/>
+		<field name="accumulatelogindaybonus" type="list:IndexBonus" index="index"/>
+	</config>
+	
+	<config name="DailyBounsActivity" input="dailybonus.xlsx">
+		<field name="id" type="int"/>
+		<field name="openrange" type="cfg.common.DateTimeRange"/>
+		<field name="mailtitle" type="string"/>
+		<field name="mailcontent" type="string"/>
+		<field name="bonusbyday" type="list:IndexBonus"/>
+	</config>
+	
+	<struct name="Key">
+		<field name="id" type="string"/>
+		<field name="password" type="string"/>
+	</struct>
+	<struct name="KeySet">
+		<field name="keys" type="list:Key"/>
+	</struct>
+	
+	<config name="KeyBonusActivity" input="keybonusactivity.xlsx">
+		<field name="id" type="int"/>
+		<field name="openrange" type="cfg.common.DateTimeRange"/>
+		<field name="rolemaxobtainnum" type="int"/>每个玩家最大获得次数
+		<field name="probability" type="float"/>中奖概率. 1 = 100%
+		<field name="keysbyserverid" type="map:int:KeySet"/>keys 用于展示奖励
+	</config>
+</configs>

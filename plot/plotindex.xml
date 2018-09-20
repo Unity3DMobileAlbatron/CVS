@@ -1,0 +1,114 @@
+﻿
+
+<configs namespace="cfg.plot">
+	<enum name="PlayMode">
+		<const name="Cannot" alias="无法播放" value="0"/>
+		<const name="Normal" alias="正常播放" value="1"/>
+		<const name="AfterChangeMap" alias="切图播放" value="2"/>
+		<const name="IndexPlay" alias="索引播放" value="3"/>
+	</enum>
+
+	<enum name="CutsceneGroupMode">
+		<const name="Single" alias="单个" value="0"/>
+		<const name="Parallel" alias="并行" value="1"/>
+		<const name="Sequence" alias="顺序" value="2"/>
+	</enum>
+
+	<struct name="Cutscene">
+		<field name="playmode" type="PlayMode"/>
+		<field name="scriptname" type="string" refpath="../code/scripts/plot/plotscript/*.lua"/>
+		<field name="scenename" type="string"/>
+	</struct>
+
+	<struct name="CutsceneGroup">
+		<field name="mode" type="CutsceneGroupMode"/>
+		<field name="cutscenes" type="list:Cutscene"/>
+	</struct>
+
+	<config name="PlotIndex" index="index" input="plotindex.xlsx">
+		<field name="index" type="string"/>
+		<field name="id" type="int"/>
+
+		<field name="displayname" type="string"/>
+		<field name="introduction" type="string"/>
+		<field name="mapname" type="string"/>
+		<field name="mapid" type="int"/>
+
+		<field name="cutscenegroup" type="CutsceneGroup"/>
+	</config>
+
+	<enum name="PlotAssetType">
+		<const name="Model" alias="模型" value="0"/>
+		<const name="Audio" alias="音频" value="1"/>
+		<const name="Special" alias="特殊" value="2"/>
+	</enum>
+	<enum name="PlotModelType">
+		<const name="character" alias="人物" value="0"/>
+		<const name="effect" alias="特效" value="1"/>
+		<const name="item" alias="物体" value="2"/>
+	</enum>
+	<enum name="PlotAudioType">
+		<const name="music" alias="背景音乐" value="0"/>
+		<const name="sound" alias="音效" value="1"/>
+		<const name="voice" alias="配音" value="2"/>
+	</enum>
+	<config name="PlotAssets" input="plotassets.xlsx">
+		<const name="maxloadtime" type="float" value="5"/>
+		<const name="maxloadtimeex" type="float" value="10"/>
+		<field name="index" type="string"/>
+		<field name="assettype" type="PlotAssetType"/>
+		<field name="detailtype" type="string"/>
+		<struct name="PlotAssetModel">
+			<field name="indextable" type="string"/>
+			<field name="path" type="string" ref="model"/>
+			<field name="introduction" type="string"/>
+			<field name="extraasset" type="bool"/>
+			<field name="assetpath" type="string" group="editor"/>
+			<field name="assetpath2" type="string" group="editor"/>
+			<field name="animatorpath" type="string" group="editor"/>
+		</struct>
+		<struct name="PlotAssetAudio">
+			<field name="indextable" type="string"/>
+			<field name="path" type="string" refpath="../Unity/Assets/*"/>
+			<field name="introduction" type="string"/>
+			<field name="extraasset" type="bool"/>
+			<field name="assetpath" type="string" group="editor"/>
+			<field name="assetpath2" type="string" group="editor"/>
+			<field name="animatorpath" type="string" group="editor"/>
+		</struct>
+	</config>
+
+
+	<enum name="QTEModeType">
+		<const name="Combo" alias="连击" value="0"/>
+		<const name="Click" alias="点击" value="1"/>
+	</enum>
+	<struct name="QTEButton">
+		<field name="mode" type="QTEModeType"/>
+		<field name="count" type="int"/>
+		<field name="number" type="int"/>
+		<field name="posx" type="float"/>
+		<field name="posy" type="float"/>
+	</struct>
+	<config name="PlotQTE" input="qte.xlsx">
+		<const name="timeScale" type="float" value="0.005"/>
+		<field name="index" type="string"/>
+		<field name="buttons" type="list:QTEButton"/>
+	</config>
+  	<struct name="Vector3">
+    		<field name="x" type="float"/>
+    		<field name="y" type="float"/>
+    		<field name="z" type="float"/>
+  	</struct>
+	<struct name="PlotGenderConfig">
+		<field name="cameradeviation" type="Vector3" delimiter=","/>
+		<field name="rolemodelname" type="string"/>
+		<field name="rolehandlename" type="string"/>
+	</struct>
+	<struct name="PlotProfessionConfig">
+		<field name="genderconfig" type="map:cfg.role.GenderType:PlotGenderConfig"/>
+	</struct>
+	<config name="PlotConfig" input="plotconfig.xlsx" single="true">
+    		<field name="professtionconfig" type="map:cfg.role.EProfessionType:PlotProfessionConfig"/>
+  	</config>
+</configs>

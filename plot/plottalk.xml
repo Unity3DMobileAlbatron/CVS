@@ -1,0 +1,35 @@
+<configs namespace="cfg.plot">
+
+	<enum name="EPlotDialogType">
+		<const name="DialogBox" alias="对话框" value="0"/>
+		<const name="MovieStyle" alias="电影对话" value="1"/>
+		<const name="CenterAside" alias="中心旁白" value="2"/>
+	</enum>
+
+	<struct name="TalkInfo">
+		<field name="talkperson" type="string"/>
+		<field name="talkcontent" type="string"/>
+		<field name="picture" type="string"/>
+		<field name="sound" type="string"/>
+		<field name="start" type="float"/>
+		<field name="duration" type="float"/>
+	</struct>
+
+	<config name="PlotTalk" index="id" input="plottalk.xlsx" output="plottalk.data">
+		<field name="id" type="int"/>
+		<field name="talktype" type="EPlotDialogType"/>
+        <field name="namefontsize" type="int"/>
+        <field name="contentfontsize" type="int"/>
+		<field name="branch" type="bool"/>
+		<struct name="Single">
+			<field name="talk" type="TalkInfo"/>
+		</struct>
+		<struct name="Branch">
+			<field name="talks" type="list:TalkInfo"/>
+		</struct>
+	</config>
+	<config name="PlotCall" index="key" input="plottalkstring.xlsx" output="plottalkcall.data">
+		<field name="key" type="string"/>
+		<field name="calls" type="list:string"/>
+	</config>
+</configs>

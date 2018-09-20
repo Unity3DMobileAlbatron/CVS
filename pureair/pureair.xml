@@ -1,0 +1,85 @@
+﻿<configs namespace="cfg.pureair">
+	<struct name="LuckyValue">
+		<const name="LUCKYMAXVALUE" value="1000" alias="幸运值最大值"/>
+		<const name="OPEN_LEVEL" value="60"/>
+		<const name="LEVEL_LIMIT" value="30"/>
+		<const name="AWAKE_LIMIT" value="15"/>
+		<const name="STAR_LIMIT" value="5"/>
+		<field name="up" type="list:int"/>
+	</struct>
+
+
+	<struct name="GetProperty">
+		<struct name="Property">
+			<field name="gainability" type="list:cfg.equip.EquipPropertyData"/>获得的属性和属性值
+		</struct>
+		<struct name="PropertyRate">
+			<field name="gainability" type="cfg.fight.AttrId"/>
+			<field name="rate" type="float"/>
+		</struct>
+	</struct>
+	
+	<struct name="AirLevel">
+		<field name="level" type="int"/>
+		<field name="showlevel" type="int"/>
+		<field name="laynumber" type="int"/>
+		<field name="cost" type="list:cfg.cmd.condition.Condition"/>
+		<field name="successrate" type="float"/>
+		<field name="luckyvalue" type="LuckyValue"/>
+		<field name="getproperty" type="list:GetProperty"/>
+	</struct>
+
+
+	<struct name="AirLayInfo">
+		<field name="lay" type="int"/>
+		<field name="model" type="string"/>
+		<field name="rolelvlimit" type="cfg.cmd.condition.MinLevel"/>
+		<field name="purelvlimit" type="int"/>
+		<field name="awakelimit" type="int"/>
+		<field name="starlimit" type="int"/>
+		<field name="upcost" type="list:cfg.cmd.condition.Condition"/>
+	</struct>
+	
+	<struct name="SublimeInfo">
+		<field name="starlevel" type="int"/>
+		<field name="showstarlevel" type="string"/>
+		<field name="laynumber" type="int"/>
+		<field name="purelvlimit" type="int"/>
+		<field name="awakelimit" type="int"/>
+		<field name="cost" type="list:cfg.cmd.condition.Condition"/>
+		<field name="getproperty" type="list:GetProperty"/>
+	</struct>
+	
+	
+	<struct name="AirAwakeInfo">
+		<field name="awakelevel" type="int"/>
+		<field name="showawakelevel" type="int"/>
+		<field name="laynumber" type="int"/>
+		<field name="cost" type="list:cfg.cmd.condition.Condition"/>		
+		<field name="successrate" type="float"/>
+		<field name="luckyvalue" type="LuckyValue"/>
+		<field name="getproperty" type="list:GetProperty"/>
+	</struct>	
+	
+	<config name="pureairlevel" input="pureairlevel.xlsx" single="true">
+		<field name="humanairlevel" type="list:AirLevel" index="level"/>
+		<field name="petairlevel" type="list:AirLevel" index="level"/>
+	</config>	
+	
+	<config name="layconfig" input="layconfig.xlsx" single="true">
+		<field name="humanairlay" type="list:AirLayInfo" index="lay"/>
+		<field name="petairlay" type="list:AirLayInfo" index="lay"/>
+		<field name="des" type="string"/>
+	</config>	
+	
+	<config name="pureairsublime" input="pureairsublime.xlsx" single="true">
+		<field name="humanairsublime" type="list:SublimeInfo" index="starlevel"/>
+		<field name="petairsublime" type="list:SublimeInfo" index="starlevel"/>
+	</config>	
+	
+	<config name="pureawake" input="pureairawake.xlsx" single="true">
+		<field name="humanairawake" type="list:AirAwakeInfo" index="awakelevel"/>
+		<field name="petairawake" type="list:AirAwakeInfo" index="awakelevel"/>
+	</config>	
+
+</configs>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.npc">
+	<config name="NPC" index="id" input="npc.xlsx" output="npc.data">
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="isexclusive" type="bool"/>
+		<field name="describename" type="string"/>
+		<field name="title" type="string"/>
+		<field name="scene" type="string"/>
+		<field name="canbattle" type="bool" group="server"/>
+		<field name="battleid" type="int" group="server"/>
+		<field name="motion" type="string"/>
+		<field name="modelname" type="string" ref="model" desc = "ref:character/model.xlsx"/>
+		<field name="speakrate" type="float"/>喊话概率
+		<field name="opentext" type="list:string"/>
+		<field name="cantalk" type="bool" group="server"/>
+		<field name="talktext" type="string" group="server"/>
+		<field name="hidename" type="bool" group="server"/>
+		<field name="camp" type="int" group="server"/>
+		<field name="transids" type="int" group="server"/>
+		<field name="sellids" type="int" group="server"/>
+		<field name="guildvisible" type="bool" group="server"/>
+		<field name="carrervisible" type="bool" group="server"/>
+		<field name="visibleflag" type="bool" group="server"/>
+		<field name="playbornaction" type="bool" group="server"/>
+	</config>
+</configs>

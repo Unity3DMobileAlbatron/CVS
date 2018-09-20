@@ -1,0 +1,45 @@
+<configs namespace="cfg.reborn">
+  
+	<struct name="Transparency" delimiter=",">
+		<field name="mintransparency" type="float"/>
+		<field name="maxtransparency" type="float"/>
+	</struct>
+
+	<struct name="NpcMsg">
+		<field name="npcid" type="int"/>
+		<field name="mapid" type="int"/>
+		<field name="pos" type="cfg.map.Vector2"/>
+		<field name="givename" type="string"/>
+		<field name="talkdecs" type="string"/>
+		<field name="npcname" type="string"/>
+		<field name="npchead" type="string"/>
+		<field name="winbonus" type="cfg.cmd.action.MultiBonus"/>
+		<field name="windecs" type="string"/>
+		<field name="winnpc" type="int"/>
+		<field name="winnpcmap" type="int"/>
+		<field name="winnpcpos" type="cfg.map.Vector2"/>
+		<field name="winnpcname" type="string"/>
+		<field name="winnpchead" type="string"/>
+		<field name="winnpctalk" type="string"/>
+	</struct>
+	
+	<config name="Reborn" input="reborn.xlsx">
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="desc" type="string"/>
+		<field name="backgroundpic" type="string"/>
+		<field name="opentime" type="cfg.common.DateTimeRange"/>
+		<field name="awardtime" type="cfg.common.DateTimeRange"/>
+		<field name="needitem" type="int"/>
+		<field name="itemdecs" type="string"/>
+		<field name="dailyup" type="cfg.cmd.condition.DayLimit"/>
+		<field name="npcmsg1" type="NpcMsg"/>
+		<field name="npcmsg2" type="NpcMsg"/>
+		<field name="aimicon" type="string"/>
+		<field name="transparency" type="Transparency" />
+		<field name="signupbonus" type="cfg.cmd.action.MultiBonus" />
+		<field name="gradeneedtimes" type="int"/>
+		<field name="dailybonus" type="cfg.cmd.action.MultiBonus"/>
+		<field name="showdailybonus" type="cfg.cmd.action.MultiBonus"/>
+	</config>
+</configs>
