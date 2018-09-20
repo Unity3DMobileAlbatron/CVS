@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.battleeffect">
+	<config name="flash" index="id" input="flash.xlsx">
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="startcolor" type="string"/>
+		<field name="startalpha" type="int"/>
+		<field name="endcolor" type="string"/>
+		<field name="endalpha" type="int"/>
+		<field name="change" type="CHANGETYPE"/>
+		<field name="duringtime" type="int"/>
+		<field name="rimpower" type="int"/>
+		<field name="rimpowerend" type="int"/>
+		<field name="effectlasttime" type="int"/>
+	</config>
+	<enum name="CHANGETYPE">
+		<const name="once" value="0" alias="一次"/>
+		<const name="loop" value="1" alias="循环"/>
+		<const name="pingpong" value="2" alias="闪烁"/>
+	</enum>
+</configs>

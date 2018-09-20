@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.audio">
+	<enum name="SoundTypes">
+		<const name="BEATTACK" alias="BeAttack" value="1"/>
+		<const name="ROLEFOOTSTEP" alias="RoleFootStep" value="2"/>
+		<const name="MOUNTFOOTSTEP" alias="MountFootStep" value="3"/>
+		<const name="VICTORYFAILED" alias="VictoryFailed" value="4"/>
+	</enum>
+
+	<enum name="AudioLogicalType">
+		<const name="ECTYPEEVENT" alias="EctypeEvent" value="1"/>
+		<const name="CITYEVENT" alias="CityEvent" value="2"/>
+		<const name="ENVIROMENT" alias="Environment" value="3"/>
+		<const name="STORYLINES" alias="StoryLines" value="4"/>
+		<const name="NONSTORYLINES" alias="NonStoryLines" value="5"/>
+		<const name="BOSSKEYSKILL" alias="BossKeySkill" vlaue="6"/>
+		<const name="PLAYERROLESKILL" alias="PlayerRoleSkill" value="7"/>
+		<const name="USERINTERFACE" alias="UI" value="8"/>
+		<const name="OTHERPLAYERSKILL" alias="OtherPlayerSkill" value="9"/>
+	</enum>
+
+	<config name="Audio" index="id" input="audio.xlsx">
+		<field name="id" type="int"/>
+		<field name="type" type="AudioLogicalType"/>
+		<field name="priority" type="int"/>
+		<field name="cliplist" type="string" refpath="../GameWindows4.2.0/Data/audio/a_*.bundle;../GameWindows4.2.0/Data/audio/*"/> ???
+		<field name="minidletime" type="int"/>
+		<field name="maxidletime" type="int"/>
+		<field name="minvolume" type="float"/>
+		<field name="maxvolume" type="float"/>
+		<field name="probability" type="float"/>
+		<field name="isloop" type="bool"/>
+	</config>
+
+	<config name="SoundEffects" index="soundtype" input="soundeffects.xlsx">
+		<field name="soundtype" type="SoundTypes"/>
+		<field name="soundlist" type="list:int"/>
+	</config>
+
+	<config name="StoryDialogSound" index="id" input= "storydialogsound.xlsx">
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="maleaudio" type="int" ref="audio"/>
+		<field name="femaleaudio" type="int" ref="audio"/>
+		<field name="boyaudio" type="int" ref="audio"/>
+		<field name="girlaudio" type="int" ref="audio"/>
+		<field name="npcaudio" type="int" ref="audio"/>
+		<field name="content" type="string"/>
+	</config>
+
+	<config name="DialogSound" input="dialogsound.xlsx">
+		<field name="id" type="int"/>
+		<field name="task" type="string"/>
+		<field name="isplayer" type="bool"/>
+		<field name="maleaudio" type="int" ref="audio"/>
+		<field name="femaleaudio" type="int" ref="audio"/>
+		<field name="boyaudio" type="int" ref="audio"/>
+		<field name="girlaudio" type="int" ref="audio"/>
+		<field name="npcaudio" type="int" ref="audio"/>
+		<field name="dialogtext" type="string"/>
+	</config>
+</configs>

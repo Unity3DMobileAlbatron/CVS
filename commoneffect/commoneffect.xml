@@ -1,0 +1,8 @@
+﻿
+<configs namespace="cfg.commoneffect">
+	<config name="CommonEffect" index="id" input="commoneffectconfig" output="commoneffect.data">
+		<field name="id" type="int" desc = "id"/>
+		<field name="actions" type="list:cfg.skill.Action" desc = "时间事件列表"/>
+	</config>
+
+</configs>

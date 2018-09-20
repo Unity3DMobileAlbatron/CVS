@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.ai">
+
+	<config name="AI" index="id" input="ai.xlsx" output="ai.data" group="server">
+		<const name="IDLE_TIME" value="10"/>
+		<const name="DEFAULT_UPDATE_INTERVAL" value="400"/> ai默认的更新间隔,400毫秒
+		<field name="id" type="int"/>
+		<struct name="DefaultAI">
+			<field name="walkback" type="bool"/>
+		</struct>
+		<struct name="BossAI">
+		
+		</struct>
+		<struct name="ArenaAI">
+		
+		</struct>
+		<struct name="ControllerAI">
+			<field name="controllers" type="list:int" delimiter=","/>
+		</struct>
+		<struct name="StaticAI"/>
+		<struct name="RunOnceAI"/>
+	</config>
+	
+	
+	<struct name="Expression">
+		<struct name="NULL"/>
+		<struct name="BoolExpr">
+			<struct name="True"/>
+			<struct name="False"/>
+			<struct name="Not">
+				<field name="condition" type="BoolExpr"/>
+			</struct>
+			<struct name="And">
+				<field name="condition1" type="BoolExpr"/>
+				<field name="condition2" type="BoolExpr"/>
+			</struct>
+			<struct name="Or">
+				<field name="condition1" type="BoolExpr"/>
+				<field name="condition2" type="BoolExpr"/>
+			</struct>
+			<struct name="Xor">
+				<field name="condition1" type="BoolExpr"/>
+				<field name="condition2" type="BoolExpr"/>
+			</struct>
+		</struct>
+		<struct name="If">
+			<field name="condition" type="BoolExpr"/>
+			<field name="iftrue" type="Expression"/>
+		</struct>
+		
+		<struct name="If2">
+			<field name="condition" type="BoolExpr"/>
+			<field name="iftrue" type="Expression"/>
+			<field name="iffalse" type="Expression"/>
+		</struct>
+		
+		<struct name="Case">
+			<field name="condition" type="BoolExpr"/>
+			<field name="expression" type="Expression"/>
+		</struct>
+		
+		<struct name="Switch">
+			<field name="cases" type="list:Case"/>
+		</struct>
+		
+		<struct name="Sequence">
+			<field name="exprs" type="list:Expression"/>
+		</struct>
+		
+		<struct name="Parallel">
+			<field name="exprs" type="list:Expression"/>
+		</struct>
+		
+		<struct name="While">
+			<field name="condition" type="BoolExpr"/>
+			<field name="exprs" type="list:Expression"/>
+		</struct>
+		
+		<struct name="ForeverAll">
+			<field name="exprs" type="list:Expression"/>
+		</struct>
+		
+		<struct name="Periodic">
+			<field name="interval" type="float"/>
+			<field name="expression" type="Expression"/>
+		</struct>
+		
+		<struct name="Periodic2">
+			<field name="interval" type="float"/>
+			<field name="maxrepeat" type="int"/>
+			<field name="expression" type="Expression"/>
+		</struct>
+		
+		<struct name="Print">
+			<field name="text" type="string"/>
+		</struct>
+		
+		<struct name="TrailAndAttackThenWalkBack">
+			<field name="guardradius" type="float"/>
+			<field name="choosetargetpolicy" type="ChooseTargetPolicy"/>
+		</struct>
+		
+	</struct>
+	
+	<struct name="ChooseTargetPolicy">
+		<struct name="ChooseDefencer"/>
+		<struct name="ChooseNearest"/>
+	</struct>
+	
+	<enum name="HostilityType">仇恨类型
+		<const name="FIX" alias="固定"/>
+		<const name="DYNAMIC" alias="动态"/>
+	</enum>
+</configs>

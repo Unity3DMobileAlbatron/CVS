@@ -1,0 +1,229 @@
+﻿<configs namespace="cfg.bonus">
+	
+	<config name="VipBonus" input="vipbonus.xlsx" output="vipbonus.data">VIP福利
+		<field name="viplevel" type="int"/>
+		<field name="needcharge" type="int"/>单位是元
+		<field name="bonustext" type="list:string"/>获得的福利
+		<field name="gainbonus" type="cfg.cmd.action.Items"/>大礼包内含物品
+		<field name="buylimit" type="cfg.cmd.condition.Limit"/>大礼包购买限制
+		<field name="price" type="cfg.cmd.condition.YuanBao"/>售价
+		<field name="showprice" type="int"/>原售价
+	</config>
+	<config name="BeginnerBonus" input="beginnerbonus.xlsx">新手礼包
+		<field name="dayscount" type="int"/>
+		<field name="bonuslist" type="cfg.cmd.action.Items"/>
+	</config>
+	<config name="MonthBonus" input="monthbonus.xlsx">每月签到
+		<!--以下两行，以后移到公共配置文件之中 -->
+		<const name="RETROACTIVE_CURRENCY" value="cfg.currency.CurrencyType.YuanBao"/>补签的货币种类
+		<field name="dayscount" type="int"/>
+		<field name="requireviplevel" type="cfg.cmd.condition.MinVipLevel"/>
+		<field name="bonuslist" type="cfg.cmd.action.Item"/>
+	</config>
+	<enum name="SignType"> 签到类型 
+        <const name="NORMAL_SIGN" value="0"/> 正常签到
+        <const name="ADD_SIGN" value="1"/> 补充签到
+    </enum>         
+
+	<config name="ContinuityLogin" input="continuitylogin.xlsx">连续登录天数对应的开宝箱次数
+		<field name="dayscount" type="int"/>
+		<field name="opentimes" type="int"/>
+	</config>
+	<config name="ContinuityLoginBonus" input="continuityloginbonus.xlsx" single="true">连续登录奖品表
+		<field name="bonuslist" type="cfg.cmd.action.RandomBonus"/>
+	</config>
+	<config name="OnlineTimeBonus" input="onlinetimebonus.xlsx">
+		<field name="onlinetimes" type="int"/>在线时间，单位为秒
+		<field name="bonuslist" type="cfg.cmd.action.RandomBonus"/>
+	</config>
+	<struct name="DayBonusInfo">
+		<field name="day" type="int"/>
+		<field name="showday" type="string"/>
+		<field name="para" type="string"/>
+		<field name="parabig" type="int"/>
+		<field name="dailybonus" type="list:DailyBonus"/>
+	</struct>
+
+	<struct name="DailyBonus">
+		<field name="time" type="int"/>
+		<field name="bonus" type="cfg.cmd.action.MultiBonus"/>
+	</struct>
+	
+	<config name="OnlineTimeBonus2" input="onlinetimebonus2.xlsx">
+		<field name="id" type="int"/>
+		<field name="desc" type="string"/>
+		<field name="name" type="string"/>
+		<field name="datetime" type="cfg.common.DateTimeRange"/>
+		<field name="background" type="string"/>
+		<field name="logindaydecs" type="string"/>
+		<field name="daybonus" type="list:DayBonusInfo" index="day"/>
+	</config>	
+	<config name="MonthlyCard" input="monthlycard.xlsx">
+		<field name="dayscount" type="int"/>这个是按照1年365天配的！
+		<field name="bonus" type="cfg.cmd.action.MultiBonus"/>
+	</config>
+	<config name="GrowPlan" input="growplan.xlsx">
+		<const name="FIRST_GROW_PLAN_END_INDEX" value="4"/>
+		<const name="SECOND_GROW_PLAN_START_INDEX" value="5"/>
+		<const name="SECOND_GROW_PLAN_END_INDEX" value="9"/>
+		<const name="THIRD_GROW_PLAN_START_INDEX" value="10"/>
+		<const name="THIRD_GROW_PLAN_END_INDEX" value="15"/>
+		<field name="id" type="int"/>
+		<field name="requirelvl" type="cfg.cmd.condition.MinLevel"/>
+		<field name="bonuslist" type="cfg.cmd.action.MultiBonus"/>
+	</config>
+	<config name="ChargeBonus" input="chargebonus.xlsx">
+		<const name="chargeNPC" type="int" value="23000020"/>首充界面上的NPCID
+		<field name="bonusid" type="int"/>
+		<field name="bonustype" type="ChargeBonusType"/>
+		<field name="requirevalue" type="int"/>
+		<field name="bonuslist" type="cfg.cmd.action.MultiBonus"/>
+	</config>
+	<!--以下行，以后移到公共配置文件之中 -->
+	<config name="BonusConfig" input="bonusconfig.xlsx" single="true">
+		<field name="retroactivecost" type="list:int"/>补签所需元宝
+		<field name="vipretroactive" type="list:int"/>VIP补签次数。从VIP0（没有VIP）开始。
+		<field name="vowtime" type="int"/>许愿所需时间，单位为秒
+		<field name="vowitem" type="int"/>额外许愿所需要的物品
+		<field name="viptimes" type="list:int"/>VIP额外许愿次数上限，第一个是vip0
+		<field name="monthlycard" type="cfg.cmd.condition.YuanBao"/>
+		<field name="growplan" type="cfg.cmd.condition.YuanBao"/>
+		<field name="growplanmaxlvl" type="list:int"/>
+	</config>
+	<config name="Wish" input="wish.xlsx">
+		<field name="wishitem" type="int"/>许愿所放入的伙伴、法宝ID
+		<field name="bonus" type="cfg.cmd.action.Item"/>许愿得到的物品ID
+	</config>
+	<enum name="ChargeBonusType">
+		<const name="EVERYDAY_CHARGE" value="1"/>每日充值
+		<const name="TOTAL_CHARGE" value="2"/>总充值
+		<const name="TOTAL_CONSUME" value="3"/>总消费
+	</enum>
+	
+	<enum name="DropState">
+		<const name="SHOW"/>
+		<const name="PROTECT"/>
+		<const name="UNPROTECT"/>
+	</enum>
+	<enum name="MealType">吃包子时段
+		<const name="LUNCH" value="1"/>
+		<const name="DINNER" value="2"/>
+	</enum>
+	<config name="Drop" index="id" input="drop.xlsx">怪物掉落
+		<const name="ATTENUATION_INTERVAL" type="int" value="15"/>经验和掉率衰减的等级间隔，目前是15级
+		<const name="EXP_ATTENUATION" type="list:int" value="100,75,50,25,0"/>经验衰减幅度，百分比
+		<const name="DROP_ATTENUATION" type="list:int" value="100,80,60,40,40"/>物品掉率衰减幅度，百分比
+		<const name="EXP_RADIUS" type="float" value="20"/>
+		<const name="SHOW_TIME" value="2"/>物品的展示时间，经过这段时间之后才可以拾取
+		<const name="AUTO_BATTLE_SHOW_TIME" value="5"/>物品的展示时间，经过这段时间之后才可以拾取
+		<const name="PROTECT_TIME" value="30"/>物品的保护时间，经过这段时间之后清空掉落权
+		<const name="DISAPPEAR_TIME" value="180"/>物品的消失时间，经过这段时间之后无人拾取则物品消失
+		<const name="PICK_RADIUS" value="15"/>自动拾取距离
+		<const name="CURVE_TYPE" value="0"/>拾取特效曲线类型（0：直线 1：Bezier曲线）
+		<const name="DROP_ITEM_RADIUS" value="5"/>掉落物品分布范围
+		<field name="id" type="int"/>
+		<field name="dropname" type="string"/>
+		<field name="droplist" type="cfg.cmd.action.Bonus"/>
+	</config>
+	<config name="DropModel" input="dropmodel.xlsm">
+		<field name="itemid" type="int"/>
+		<field name="name" type="string"/>
+		<field name="namecolor" type="cfg.item.EItemColor"/>
+		<field name="modelpath" type="string"/>
+	</config>
+	<struct name="RankBonusList">
+		<field name="requirerank" type="int"/>
+		<field name="bonuslist" type="cfg.cmd.action.Bonus"/>
+	</struct>
+	
+	<enum name="RankType">
+		<const name="COMBAT_POWER" alias="战力榜" value="1"/>
+		<const name="LEVEL" alias="等级榜" value="2"/>
+		<const name="PET" alias="伙伴榜" value="3"/>
+		<const name="FABAO" alias="法宝" value="4"/>
+		<const name="FAMILY" alias="家族" value="5"/>
+		<const name="ARENA" alias="竞技场" value="6"/>
+		<const name="CLIMB_TOWER" alias="幻月洞" value="7"/>
+		<const name="FLOWER" alias="鲜花" value="8"/>
+		<const name="XUNIBI" alias="金币" value="9"/>
+		<const name="WEEK_FLOWER" alias="周魅力" value="10"/>
+	</enum>
+	
+	<enum name="UpdateType">
+		<const name="ORDER" alias="排序"/>
+		<const name="SWAP" alias="交换"/>
+	</enum>
+	
+	
+	<config name="RankBonus" input="rankbonus.xlsx">排名奖励
+		<field name="ranktype" type="RankType"/>排行榜奖励名称以后可以换用枚举
+		<field name="bonuslist" type="list:RankBonusList"/>
+	</config>
+	
+	<config name="Rank" input="rank.xlsx">
+		<field name="ranktype" type="RankType"/>
+		<field name="isrolerank" type="bool"/>
+		<field name="showsize" type="int"/>
+		<field name="ranksize" type="int"/>
+		<field name="updatetype" type="UpdateType"/>
+		<field name="realtime" type="bool"/>
+		<field name="desc" type="bool"/>
+		<field name="refreshrate" type="int"/>刷新频率
+	</config>
+	
+	<config name="FamilyBonus" input="familybonus.xlsx">
+		<field name="bonusid" type="int"/>
+		<field name="requirefamilylvl" type="cfg.cmd.condition.MinFamilyLevel"/>
+		<field name="weekbonustimes" type="cfg.cmd.condition.Limit"/>
+		<field name="bonus" type="cfg.cmd.action.Items"/>
+	</config>
+	
+	<config name="BaoZi" input="baozi.xlsx">
+		<field name="mealtype" type="MealType"/>
+		<field name="starthour" type="int"/>
+		<field name="startminute" type="int"/>
+		<field name="endhour" type="int"/>
+		<field name="endminute" type="int"/>
+		<field name="gettili" type="cfg.cmd.action.TiLi"/>
+		<field name="requireyuanbao" type="cfg.cmd.condition.YuanBao"/>
+	</config>
+
+	<enum name="BONUSTYPE">
+		<const name="NEW_GIFT" value="1"/>
+		<const name="MONTH_SIGN" value="2"/>
+		<const name="CONTINUE_LOGIN" value="3"/>
+		<const name="DAILY_ONLINE" value="4"/>
+		<const name="WISH" value="5"/>
+		<const name="EAT_BAOZI" value="6"/>
+	</enum>
+
+	<enum name="SPRINTBONUSTYPE">
+		<const name="FIRST" value="1"/>
+		<const name="SECOND" value="2"/>
+		<const name="THIRD" value="3"/>
+	</enum>
+
+	<struct name="SpringBonusDetail">
+		<field name="id" type="int"/>
+		<field name="desc" type="string"/>
+		<field name="starttime" type="cfg.common.DateTime"/>
+		<field name="bonus" type="cfg.cmd.action.MultiBonus"/>
+	</struct>
+
+	<struct name="EachSpringBonus">
+		<field name="id" type="SPRINTBONUSTYPE"/>
+		<field name="desc1" type="string"/>
+ 		<field name="buymoney" type="cfg.cmd.condition.YuanBao"/>
+ 		<field name="totalmoney" type="cfg.cmd.condition.YuanBao"/>
+        <field name="details" type="list:SpringBonusDetail" index="id"/>
+	</struct>
+
+	<config name="SpringBonus" input="springbonus.xlsx" single="true">
+		<field name="time" type="cfg.common.DateTimeRange"/>
+		<field name="desc1" type="string"/>
+		<field name="mailtitle" type="string"/>
+		<field name="mailcontent" type="string"/>
+		<field name="springbonus" type="list:EachSpringBonus" index="id"/>
+	</config>
+
+</configs>

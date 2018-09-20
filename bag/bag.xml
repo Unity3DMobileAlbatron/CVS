@@ -1,0 +1,42 @@
+<configs namespace="cfg.bag">
+	<enum name="BagType">
+		<const name="EQUIP" />
+		<const name="EQUIP_BODY"/>
+
+		<const name="TALISMAN" />
+		<const name="TALISMAN_BODY" />
+
+		<const name="ITEM" />
+
+		<const name="FRAGMENT"/>
+
+		<const name="DEPOT_FRAGMENT"/>
+		<const name="DEPOT_EQUIP"/>
+		<const name="DEPOT_TALISMAN"/>
+		<const name="DEPOT_ITEM"/>
+
+		<const name="GEMSTONE"/>
+
+		<const name="FAMILY_EQUIP"/>
+	</enum>
+
+	<config name="BagConfig" input="bagconfig.xlsx">
+		<const name="DEPOT_NPCID" type="int" value="23000455" comment="仓库Npc的Id"/>
+		<field name="bagtype" type="BagType" />包裹类型
+		<field name="stackable" type="bool" />是否可堆叠
+		<field name="initcapacity" type="int" />初始容量
+		<field name="maxcapacity" type="int" />最大容量
+		<field name="unlockgridcost" type="cfg.cmd.condition.FixCurrency" />解锁每个格子花费的元宝数量
+		<field name="sortcd" type="cfg.cmd.condition.CoolDown" /> 排序cd
+	</config>
+	
+	<config name="SlotBagConfig" input="slotbag.xlsx" single="true">
+		<field name="condtioninfo" type="list:SlotCondition" /> 所有槽位使用条件
+	</config>
+	
+	<struct name="SlotCondition" >
+		<field name="bagtype" type="BagType" /> 包裹类型
+		<field name="slotindex" type="int" /> 槽位位置（从1开始）
+		<field name="condition" type="cfg.cmd.condition.Condition" /> 槽位使用条件
+	</struct>
+</configs>

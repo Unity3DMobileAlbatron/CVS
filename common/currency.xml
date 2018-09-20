@@ -1,0 +1,24 @@
+<configs namespace="cfg.currency">
+	
+	<enum name="CurrencyType">
+		<!--  
+			如果没有非常非常非常必要的原因，不要调整这些枚举值的值,因为很多配置表都涉及到货币类型（如monster.xml),
+			在表中定义了使用的货币类型的常量,而由于我们配置的常量不支持引用其他常量,在那些配置里直接
+			填了枚举对应的数值,如果调整枚举值，导致消耗或者添加的货币变了，很可能带来灾难性后果.
+		-->
+	
+		<const name="XuNiBi" value="1" alias="虚拟币"/>
+		<const name="YuanBao" value="2" alias="元宝"/>
+		<const name="BindYuanBao" value="3" alias="绑定元宝"/>
+		<const name="LingJing" value="4" alias="灵晶"/>
+		<const name="JingYan" value="5" alias="经验"/>
+		<const name="ZaoHua" value="6" alias="造化值"/>
+		<const name="WuXing" value="7" alias="悟性值"/>
+		<const name="BangPai" value="8" alias="帮派贡献"/>
+		<const name="ShiMen" value="9" alias="师门贡献"/>
+		<const name="ZhanChang" value="10" alias="战场贡献"/>
+		<const name="LingShi" value="11" alias="灵石"/>
+		<const name="XuanJing" value="12" alias="玄晶"/>
+	</enum>
+
+</configs>

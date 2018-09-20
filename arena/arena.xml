@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.arena">
+	<config name="ArenaConfig" input="arenaconfig.xlsx" single="true">
+		<const name="firsttitle" type="string" value="天下第一"/>
+		<const name="secondtitle" type="string" value="天下第二"/>
+		<const name="thirdtitle" type="string" value="天下第三"/>
+		<field name="openlevel" type="int"/>
+		<field name="shengwangrefreshinterval" type="int"/>取得排名之后，免费获取声望的间隔，单位为秒
+		<field name="maxreportnum" type="int"/>战报信息保存的最大条数
+		<field name="arrowindex" type="string" ref="model"/>
+		<field name="arrowdistance" type="float"/>
+		<field name="challengelimit" type="cfg.cmd.condition.VipLimits"/>
+		<field name="refreshopponentlimit" type="cfg.cmd.condition.VipLimits"/>
+		<field name="rankbonus" type="list:cfg.bonus.RankBonusList"/>
+		<field name="awardlist" type="list:ArenaAward"/>
+		<field name="shengwangsteplist" type="list:ArenaShengwang"/>
+		<field name="specialawardlist" type="list:ArenaSpecialAward" index="times"/>
+		<field name="ranksteps" type="list:ArenaRankStep" group="server"/>
+		<field name="introduction" type="string"/>
+	</config>
+
+	<struct name="ArenaRankStep">
+		<field name="upbound" type="int"/>
+		<field name="rivalbounds" type="list:ArenaRivalBound"/>
+	</struct>
+
+	<struct name="ArenaRivalBound">
+		<field name="low" type="int"/> 注：这里指的是名次低，但数值大
+		<field name="up" type="int"/>
+	</struct>
+
+	<struct name="ArenaAward" >
+		<field name="maxlvl" type="int"/>根据排名，会有奖励变化。这是可获取这一档奖励的最大等级。
+		<field name="winaward" type="cfg.cmd.action.Bonus"/>胜利奖励
+		<field name="loseaward" type="cfg.cmd.action.Bonus"/>失败奖励
+	</struct>
+
+	<struct name="ArenaShengwang" >自动每隔一段时间增加声望
+		<field name="id" type="int"/>
+		<field name="minrank" type="int"/>获取这档声望的最小等级
+		<field name="addshengwang" type="int"/>每隔一段时间可以获取到的声望
+	</struct>
+
+	<struct name="ArenaSpecialAward" >
+		<field name="times" type="int"/>
+		<field name="award" type="cfg.cmd.action.Bonus"/>胜利场次奖励，这是具体的奖励物品
+	</struct>
+
+	<config name="Robot" input="robot.xlsx" group="server">
+		<field name="rank" type="int"/>
+		<field name="name" type="string"/>
+		<field name="gender" type="cfg.role.GenderType"/>
+		<field name="profession" type="cfg.role.EProfessionType"/>
+		<field name="level" type="int"/>
+		<field name="viplevel" type="int"/>
+		<field name="combatpower" type="int"/>
+	</config>
+
+	<config name="ArenaInfo" input="arenainfo.xlsx">
+		<field name="index" type="string"/>
+		<field name="content" type="string"/>
+	</config>
+	<enum name="ChallengeType">
+		<const name="CHALLENGE"/>
+		<const name="BECHALLENGE"/>
+	</enum>
+
+	<config name="ArenaMultiList" input="arenamultilist.xlsx">
+		<field name="id" type="int"/>
+		<field name="label" type="string"/>
+		<field name="tabname" type="string"/>
+	</config>
+
+	<config name="ArenaMultiPvPBonus" input="pvpbonus.xlsx">
+		<field name="id" type="int"/>
+		<field name="score" type="int"/>
+	</config>
+</configs>

@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.common">
+	<struct name="DayTime" delimiter=":"> 格式  hh:mm:ss
+		<field name="hour" type="int"/>
+		<field name="minute" type="int"/>
+		<field name="second" type="int"/>
+	</struct>
+	
+	<struct name="WeekTime" delimiter=":|-">格式  ww-hh:mm:ss
+		<field name="weekday" type="int"/> 1 - 7 对应周一到周日
+		<field name="hour" type="int"/>
+		<field name="minute" type="int"/>
+		<field name="second" type="int"/>
+	</struct>
+	
+	<struct name="DateTime" delimiter=":|-">格式  yyyy:mm:dd-hh:mm:ss
+		<field name="year" type="int"/>
+		<field name="month" type="int"/>
+		<field name="day" type="int"/>
+		<field name="hour" type="int"/>
+		<field name="minute" type="int"/>
+		<field name="second" type="int"/>		
+	</struct>
+
+	<struct name="Date" delimiter=":|-">格式  yyyy:mm:dd
+		<field name="year" type="int"/>
+		<field name="month" type="int"/>
+		<field name="day" type="int"/>	
+	</struct>
+	
+	<struct name="DayTimeRange">
+		<field name="begintime" type="DayTime"/>
+		<field name="endtime" type="DayTime"/>
+	</struct>
+	
+	<struct name="WeekTimeRange">
+		<field name="begintime" type="WeekTime" />
+		<field name="endtime" type="WeekTime"/>
+	</struct>
+
+	<struct name="DateTimeRange">
+		<field name="begintime" type="DateTime"/>
+		<field name="endtime" type="DateTime"/>
+	</struct>
+	<config name="BroadcastType" index="id" input="broadcasttype.xlsx" output="broadcasttype.data">
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+	</config>
+
+	<config name="CountType" index="id" input="counttype.xlsx" output="counttype.data">
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+	</config>
+
+
+	<config name="TaskType" index="id" input="tasktype.xlsx" output="tasktype.data">
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="countlimit" type="int"/>
+		<field name="resetcounttimerid" type="int"/>
+	</config>
+
+
+	<config name="Timer" index="id" input="timer.xlsx" output="timer.data">
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="comment" type="string"/>
+		<field name="timertype" type="int"/>
+		<field name="month" type="int"/>
+		<field name="day" type="int"/>
+		<field name="hour" type="int"/>
+		<field name="minute" type="int"/>
+		<field name="second" type="int"/>
+	</config>
+
+	<config name="TimerType" index="id" input="timertype.xlsx" output="timertype.data">
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+	</config>
+
+	<config name="DialogFrame" index="id" input="dialogframe.xlsx">
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="frame" type="string"/>
+	</config>
+
+	<config name="WildcardSex" input="wildcardsex.xlsx">
+		<field name="id" type="int"/>
+		<field name="male" type="string"/>
+		<field name="female" type="string"/>
+	</config>
+
+	<config name="WildcardProfession" input="wildcardprofession.xlsx">
+		<field name="id" type="int"/>
+		<field name="qingyun" type="string"/>
+		<field name="tianyin" type="string"/>
+		<field name="guiwang" type="string"/>
+		<field name="hehuan" type="string"/>
+	</config>
+
+	<config name="NavigationMode" input="navigationmode.xlsx">
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+	</config>
+
+</configs>

@@ -1,0 +1,211 @@
+﻿<configs namespace="cfg.cmd.condition">
+	<enum name="LimitType">
+		<const name="DAY" value="1" alias="每日限购"/>
+		<const name="WEEK" value="2" alias="每周限购"/>
+		<const name="LIFELONG" value="4" alias="终生限购"/>
+	</enum>
+	<enum name="ActivityType">
+		<const name="XUEZHANQINGYUN" alias="血战青云"/>
+		<const name="SHOUYAOGONGCHENG" alias="兽妖攻城"/>
+		<const name="HONGMENGZHENGBA" alias="鸿蒙争霸"/>
+		<const name="QIMAIHUIWU" alias="七脉会武"/>
+		<const name="TIANXIAHUIWU" alias="天下会武"/>
+	</enum>
+	<struct name="LevelNum">
+		<field name="level" type="int"/>
+		<field name="num" type="int"/>
+	</struct>
+	<struct name="Condition">
+		<struct name="Gender">
+			<field name="gender" type="cfg.role.GenderType"/>
+		</struct>
+		<struct name="MinLevel">
+			<field name="level" type="int"/>
+		</struct>
+		<struct name="MaxLevel">
+			<field name="level" type="int"/>
+		</struct>
+		<struct name="MinMaxLevel">
+			<field name="min" type="int"/>
+			<field name="max" type="int"/>
+		</struct>
+		<struct name="MinVipLevel">
+			<field name="level" type="int"/>
+		</struct>
+		<struct name="MinFamilyLevel">
+			<field name="level" type="int"/>
+		</struct>
+		<struct name="MinFamilyShopLevel">
+			<field name="level" type="int"/>
+		</struct>
+		<struct name="OneItem">
+			<field name="itemid" type="int" ref="itembasic|petbasicstatus|talismanbasic|equip|fragment|petfragment"/>
+		</struct>
+		<struct name="Item">
+			<field name="itemid" type="int" ref="itembasic|petbasicstatus|talismanbasic|equip|fragment|petfragment"/>
+			<field name="amount" type="int"/>
+		</struct>
+		<struct name="Items">
+			<field name="items" type="list:Item"/>
+		</struct>
+		<struct name="Currency">
+			<field name="currencytype" type="cfg.currency.CurrencyType"/>
+			<field name="amount" type="long"/>
+		</struct>
+		<struct name="Currencys">
+			<field name="currencys" type="list:Currency"/>
+		</struct>
+		<struct name="FamilyMoney">
+			<field name="money" type="long"/>
+		</struct>
+		<struct name="FixCurrency">
+			<field name="amount" type="long"/>
+			<struct name="XuNiBi"/>
+			<struct name="YuanBao"/>
+			<struct name="BindYuanBao"/>
+			<struct name="LingJing"/>
+			<struct name="JingYan"/>
+			<struct name="ZaoHua"/>
+			<struct name="WuXing"/>
+			<struct name="BangPai"/>
+			<struct name="ShiMen"/>
+			<struct name="ZhanChang"/>
+			<struct name="ShengWang"/>
+			<struct name="HuoBanJiFen"/>
+			<struct name="FaBaoJiFen"/>
+			<struct name="ChengJiu"/>
+			<struct name="BangGong"/>
+			<struct name="TianFu"/>
+			<struct name="TiLi"/>
+			<struct name="ChongZhiJiFen"/>
+			<struct name="LotteryScore"/>
+			<struct name="TeamFightScore"/>
+		</struct>
+		<struct name="CombatPower">战力值
+			<field name="amount" type="long"/>
+		</struct>
+		<struct name="OR">
+			<field name="first" type="Condition"/>
+			<field name="second" type="Condition"/>
+		</struct>
+		<struct name="ORs">
+			<field name="conditions" type="list:Condition"/>
+		</struct>
+		<struct name="VipLimitsLite">精简后的Vip限制
+			<field name="entertimes" type="list:int"/>进入次数，是个数组，第一个是vip0      5,6,6,7,7,8,9,10
+		</struct>
+		<struct name="VipLimits"> 每日限制
+			<field name="currencytype" type="cfg.currency.CurrencyType"/>
+			<field name="entertimes" type="list:int"/>进入次数，是个数组，第一个是vip0      5,6,6,7,7,8,9,10
+			<field name="amout" type="list:long"/>     0,0,0,0,0,5,5,5,5,5,5,5
+		</struct>
+		<struct name="VipLimits2">
+			<field name="entertimes" type="list:int"/>进入次数，是个数组，第一个是vip0      5,6,6,7,7,8,9,10
+			<field name="costs" type="list:Condition"/>
+		</struct>
+		<struct name="LevelLimit">
+			<field name="levels" type="list:LevelNum"/>进入次数，是个数组，第一个是vip0      5,6,6,7,7,8,9,10
+		</struct>
+		<struct name="Limit">
+			<field name="type" type="LimitType"/>
+			<field name="num" type="int"/>
+		</struct>
+		<struct name="DayLimit">简单的每日限制
+			<field name="num" type="int"/>
+		</struct>
+		<struct name="Limits">
+			<field name="limits" type="list:Limit"/>
+		</struct>
+		<struct name="TimeLimit">
+			<field name="limittype" type="LimitType"/>
+			<field name="starttime" type="int"/>
+			<field name="endtime" type="int"/>
+		</struct>
+		<struct name="CoolDown">冷却
+			<field name="time" type="float"/>
+		</struct>
+		<struct name="GroupCoolDown">
+			<field name="groupid" type="int"/>
+			<field name="time" type="float"/>
+		</struct>
+		<struct name="Equiped">装备**  新手指引使用
+			<field name="id" type="list:int" delimiter=","/>不同职业用，隔开
+		</struct>
+		<struct name="TeamMemberNumber">
+			<field name="min" type="int"/>
+			<field name="max" type="int"/>
+		</struct>
+		<struct name="OwnTask">新手指引使用
+			<field name="taskid" type="int"/>
+		</struct>
+		<struct name="AcceptTask">
+			<field name="taskid" type="int"/>
+		</struct>
+		<struct name="CompleteTask">新手指引使用
+			<field name="taskid" type="int"/>
+		</struct>
+		<struct name="CompleteAchievement">
+			<field name="achievementid" type="int"/>
+		</struct>
+		<struct name="MonsterAppear">怪物出现在一定距离内 新手指引使用
+			<field name="monsterid" type="int"/>怪物id
+			<field name="distance" type="float"/>距离
+		</struct>
+		<struct name="PassEctype">
+			<field name="ectypeid" type="int"/>
+		</struct>
+		<struct name="LoginDay">登录天数（1表示登录第一天），新手指引使用
+			<field name="day" type="int"/>
+		</struct>
+		<struct name="JoinFamily">加入家族，新手指引使用
+		</struct>
+		<struct name="EnterRegion">到达某个点   新手指引使用
+			<field name="coordinate" type="list:float" delimiter=","/>坐标点
+			<field name="distance" type="float"/>判断距离
+		</struct>		
+		<struct name="MonsterHp">目标怪物血量    新手指引使用
+			<field name="monsterid" type="int"/>
+			<field name="hp" type="int"/>
+		</struct>
+		<struct name="CanPlaySkill">获取并可以释放某个技能    新手指引使用
+			<field name="skillids" type="list:int" delimiter=","/>
+		</struct>
+		<struct name="OwnSkill">获取技能    新手指引使用
+			<field name="skillids" type="list:int" delimiter=","/>
+		</struct>
+		<struct name="DisplayDlg">某界面展开  新手指引使用
+			<field name="open" type="int"/>开启或关闭（0:开启;1:关闭）
+			<field name="dialogname" type="string"/>
+		</struct>
+		<struct name="OpenEctype">某副本开启  新手指引使用
+			<field name="ectypeid" type="int"/>
+		</struct>
+		<struct name="CanJoinActivity">定时活动开启  新手指引使用
+			<field name="activitytype" type="ActivityType"/>
+		</struct>
+		<struct name="PlayCGOver">CG播放完毕 新手指引使用
+			<field name="cgids" type="list:int" delimiter=","/>根据职业区分
+		</struct>
+		<struct name="IsNavigating">正在导航，新手指引使用
+		</struct>
+		<struct name="PetSkillUpgrade">当前上阵的伙伴技能是否可以升级，新手指引使用
+		</struct>
+		<struct name="PetLevel">当前第一个上阵伙伴的等级，新手指引使用
+			<field name="level" type="int"/>
+		</struct>
+		<struct name="FirstRecharge">首充判断，新手指引使用
+		</struct>
+		<struct name="HasActiveRide">是否已有激活的坐骑
+			<field name="has" type="bool"/>
+		</struct>
+		<struct name="ServerController">
+			<field name="controllerid" type="int"/>
+		</struct>
+		<struct name="ProfessionLimit">
+			<field name="profession" type="cfg.role.EProfessionType"/>
+		</struct>
+		<struct name="MultiCondition">
+			<field name="conditions" type="list:Condition"/>
+		</struct>
+	</struct>
+</configs>

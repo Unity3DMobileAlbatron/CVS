@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.broadcast">
+	<struct name="Notice">
+		<field name="name" type="string"/>
+		<field name="content" type="string"/>
+		<field name="date" type="string"/>
+		<field name="isnew" type="bool"/>
+	</struct>
+	<config name="Broadcast" input="broadcast.xlsx" single="true">
+		<field name="notices" type="list:Notice"/>
+	</config>
+</configs>

@@ -1,0 +1,192 @@
+<configs namespace="cfg.buff">
+	<enum name="EndCondition">
+		<const name="BY_TIME"/>时间经过则buff结束
+		<const name="BY_NEXT_ATTACK"/>下次攻击之后buff结束
+		<const name="BY_TRANSIENT"/>瞬时的
+		<const name="BY_REMOVE"/>必须通过移除操作结束
+	</enum>
+	<enum name="EffectPosition">
+		<const name="HEAD"/>
+		<const name="BODY"/>
+		<const name="FOOT"/>
+	</enum>
+	<enum name="DisperseType">只驱散BY_TIME和BY_NEXT_ATTACK的effect
+		<const name="ALL" alias="全部"/>
+		<const name="ADVANTAGE_BUFF" alias="正面"/>
+		<const name="DISADVANTAGE_BUFF" alias="负面"/>
+	</enum>
+	<struct name="EffectInfo">
+		<field name="effectid" type="int" ref="effect"/>
+		<field name="description" type="string"/>
+		<field name="endconditiontype" type="EndCondition"/>
+		<field name="duration" type="list:float" delimiter=","/>
+	</struct>
+
+	<config name="Buff" index="id" input="buff.xlsx">
+		<field name="id" type="int"/>
+		<field name="buffname" type="string"/>策划查找用名称
+		<field name="name" type="string"/>游戏内名称
+		<field name="target" type="cfg.fight.Relation" group="server"/>
+		<field name="effects" type="list:EffectInfo"/>
+	</config>
+
+
+	<config name="Effect" index="id" input="effect.xlsx">
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="groupid" type="int" group="server"/>
+		<field name="priority" type="int" group="server"/>
+		<field name="hitrate" type="float"/>命中率
+		<field name="showicon" type="bool"/>
+		<field name="isharmful" type="bool" group="server"/>是否为有害状态
+		<field name="candisperse" type="bool" group="server"/>是否可以被驱散
+		<field name="icontype" type="string"/>
+		<field name="isresist" type="bool" group="server"/>是否被抗性抵抗
+		<field name="commoneffectid" type="int" />
+		<field name="displaypriority" type="int"/>
+		<field name="ispersistent" type="bool"/>
+		<struct name="AddProperty">增加属性
+			<field name="introduction" type="string"/>
+			<field name="property" type="cfg.fight.AttrId"/>
+			<field name="value" type="float"/>
+			<field name="maxoverlay" type="int"/>最大叠加层数
+		</struct>
+
+		<struct name="IntervalEffect">
+			<field name="interval" type="float" group="server"/>间隔时间
+			<struct name="Bleed">流血
+				<field name="introduction" type="string"/>
+				<field name="value" type="float"/>
+			</struct>
+			<struct name="BleedPercent">按百分比流血
+				<field name="introduction" type="string"/>
+				<field name="value" type="float"/>
+			</struct>
+			<struct name="AddHPInterval">缓慢回血
+				<field name="introduction" type="string"/>
+				<field name="value" type="float"/>
+			</struct>
+
+			<struct name="AddMPInterval">缓慢回蓝
+				<field name="introduction" type="string"/>
+				<field name="value" type="float"/>
+			</struct>
+			<struct name="AddHPPercentInterval">百分比缓慢回血
+				<field name="introduction" type="string"/>
+				<field name="value" type="float"/>
+			</struct>
+
+			<struct name="AddMPPercentInterval">百分比缓慢回蓝
+				<field name="introduction" type="string"/>
+				<field name="value" type="float"/>
+			</struct>
+
+			<struct name="AddHPByLevelInterval">缓慢回血
+				<field name="introduction" type="list:string"/>
+				<field name="value" type="list:float"/>
+			</struct>
+
+			<struct name="AddMPByLevelInterval">缓慢回蓝
+				<field name="introduction" type="list:string"/>
+				<field name="value" type="list:float"/>
+			</struct>
+			<!--
+			<struct name="Laceration">裂伤
+				<field name="introduction" type="string"/>
+				<field name="rate" type="float"/>
+				<field name="damage" type="float"/>
+			</struct>
+			<struct name="BleedbyLevel">配有等级的流血
+				<field name="introduction" type="list:string"/>
+				<field name="interval" type="float"/>1对应100%
+				<field name="value" type="list:float"/>
+			</struct>
+		-->
+			<struct name="LacerationbyLevel">配有等级的裂伤
+				<field name="introduction" type="list:string"/>
+				<field name="rate" type="list:float" group="server"/>
+				<field name="damage" type="list:float" group="server"/>
+				<field name="ignoredefence" type="bool" group="server"/>
+			</struct>
+		</struct>
+		<struct name="SetAbnormalState">异常状态
+			<field name="introduction" type="string"/>
+			<field name="statetype" type="cfg.fight.StateType" ref="state"/>
+		</struct>
+		<!--
+		<struct name="AddPropertyByHP">HP触发
+			<field name="introduction" type="string"/>
+			<field name="HP" type="float"/>
+			<field name="property" type="cfg.fight.AttrId"/>
+			<field name="value" type="float"/>
+		</struct>
+		<struct name="AddPercentPropertyByHP">HP触发，改变状态百分比
+			<field name="introduction" type="string"/>
+			<field name="HP" type="float"/>
+			<field name="property" type="cfg.fight.AttrId"/>
+			<field name="value" type="float"/>1对应100%
+		</struct>
+		<struct name="Revive">
+			<field name="introduction" type="string"/>
+			<field name="percent" type="float"/>复活概率
+			<field name="HPpercent" type="float"/>复活后拥有的HP最大百分比
+		</struct>
+		-->
+		<struct name="AddPropertyByLevel">配有等级的状态改变
+			<field name="introduction" type="list:string"/>
+			<field name="property" type="cfg.fight.AttrId"/>
+			<field name="value" type="list:float"/>
+			<field name="maxoverlay" type="int" group="server"/>最大叠加层数
+		</struct>
+		<struct name="Aura">
+			<field name="buffid" type="int" ref="buff"/>
+			<field name="judgeinterval" type="float" group="server"/>
+			<field name="judgeradius" type="float" group="server"/>
+		</struct>
+
+		<struct name="AbnormalDamageUp">敌人异常状态下造成伤害上升
+			<field name="damagepercent" type="list:float" delimiter="," group="server"/>
+		</struct>
+
+		<struct name="SuckBlood">吸血
+			<field name="introduction" type="string"/>
+			<field name="suckrate" type="list:float" delimiter="," group="server"/>吸血率
+		</struct>
+
+		<struct name="Reflect">反伤
+			<field name="reflectrate" type="list:float" delimiter="," group="server"/>反伤率
+		</struct>
+
+		<struct name="Disperse">驱散
+			<field name="dispersetype" type="DisperseType" group="server"/>驱散种类
+			<field name="maxnum" type="int" group="server"/>null为全部驱散
+		</struct>
+
+		<struct name="SkillEffect">技能额外附加的effect
+			<field name="skillid" type="int" group="server"/>获益的技能ID
+			<field name="hitpoint" type="list:int" delimiter="," group="server"/>第几个打击点
+			<field name="targetamountchange" type="int" group="server"/>增加几个此打击点的作用个数
+			<field name="isbefore" type="bool" group="server"/>是否是打击前添加buff，false的话是命中后添加buff
+			<field name="buffid" type="int" group="server" ref="buff"/>添加的buffid，是null的话就什么都不挂
+		</struct>
+		
+		<struct name="TransForm">
+			<field name="model" type="string"/>
+			<field name="model2" type="string"/>
+			<field name="skilllist" type="map:int:int"/>
+		</struct>
+		
+		<struct name="Revive">复活
+			<field name="introduction" type="list:string"/>
+			<field name="probability" type="list:float"/>复活概率(1= 100%)
+			<field name="revivehppercent" type="float"/>复活血量比例(1=100%)
+			<field name="reviveactionname" type="string"/>
+			<field name="reviveduration" type="float"/>
+			<field name="cooldown" type="int"/>
+		</struct>
+		<struct name="Kill">斩杀
+			<field name="probability" type="float"/>斩杀的触发概率
+			<field name="hppercent" type="float"/>敌方血量低于此百分比时斩杀(1 = 100%)
+		</struct>
+	</config>
+</configs>

@@ -1,0 +1,99 @@
+﻿<configs namespace="cfg.achievement">
+
+	<enum name="CounterType">
+		<const name="TASK_MAINLINE" value="1"/>完成主线任务
+		<const name="LEVEL" value="2"/>等级
+		<const name="CONTINUE_LOGIN" value="3"/>连续登录
+		<const name="XUNIBI_NUM_OBTAIN" value="4"/>获得金币数
+		<const name="XUNIBI_NUM_CONSUME" value="5"/>花费金币数
+		<const name="KILL_MONSTER" value="6"/>杀怪数
+		<const name="KILL_BOSS" value="7"/>杀死boss数
+		<const name="MAX_ANNEAL_EQUIP" value="8"/>最高装备炼器
+		<const name="MAX_PERFUSE_EQUIP" value="9"/>最高装备灌注
+		<const name="TOTAL_ANNEAL_EQUIP" value="10"/>总装备炼器
+		<const name="TOTAL_PERFUSE_EQUIP" value="11"/>总装备灌注
+		<const name="PASS_STORY_ECTYPE" value="12"/>剧情本
+		<const name="PASS_CURRENCY_ECTYPE" value="13"/>金钱本
+		<const name="PASS_EXP_ECTYPE" value="14"/>经验本
+		<const name="PASS_TALISMAN_ECTYPE" value="15"/>护符本
+		<const name="PASS_ZAOHUA_ECTYPE" value="16"/>造化本
+		<const name="PVP_1V1_WIN" value="17"/>1v1竞技场胜场
+		<const name="PVP_HUIWU_WIN" value="18"/>天下会武胜场
+		<const name="PVP_ZHENGBA_WIN" value="19"/>鸿蒙争霸胜场
+		<const name="FRIEND_NUM" value="20"/>好友数
+		<const name="COMPANION_NUM" value="21"/>伴侣数
+		<const name="TOTAL_SOULMATE_NUM" value="22"/>红颜和蓝颜总数
+		<const name="TOTAL_CONFIDANT_NUM" value="23"/>闺蜜和基友总数
+		<const name="YIXIONG_NUM" value="24"/>义兄数
+		<const name="YIDI_NUM" value="25"/>义弟数数
+		<const name="YIJIE_NUM" value="26"/>义姐数
+		<const name="YIMEI_NUM" value="27"/>义妹数
+
+		<const name="PASS_NORMAL_ECTYPE" value="28"/>
+		<const name="PASS_ELITE_ECTYPE" value="29"/>
+		<const name="PASS_EVIL_ECTYPE" value="30"/>
+		<const name="SHENGWANG" value="31" desc="声望"/>
+		<const name="PASS_DAILY_ECTYPEvalue" value="32"/>
+		<const name="PASS_CLIMB_TOWER_ECTYPE" value="33"/>爬塔
+		<const name="PASS_PERSONAL_BOSS_ECTYPE" value="34"/>
+		<const name="PASS_CHALLENGE_ECTYPE" value="35"/>多人本
+		<const name="PVP_3V3_WIN" value="36"/>3v3竞技场胜场
+		<const name="PASS_PET_ECTYPE" value="37"/>伙伴本
+		<const name="REBORN_LEVEL" value="38"/>
+		<const name="PVP_HUIWU_POJUN" value="39"/>
+		<const name="PVP_HUIWU_DAMANHGUAN" value="40"/>
+		<const name="PVP_HUIWU_JIANLOUWANG" value="41"/>
+		<const name="PVP_HUIWU_LAOMO" value="42"/>
+		<const name="SKILL_LEVEL" value="43"/>
+	</enum>
+
+	<enum name="AchievementType">
+		<const name="TASK" desc ="任务"/>
+		<const name="GROWUP" desc ="成长"/>
+		<const name="LOGIN" desc ="登录"/>
+		<const name="WEALTH" desc ="财富"/>
+		<const name="FIGHT" desc ="战斗"/>
+		<const name="EQUIPE" desc ="装备"/>
+		<const name="ECTYPE" desc ="副本"/>
+		<const name="PVP" desc ="PVP"/>
+		<const name="OTHER" desc ="其它"/>
+		<const name="SOCIAL" desc ="社交"/>
+		<const name="BOSS" desc ="BOSS"/>
+
+		<const name="ARENATITLE" desc="竞技场称号"/>
+		<const name="TEAMFIGHTTITLE" desc="3v3称号"/>
+	</enum>
+
+	<enum name="Status">
+		<const name="NOTCOMPLETED" value="0"/>
+		<const name="COMPLETED" value="1"/>
+		<const name="GETREWARD" value="2"/>
+	</enum>
+
+	<config name="Achievement" input="achievement.xlsx">
+		<field name="id" type="int"/>
+		<field name="achievementtype" type="AchievementType"/>
+		<field name="achievementtypename" type="string"/>
+		<field name="type" type="CounterType"/>
+		<field name="value" type="long"/>
+		<field name="isamount" type="bool"/>
+		<field name="name" type="string"/>
+		<field name="detail" type="string"/>
+
+		<struct name="AchievementNormal">
+			<field name="icon" type="string"/>
+			<field name="chengjiupoint" type="cfg.cmd.action.ChengJiu"/>
+			<field name="bindyuanbao" type="cfg.cmd.action.BindYuanBao"/>
+		</struct>
+		<struct name="AchievementTitle">
+			<field name="titleid" type="cfg.cmd.action.OneItem"/>
+		</struct>
+	</config>
+
+	<config name="TitleEvolve" input="titleevolve.xlsx" index="titleid">
+		<field name="name" type="string"/>
+		<field name="needvalue" type="cfg.cmd.condition.ChengJiu"/>
+		<field name="titleid" type="int"/>
+	</config>
+
+</configs>

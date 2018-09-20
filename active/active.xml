@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.active">
+	<enum name="GrowupType">
+        <const name="UPGRADE" alias="我要升级" value="1"/>
+        <const name="MATERIAL" alias="我要材料" value="2"/>
+        <const name="RICHER" alias="我要财富" value="3"/>
+        <const name="PET" alias="我要伙伴" value="4"/>
+        <const name="TALISMAN" alias="我要法宝" value="5"/>
+        <const name="EQUIP" alias="我要装备" value="6"/>                        
+    </enum>
+	<config name="Activeevent" index="id" input="activeevent.xlsx">
+		<field name="id" type="int"/>
+		<field name="eventtype" type="EventNum"/>
+		<field name="decs" type="string"/>
+		<field name="addtype" type="AddType"/>
+		<field name="times" type="int"/>
+		<field name="addnum" type="int"/>
+		<field name="uientry" type="string" ref="dialog"/>
+		<field name="uitabindex" type="int"/>
+		<field name="uitabindex02" type="int"/>
+		<field name="displayorder" type="int"/>显示顺序
+	</config>
+	<config name="Activebonus" index="grade" input="active.xlsx">
+		<field name="grade" type="int"/>
+		<field name="icon" type="string"/>
+		<field name="award" type="cfg.cmd.action.MultiBonus"/>
+	</config>
+	<config name="Growup" input="growup.xlsx">
+		<field name="systemid" type="int"/>
+		<field name="systemname" type="EventNum"/>
+		<field name="name" type="string"/>
+		<field name="desc" type="string"/>
+		<field name="icon" type="string"/>
+		<field name="growtype" type="GrowupType" />
+		<field name="uientry" type="string" ref="dialog"/>
+		<field name="uitabindex" type="int"/>
+		<field name="uitabindex02" type="int"/>		
+		<field name="showbasedialog" type="bool"/>
+	</config>
+	
+	<config name="Findback" index="lv" input="findback.xlsx">
+		<field name="lv" type="int"/>
+		<field name="findsystemlist" type="list:SystemLookBack"/>
+	</config>
+	<enum name="EventNum">
+        <const name="TOTAL" alias="所有" value="0"/>
+        <const name="COINPOINT" alias="金钱副本" value="1"/> 
+        <const name="EXPPOINT" alias="经验副本" value="2"/>
+        <const name="STORYPOINT" alias="剧情副本" value="3"/>
+        <const name="MANYPOINT" alias="多人副本" value="4"/>
+        <const name="CLIMBTOWER" alias="幻月洞" value="5"/>爬塔
+		<const name="ARENA" alias="竞技场" value="6"/>
+		<const name="HEROBOOK" alias="青云英雄录" value="7"/>
+		<const name="SPECTRUM" alias="个人BOSS" value="8"/>个人boss
+		<const name="ANNEAL" alias="炼器" value="9"/>
+		<const name="PERFUSE" alias="灌注" value="10"/>
+		<const name="USEHUOBANDAN" alias="使用伙伴经验丹" value="11"/>
+		<const name="USEFABAODAN" alias="使用法宝经验丹" value="12"/>		
+		<const name="HUFUPOINT" alias="护符副本" value="13"/>
+		<const name="YUPEIPOINT" alias="玉佩副本" value="14"/>临时的名字，有谁闲就换一下
+		<const name="HONGMENG" alias="鸿蒙争霸" value="15"/>
+		<const name="XUEZHAN" alias="血战青云" value="16"/>
+		<const name="KILLMONSTER" alias="打倒怪物" value="17"/>
+		<const name="PARTY" alias="仙府聚宴" value="18"/>
+		<const name="PRAY" alias="烧香" value="19"/>
+		<const name="FEEDBOSS" alias="神兽培养" value="20"/>
+		<const name="WINHUIWU" alias="天下会武胜场" value="21"/>
+		<const name="RINGTASK" alias="家族环任务" value="22"/>
+		<const name="TASK" alias="任务" value="23"/>
+		<const name="RECHARGE" alias="充值" value="24"/>
+		<const name="WISH" alias="许愿" value="25"/>
+		<const name="FAMILYPROFITEER" alias="家族黑市商人" value="26"/>
+		<const name="FAMILYSTORE" alias="家族商店" value="27"/>
+		<const name="TREASUREBOWL" alias="聚宝盆兑换" value="28"/>
+		<const name="QIMAIHUIWU" alias="七脉会武" value="29"/>
+		<const name="JIUYIQIANKUNDING" alias="九仪乾坤鼎" value="30"/>		
+		<const name="STORE" alias="商城" value="31"/>
+		<const name="WORLDBOSS" alias="世界BOSS" value="32"/>
+		<const name="SHOUYAOGONGCHENG" alias="兽妖攻城" value="33"/>
+		<const name="SHAKEMONEYTREE" alias="摇钱树" value="34"/>
+		<const name="FIELDBOSS" alias="野外精英" value="35"/>
+		<const name="RECRUIT" alias="招募" value="36"/>	
+		<const name="ARENAREWARD" alias="竞技场兑换" value="37"/>		
+		<const name="SILINGJIANGSHI" alias="四灵降世" value="38"/>				
+		<const name="MANHUANGSHOUCHAO" alias="蛮荒兽潮" value="39"/>																										
+    </enum>
+	<enum name="AddType">
+        <const name="ADDPERTIME" alias="单次增加" value="1"/> 
+        <const name="ADDTOTAL" alias="全部完成增加" value="2"/>
+    </enum>
+
+	
+	<struct name="SystemLookBack">
+		<field name="eventtype" type="EventNum"/>
+		<field name="name" type="string"/>
+		<field name="systemicon" type="string"/>
+		<field name="xunibicost" type="cfg.cmd.condition.XuNiBi" group="server"/>
+		<field name="xunibiaward" type="cfg.cmd.action.MultiBonus" group="server"/>
+		<field name="yuanbaocost" type="cfg.cmd.condition.YuanBao" group="server"/>
+		<field name="yuanbaoaward" type="cfg.cmd.action.MultiBonus" group="server"/>
+	</struct>
+
+	<config name="FindBackCandoTimes" input="findbackcandotimes.xlsx" group="server">
+		<field name="eventtype" type="int"/>
+		<field name="desc" type="string"/>
+		<field name="candotimes" type="cfg.cmd.condition.VipLimitsLite"/>
+	</config>
+
+	<config name="FindBackFreeTime" input="freetime.xlsx" single="true" group="server">
+		<field name="time" type="list:cfg.common.DateTimeRange"/>
+	</config>
+
+</configs>
