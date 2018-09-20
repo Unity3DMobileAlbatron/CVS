@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.dailyactivity">
+
+	<config name="DailyEctypeTab" input="dailyectypetab.xlsx">
+		<field name="order" type="int"/>
+		<field name="name" type="string"/>
+		<field name="ectypetype" type="cfg.ectype.EctypeType"/>
+	</config>
+
+	<config name="DailyActivityTab" input="dailyactivitytab.xlsx">
+		<field name="order" type="int"/>
+		<field name="name" type="string"/>
+		<field name="label" type="string"/>
+		<field name="tabindex" type="string"/>
+	</config>
+
+  <config name="WeekendActivityTab" input="weekendactivitytab.xlsx">
+    <field name="order" type="int"/>
+    <field name="name" type="string"/>
+	<field name="label" type="string"/>
+    <field name="tabindex" type="string"/>
+  </config>
+  
+  <config name="Festivalactivitytab" input="festivalactivitytab.xlsx">
+    <field name="order" type="int"/>
+    <field name="name" type="string"/>
+	<field name="label" type="string"/>
+    <field name="tabindex" type="string"/>
+  </config>
+
+  <config name="activitytip" input="activitytip.xlsx" single="true">
+    <field name="activitytipmap" type="map:ActivityTipEnum:string"/>    界面文字描述
+    <field name="tipshowduration" type="int"/>    每条显示时长（秒）
+  </config>
+
+  <enum name="ActivityTipEnum">
+    <const name="TianXiaHuiWu" value="0" alias="天下会武"/>
+    <const name="HongMengZhengBa_Enroll" value="1" alias="鸿蒙争霸报名"/>
+    <const name="QiMaiHuiWu" value="2" alias="七脉会武"/>
+    <const name="HongMengZhengBa_Countdown" value="3" alias="鸿蒙争霸倒计时"/>
+    <const name="YaoShouGongCheng" value="4" alias="兽妖攻城"/>
+    <const name="ManHuangShouChao" value="5" alias="蛮荒兽潮"/>
+	<const name="FAMILYGATHERS" value="6" alias="家族约战"/>
+	<const name="CITYWAR" value="7" alias="家族城战"/>
+	<const name="CITYWAR_PREPARE" value="8" alias="家族城战准备"/>
+	<const name="FAMILYROUNDROBIN" value="9" alias="家族循环赛"/>
+	<const name="ACTIVITYBOSS" value="10" alias="春节杀年兽"/>
+  </enum>
+</configs>

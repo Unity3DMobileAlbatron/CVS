@@ -1,0 +1,32 @@
+﻿<configs namespace="cfg.currency">
+	
+	<enum name="CurrencyType">
+		<const name="XuNiBi" value="10200001" alias="虚拟币"/>
+		<const name="YuanBao" value="10200002" alias="元宝"/>
+		<const name="BindYuanBao" value="10200003" alias="绑定元宝"/>
+		<const name="LingJing" value="10200004" alias="灵晶"/>
+		<const name="JingYan" value="10200005" alias="经验"/>
+		<const name="ZaoHua" value="10200006" alias="造化值"/>
+		<const name="WuXing" value="10200007" alias="悟性值"/>
+		<const name="BangPai" value="10200008" alias="帮派贡献"/>
+		<const name="ShiMen" value="10200009" alias="师门贡献"/>
+		<const name="ZhanChang" value="10200010" alias="战场声望"/>
+		<const name="ShengWang" value="10200011" alias="竞技场声望"/>
+		<const name="HuoBanJiFen" value="10200012" alias="伙伴积分"/>
+		<const name="FaBaoJiFen" value="10200013" alias="法宝积分"/>
+		<const name="ChengJiu" value="10200014" alias="成就值"/>
+		<const name="BangGong" value="10200015" alias="个人帮贡值"/>
+		<const name="TianFu" value="10200016" alias="伙伴天赋值"/>
+		<const name="TiLi" value="10200017" alias="活力"/>
+		<const name="ChongZhiJiFen" value="10200018" alias="充值积分"/>
+		<const name="LotteryScore" value="10200019" alias="彩票抽奖积分"/>
+		<const name="TeamFightScore" value="10200020" alias="天下会武积分"/>
+		<const name="LingShi" value="10200021" alias="灵石"/>
+		<const name="XuanJing" value="10200022" alias="玄晶"/>
+		<const name="XianYu" value="10200023" alias="仙玉"/>
+		<const name="NeiDan" value="10200024" alias="内丹"/>
+		<!--   加新货币类型时记得修改cfg.cmd.condition与cfg.cmd.action           -->
+	</enum>
+	
+
+</configs>

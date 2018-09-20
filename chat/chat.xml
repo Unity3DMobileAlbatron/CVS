@@ -1,0 +1,24 @@
+<configs namespace="cfg.chat">
+	<enum name="ChannelType">
+		<const name="WORLD" value="1"/>
+		<const name="PRIVATE"/>
+		<const name="FAMILY"/>
+		<const name="TEAM"/>
+		<const name="SYSTEM"/>
+		<const name="INVITE"/>
+		<const name="TOP"/>
+	</enum>
+	
+	<enum name="MediaType">
+		<const name="TEXT"/>
+		<const name="VOICE"/>
+	</enum>
+	
+	<struct name="Const">
+		<const name="MAX_TEXT_SIZE" value="40"/>
+		<const name="MAX_VOICE_SIZE" value="100000"/>
+		<const name="MAX_IMAGE_SIZE" value="300000" />
+		<const name="FACE_PRICE" value="68"/> 单位：元宝
+		<const name="TOP_CHANNEL_PRICE" value="100"/> 单位：元宝
+	</struct>
+</configs>

@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.error">
+	<enum name="ErrorCode">
+		<const name="OK" value="0"/>
+		
+		<const name="TODO" value="1"/>
+		<const name="INTERNAL_ERR" value="2"/>
+		<const name="NOT_AUTHORITY" value="3"/>
+		<const name="FAILED_DIRECTLY" value="4"/>
+		
+		<const name="CURRENCY_IS_NOT_ENOUGH" value="100"/>
+		<const name="BAG_FULL" value="101"/>
+		<const name="PARAM_ERROR" value="102"/>
+		<const name="ITEM_NOT_FOUND" value="103"/>
+		<const name="LEVEL_TOO_HIGH" value="104"/>
+		<const name="ROLE_NOT_EXISTED_OR_NOT_ONLINE" value="105"/>
+		<const name="HAS_RECEIVED" value="106"/>
+		<const name="NOT_ENOUGH_LEVEL" value="107"/>
+		<const name="NOT_ENOUGH_SCORES" value="108"/>
+		<const name="YUANBAO_NOT_ENOUGH" value="109"/>
+		<const name="XUNIBI_NOT_ENOUGH" value="110"/>
+		<const name="EXCEED_LIMIT" value="111"/>
+		<const name="NOT_ENOUGH_VIP_LEVEL" value="112"/>
+		<const name="COOL_DOWN" value="113"/>
+		<const name="TIME_NOT_YET" value="114"/>
+		<const name="COMBATPOWER_NOT_ENOUGH" value="115"/>
+		<const name="OPERATION_LATER" value="116"/>
+		<const name="KILL_AMOUNT_NOT_ENOUGH" value="117"/>
+		<const name="BINDYUANBAO_NOT_ENOUGH" value="118"/>
+		<const name="LINGJING_NOT_ENOUGH" value="119"/>
+		<const name="JINGYAN_NOT_ENOUGH" value="120"/>
+		<const name="ZAOHUA_NOT_ENOUGH" value="121"/>
+		<const name="WUXING_NOT_ENOUGH" value="122"/>
+		<const name="BANGPAI_NOT_ENOUGH" value="123"/>
+		<const name="SHIMEN_NOT_ENOUGH" value="124"/>
+		<const name="ZHANCHANG_NOT_ENOUGH" value="125"/>
+		<const name="SHENGWANG_NOT_ENOUGH" value="126"/>
+		<const name="HUOBANJIFEN_NOT_ENOUGH" value="127"/>
+		<const name="FABAOJIFEN_NOT_ENOUGH" value="128"/>
+		<const name="CHENGJIU_NOT_ENOUGH" value="129"/>
+		<const name="BANGGONG_NOT_ENOUGH" value="130"/>
+		<const name="TIANFU_NOT_ENOUGH" value="131"/>
+		<const name="CHONGZHIJIFEN_NOT_ENOUGH" value="132"/>
+		<const name="LOTTERY_SCORE_NOT_ENOUGH" value="133"/>
+		<const name="HAS_RECEIVE_OFFLINE_EXP" value="134"/>
+		
+		<const name="ROLE_NOT_FOUND" value="200"/>
+		<const name="OVER_ALCHEMY_LIMIT" value="201"/>
+		<const name="OVER_VITALITY_LIMIT" value="202"/>
+		<const name="OVER_REAL_VITALITY_CAPACITY" value="203"/>
+		<const name="ROLE_EQUIP_INFO_NOT_FOUND" value="204"/>
+		<const name="PROFESSION_NOT_MATCH" value="205"/>
+		<const name="GENDER_NOT_MATCH" value="206"/>
+		<const name="MAX_ROLE_LEVEL" value="207"/>
+		<const name="TILI_FULL" value="208"/>
+		<const name="TILI_NOT_ENOUGH" value="209"/>
+		
+		<const name="LINE_NOT_EXIST" value="300"/>
+		<const name="LINE_FULL" value="301"/>
+		<const name="MAP_NOT_EXIST" value="302"/>
+		<const name="LINE_NOT_AVAILABLE" value="303"/>
+		<const name="AGENT_NOT_FIND" value="304"/>
+		<const name="ECTYPE_MAP_NOT_EXIST" value="305"/>
+		<const name="CANNOT_ENTER_ECTYPE_IN_ECTYPE" value="306"/>
+		<const name="INVALID_ECTYPEID" value="307"/>
+		<const name="OUT_OFF_DIG_DISTANCE" value="308"/>
+		<const name="DIGGING_BY_OTHER" value="309"/>
+		<const name="CANNOT_DIG" value="310"/>
+		<const name="DIGGING_NOT_FINISH" value="311"/>
+		<const name="DIG_REQUIRE_TASK" value="312"/>
+		<const name="MINE_IN_PROTECTED" value="313"/>
+		<const name="DIG_REQUIRE_BUFF" value="314"/>
+		<const name="CANNOT_LEAVE_ECTYPE_IN_OTHER_MAP" value="315"/>
+		<const name="ENTER_CUR_MAP" value="316"/>
+		<const name="MAP_IS_FULL" value="317"/>
+		<const name="NOT_IN_DIGGING" value="318"/>
+		<const name="CAN_NOT_PICK_OTHER_PLAYER_ITEM" value="319"/>
+		<const name="CAN_NOT_PICK_SHOW_ITEM" value="320"/>
+		<const name="NOT_IN_ECTYPE" value="321"/>
+		<const name="CANNOT_ENTER_WORLD_IN_ECTYPE" value="322"/>
+		<const name="STORY_ECTYPE_NOT_FINISH_PREV" value="323"/>
+		<const name="UNKNOWN_DAILY_ECTYPE_TYPE" value="324"/>
+		<const name="MAX_TOWER_FLOOR" value="325"/>
+		<const name="MAX_CUR_LEVEL_TOWER_FLOOR" value="326"/>
+		<const name="BASE_DESTROY" value="327"/>
+		<const name="ECTYPE_TIMEOUT" value="328"/>
+		<const name="MAX_REVIVE_NUM" value="329"/>
+		<const name="HAS_OBTAIN_CHAPTER_REWARD" value="330"/>
+		<const name="CHAPTER_STAR_NOT_ENOUGH" value="331"/>
+		<const name="STORY_ECTYPE_SWEEP_NEED_3_STAR" value="332"/>
+		<const name="STORY_ECTYPE_SWEEP_NEED_CLEAR" value="333"/>
+		<const name="NPC_NOT_OPEN" value="334"/>
+		<const name="FAR_FROM_NPC" value="335"/>
+		<const name="ECTYPE_PLAYER_LEAVE" value="336"/>
+		<const name="ECTYPE_PLAYER_DEAD" value="337"/>
+		<const name="ECTYPE_MAX_DEAD_COUNT" value="338"/>
+		<const name="NOT_NEED_RESET_OPEN_COUNT" value="339"/>
+		<const name="ECTYPE_PLAYER_LOGOUT" value="340"/>
+		<const name="ECTYPE_PLAYER_EXIT" value="341"/>
+		<const name="MAP_NOT_READY" value="342"/>
+		<const name="PLAYER_NOT_IN_MAP" value="343"/>
+		<const name="NOT_ADMIT_ENTER" value="344"/>
+		<const name="HAS_IN_ENROLL_MULTI_STORY" value="345"/>
+		<const name="HAS_EXCEED_MAX_ENROLL_NUMS" value="346"/>
+		<const name="PRE_MULTI_STORY_NOT_COMPLETE" value="347"/>
+		<const name="HAS_OBTAIN_TEAM_FIGHT_DAY_REWARD" value="348"/>
+		<const name="TODAY_WIN_NUM_NOT_ENOUGH" value="349"/>
+		<const name="HAS_OBTAIN_TEAM_FIGHT_WEEK_REWARD" value="350"/>
+		<const name="WEEK_SCORE_NOT_ENOUGH" value="351"/>
+		<const name="ALL_PLAYER_HAS_LEAVE" value="352"/>
+		<const name="CAN_NOT_LEAVE_MULTISTORY" value="353"/>
+		<const name="ONE_TEAM_PLAYERS_ALL_LEAVE" value="354"/>
+		<const name="YOU_COME_LATER" value="356"/>
+		<const name="TEAM_FIGHT_CLOSED" value="357"/>
+		<const name="ATTACK_CITY_NOT_OPEN" value="358"/>
+		<const name="ATTACK_CITY_SIGNUP_NOT_BEGIN" value="359"/>
+		<const name="TEAMSPEED_NOT_APPLY_TIME" value="360"/>
+		<const name="TEAMSPEED_MEMBER_CAN_NOT_APPLY" value="361"/>
+		<const name="TEAMSPEED_MEMBERS_ERROR" value="362"/>
+		<const name="TEAMSPEED_MEMBERS_NOT_IN_SAME_SCOPE" value="363"/>
+		<const name="TEAMSPEED_NOT_LEADER" value="364"/>
+		<const name="TEAMSPEED_NOT_APPLY" value="365"/>
+		<const name="LEVEL_NOT_ENOUGH_CAN_NOT_ENTER_WORLD" value="366"/>
+		<const name="TEAMSPEED_CAN_NOT_MATCH_AFTER_CANCEL" value="367"/>
+		<const name="TEAMSPEED_ALREADY_APPLY" value="368"/>
+		<const name="CLIMBTOWER_FLOOR_IS_ZERO" value="369"/>
+		<const name="CLOSE_MAP_KICK_PLAYER" value="370"/>
+		<const name="FAMILY_TEAM_NOT_INT_TEAM" value="371"/>
+		<const name="FAMILY_TEAM_MEMBER_NOT_ENOUGH" value="372"/>
+		<const name="FAMILY_TEAM_NOT_INT_FAMLIY" value="373"/>
+		<const name="FAMILY_TEAM_NOT_IN_SAME_FAMILY" value="374"/>
+		<const name="FAMILY_TEAM_MEMBER_CANNOT_APPLY" value="375"/>
+		<const name="TEAM_MEMBER_NEED_UNLOCK" value="376"/>
+		<const name="TEAM_MEMBER_NEED_LEAST2" value="377"/>
+		<const name="TEAM_MEMBER_MUST_MM_RELATION" value="378"/>
+		<const name="FAMILY_WAR_END" value="379"/>
+		<const name="FAMILY_CITY_WAR_END" value="380"/>
+		<const name="ALLOC_LUCKY_BONUS_NEED_JOIN_FAMILY_SOME_TIME" value="381"/>
+		
+		<const name="THIS_RANK_HAS_NOT_REWARD" value="400"/>
+		<const name="HAS_GOT_ALL_REWARD" value="401"/>
+		
+		<const name="NOT_EXIST_TASKID" value="500"/>
+		<const name="CAN_NOT_ACCEPT" value="501"/>
+		<const name="NOT_NPC_TASK" value="502"/>
+		<const name="NOT_CUR_NPC_TASK" value="503"/>
+		<const name="NOT_IN_TASK_LIST" value="504"/>
+		<const name="TASK_NOT_COMPLETED" value="505"/>
+		<const name="IN_TASK_LIST" value="506"/>
+		<const name="EXCEED_MAX_TASK_FINISH_NUM" value="507"/>
+		<const name="PRETASK_NOT_FINISH" value="508"/>
+		<const name="MUTEXTASK_FINISH" value="509"/>
+		<const name="NOT_FAMILY_NPC" value="510"/>
+		<const name="HAS_ACCEPT_FAMILY_TASK" value="511"/>
+		<const name="NOT_HAS_ACCEPT_FAMILY_TASK" value="512"/>
+		<const name="CAN_NOT_ACCEPT_FAMILY_TASK" value="513"/>
+		<const name="NOT_FAMILY_TASK" value="514"/>
+		<const name="EXCEED_BRANCH_NUMS" value="515"/>
+		<const name="CAN_NOT_CLEAR_FAMILY_TASK" value="516"/>
+		<const name="HAS_RECEIVED_THIS_BONUS" value="517"/>
+		<const name="COMPLETE_NUMS_NOT_ENOUGH" value="518"/>
+		<const name="FAMTASK_ORDER_WRONG" value="519"/>
+		<const name="TASK_HAS_NOT_ECTYPEID" value="520"/>
+		<const name="PRE_TASK_HAS_NOT_COMPLETE" value="521"/>
+		
+		<const name="MAIL_ACCESSORY_OBTAINED" value="600"/>
+		<const name="MAILBOX_FULL" value="601"/>
+		<const name="MAIL_NOT_EXIST" value="602"/>
+		<const name="MAIL_HAS_READ" value="603"/>
+		
+		<const name="FRIEND_NOT_FOUND" value="700"/>
+		<const name="FRIEND_MY_FRIENDLIST_OVERFLOW" value="701"/>
+		<const name="FRIEND_MY_REQUESTLIST_OVERFLOW" value="702"/>
+		<const name="FRIEND_PEER_FRIENDLIST_OVERFLOW" value="703"/>
+		<const name="FRIEND_ALREADY_REQUESTING" value="704"/>
+		<const name="FRIEND_NOT_BEREQUESTED" value="705"/>
+		<const name="FRIEND_ALREADY_FRIEND" value="706"/>
+		<const name="FRIEND_BLOCKED_BY_PEER" value="707"/>
+		<const name="FRIEND_NOT_FIND_IN_LIST" value="708"/>
+		<const name="FLOWER_EXCEED_DAY_LIMIT" value="709"/>
+		<const name="IDOL_AWARD_ALREADY_CLAIMED" value="710"/>
+		<const name="FRIEND_DEGREE_TOO_LOW" value="711"/>
+		<const name="FLOWER_NOT_ENOUGH" value="712"/>
+		<const name="FRIEND_NOT_FRIEND" value="713"/>
+		<const name="FRIEND_MY_ERROR_GENDER" value="714"/>
+		<const name="FRIEND_PEER_ERROR_GENDER" value="715"/>
+		<const name="FRIEND_MY_MM_OVERFLOW" value="716"/>
+		<const name="FRIEND_PEER_MM_OVERFLOW" value="717"/>
+		<const name="FRIEND_ALREADY_MM" value="718"/>
+		<const name="FRIEND_NOT_MM" value="719"/>
+		<const name="FRIEND_NOT_ALLOW_GETMM" value="720"/>
+		<const name="IN_OTHER_BLACK_LIST" value="721"/>
+		<const name="IN_YOUR_BLACK_LIST" value="722"/>
+		<const name="IS_YOUR_BANLV" value="723"/>
+		
+		<const name="EXCCEED_MAX_TEXT_SIZE" value="800"/>
+		<const name="EXCCEED_MAX_VOICE_SIZE" value="801"/>
+		<const name="UNKNOWN_CHANNEL" value="802"/>
+		<const name="VOICE_NOT_FIND" value="803"/>
+		<const name="CANNOT_CHAT_IN_SYSTEM_CHANEL" value="804"/>
+		<const name="IMAGE_NOT_FIND" value="805"/>
+		<const name="CHAT_FORBIDDEN" value="806"/>
+		<const name="TALK_TOO_BUSY" value="807"/>
+		<const name="NO_LEFT_REPORT_TIME" value="808"/>
+		
+		<const name="NOT_PAY" value="900"/>
+		<const name="NOT_PAY_ENOUGH" value="901"/>
+		<const name="PAY_AWARD_HAS_GOT" value="902"/>
+		<const name="PAY_HAS_GOT_PAY_RETURN" value="903"/>
+		<const name="PAY_HAS_NOT_PAY_RETURN" value="904"/>
+		<const name="HAS_BUY_THIS_PRODUCT_TODAY" value="905"/>
+		
+		<const name="EQUIP_UNLOAD_EQUIPTYPE_NOT_EXIST" value="1000"/>
+		<const name="EQUIP_BAG_IS_FULL" value="1001"/>
+		<const name="EQUIP_NOT_EXIST" value="1002"/>
+		<const name="EQUIP_LOADERROR_REQ_LEVEL" value="1003"/>
+		<const name="EQUIP_LOADERROR_REQ_PROFESSION" value="1004"/>
+		<const name="RES_GOLD_OVERFLOW" value="1005"/>
+		<const name="EQUIP_ITEM_NOT_EXIST" value="1007"/>
+		<const name="EQUIP_ITEM_NOT_RESOLVABLE" value="1008"/>
+		<const name="EQUIP_ENHANCEAPPEND_ID_NOTEXIST" value="1009"/>
+		<const name="EQUIP_ENHANCE_STRENGTHEN_LIMIT" value="1010"/>
+		<const name="EQUIP_APPEND_NOT_ENOUGH_STONE" value="1011"/>
+		<const name="EQUIP_APPEND_NOT_ENOUGH_EQUIP" value="1012"/>
+		<const name="EQUIP_PERFUSE_MAX_LEVEL" value="1013"/>
+		<const name="EQUIP_SELL_FAIL" value="1014"/>
+		<const name="EQUIP_EXTEND_NOT_SAME_TYPE" value="1015"/>
+		<const name="EQUIP_EXTEND_NOT_SAME_PROFESSION" value="1016"/>
+		<const name="EQUIP_APPEND_NOT_ENOUGH_ITEM" value="1017"/>
+		<const name="EQUIP_ANNEAL_HELPITEM_NOT_VALID" value="1018"/>
+		<const name="EQUIP_ANNEAL_HELPITEM_NOT_ENOUGH" value="1019"/>
+		<const name="EQUIP_ANNEAL_COSTITEM_NOT_ENOUGH" value="1020"/>
+		<const name="EQUIP_EVOLVE_NOT_SUPPORT_TYPE" value="1021"/>
+		<const name="EQUIP_EVOLVE_COST_ITEM_NOT_ENOUGH" value="1022"/>
+		<const name="EQUIP_EVOLVE_CAN_NOT_EVOLVE" value="1023"/>
+		<const name="RES_LINGJING_ERROR" value="1024"/>
+		<const name="EQUIP_ACCESSORY_NOT_SUPPORT" value="1025"/>
+		<const name="ACC_TYPE_NOT_SAME" value="1026"/>
+		<const name="EQUIP_SPLIT_ITEM_BAG_FULL" value="1027"/>
+		<const name="EQUIP_EVOLVE_COST_EQUIP_NOT_FIND" value="1028"/>
+		<const name="EQUIP_PERFUSE_NOT_VALID" value="1029"/>
+		<const name="EQUIP_ANNEAL_NOT_VALID" value="1030"/>
+		
+		<const name="DRESS_ALREADY_ACTIVE" value="1101"/>
+		<const name="DRESS_NOT_GET" value="1102"/>
+		<const name="DRESS_NOT_EXISTED" value="1103"/>
+		<const name="DRESS_NOT_ACTIVED" value="1104"/>
+		<const name="DRESS_ALREADY_HAVE" value="1105"/>
+		
+		<const name="RIDE_MODULE_LOCKED" value="1200"/>
+		<const name="RIDE_ALREADY_ACTIVE" value="1201"/>
+		<const name="RIDE_NOT_GET" value="1202"/>
+		<const name="RIDE_NOT_EXISTED" value="1203"/>
+		<const name="RIDE_NOT_ACTIVED" value="1204"/>
+		<const name="RIDE_ALREADY_GET" value="1205"/>
+		
+		<const name="ITEM_BAG_CAPACITY_FULL" value="1300"/>
+		<const name="ITEM_NUMBER_NOT_ENOUGH" value="1301"/>
+		<const name="ITEM_CANNOT_SELL" value="1302"/>
+		<const name="ITEM_SELL_FAIL" value="1303"/>
+		<const name="ITEM_CAN_NOT_USE" value="1304"/>
+		<const name="ITEM_CAN_NOT_BATCH_USE" value="1305"/>
+		
+		<const name="FRAGMENT_NOT_ENOUGH" value="1400"/>
+		<const name="FRAGMENT_NOT_FIND" value="1401"/>
+		<const name="FRAGMENT_BAG_IS_FULL" value="1402"/>
+		
+		<const name="EXCEED_BUY_LIMIT" value="1500"/>
+		<const name="UNKNOWN_GOODS_ID" value="1501"/>
+		<const name="BUY_NUM" value="1502"/>
+		<const name="BLACK_MALL_NOT_OPEN" value="1503"/>
+		
+		<const name="ADD_SIGN_LIMIT" value="1600"/>
+		<const name="SING_DATE_ERROR" value="1601"/>
+		<const name="UKNOW_SIGN_TYPE" value="1602"/>
+		<const name="NO_LEFT_TIME" value="1603"/>
+		<const name="TIME_NOT_ENOUGH" value="1604"/>
+		<const name="NOT_ENOUGH_CHARGE" value="1605"/>
+		<const name="NOT_ENOUGH_COST" value="1606"/>
+		<const name="NOT_PUT_PET" value="1607"/>
+		<const name="NOT_ENOUGH_WISH_TIME" value="1608"/>
+		<const name="NOT_ENOUGH_BAODIE" value="1609"/>
+		<const name="NOT_NEED_ADD_SIGN" value="1610"/>
+		<const name="WRONG_MONTH_CARD_DATE" value="1611"/>
+		<const name="HAS_SIGNED" value="1612"/>
+		<const name="NOT_ENOUGH_LOGIN_DAYS" value="1613"/>
+		<const name="HAS_BUY_GROWPLAN" value="1614"/>
+		<const name="HAS_EATEN_LUNCH" value="1615"/>
+		<const name="HAS_EATEN_DINNER" value="1616"/>
+		<const name="NOT_THE_EAT_TIME" value="1617"/>
+		<const name="EXCEED_BUY_LEVEL" value="1618"/>
+		<const name="HAS_RECEIVE_BONUS" value="1619"/>
+		<const name="NOT_BUY_GROWPLAN" value="1620"/>
+		<const name="WRONG_GROW_PLAN_TYPE" value="1621"/>
+		<const name="MUST_COMPLETE_PRE_GROW" value="1622"/>
+		<const name="LEVEL_TOO_HIGH_TO_BUY_GROW" value="1623"/>
+		
+		<const name="UNKNOWN_TYPE" value="1700"/>
+		<const name="EXCEED_MAX_EXCHANGE_TIEMS" value="1701"/>
+		<const name="CAN_NOT_FREE_PICK_CARD" value="1702"/>
+		
+		<const name="ACTIVITY_INFO_NOT_FIND" value="1800"/>
+		<const name="BOSS_INFO_NOT_FIND" value="1801"/>
+		<const name="CHALLENGE_COUNT_OVERFLOW" value="1802"/>
+		<const name="BOSS_IS_LOCKED" value="1803"/>
+		
+		<const name="ARENA_NOT_IN_CHALLENGE_LIST" value="1900"/>
+		<const name="ARENA_CHALLENGER_LOCKED" value="1901"/>
+		<const name="ARENA_OBTAIN_REWARD" value="1902"/>
+		<const name="ARENA_CAN_NOT_OBTAIN_REWARD" value="1903"/>
+		<const name="ARENA_NOT_OPEN" value="1904"/>
+		<const name="ARENA_SELF_LOCKED" value="1905"/>
+		
+		<const name="NOT_IN_EXCHANGE_ITEM_LIST" value="2000"/>
+		<const name="EXCEED_MAX_EXCHANGE_ITEM_NUM" value="2001"/>
+		<const name="INVALID_PRICE" value="2002"/>
+		<const name="ADD_UNBIND_ITEM_ONLY" value="2003"/>
+		<const name="EXCEED_MAX_OVERLAY_NUM" value="2004"/>
+		<const name="INVALID_BAG_TYPE" value="2005"/>
+		<const name="CANNOT_BUY_SELF_ITEM" value="2006"/>
+		<const name="EXCEED_AVALIABLE_NUM" value="2007"/>
+		<const name="ITEM_CAN_NOT_TRADE" value="2008"/>
+		<const name="EXCHANGE_PRICE_OVERLIMIT" value="2009"/>
+		
+		<const name="EXCEED_MAX_EQUIP_SKILL_NUM" value="2100"/>
+		<const name="NOT_INT_SKILL_LIST" value="2101"/>
+		<const name="DUPLICATE_EQUIP_POSITION" value="2102"/>
+		<const name="CANNOT_EQUIP_PASSIVE_SKILL" value="2103"/>
+		<const name="CUR_LEVEL_CANNOT_EVOLVE" value="2104"/>
+		<const name="NOT_NEXT_EVOLVE_SKILL" value="2105"/>
+		<const name="CANNOT_UPGRADE_MAX_LEVEL" value="2106"/>
+		<const name="SKILL_NEED_TARGET" value="2107"/>
+		<const name="SKILL_OUT_ATTACK_RANGE" value="2108"/>
+		<const name="INVALID_SKILLID" value="2109"/>
+		<const name="SKILL_NOT_COLDDOWN" value="2110"/>
+		<const name="SKILL_UNAVALIABLE" value="2111"/>
+		<const name="SKILL_FORBID" value="2112"/>
+		<const name="INVALID_SKILL_TARGET" value="2113"/>
+		<const name="SKILL_PERFORM_MP_NOT_ENOUGH" value="2114"/>
+		
+		<const name="TEAM_ALREADY_CREATED" value="2200"/>
+		<const name="ONLY_LEADER_CAN_BREAKUP_TEAM" value="2201"/>
+		<const name="ALREADY_IN_TEAM" value="2202"/>
+		<const name="LEADER_NOT_INVITE_YOU" value="2203"/>
+		<const name="ONLY_LEADER_CAN_INVITE_FOLLOW" value="2204"/>
+		<const name="ONLY_LEADER_CAN_UNFOLLOW_TEAMMEMBER" value="2205"/>
+		<const name="ONLY_LEADER_CAN_KICKOUT_TEAMMEMBER" value="2206"/>
+		<const name="ONLY_LEADER_CAN_INVITE_JOIN" value="2207"/>
+		<const name="ONLY_LEADER_CAN_TRANSFER_LEADERSHIP" value="2208"/>
+		<const name="ROLE_NOT_ONLINE" value="2209"/>
+		<const name="TEAM_INFO_NOT_FIND" value="2210"/>
+		<const name="TEAMMEMBER_NOT_EXISTED" value="2211"/>
+		<const name="TEAMMEMBER_NOT_ONLINE" value="2212"/>
+		<const name="LEADER_NOT_EXISTED" value="2213"/>
+		<const name="LEADER_NOT_ONLINE" value="2214"/>
+		<const name="NOT_YOUR_TEAMMEMBER" value="2215"/>
+		<const name="ALREADY_IN_OTHER_TEAM" value="2216"/>
+		<const name="NOT_REQUEST" value="2217"/>
+		<const name="NOT_IN_TEAM" value="2218"/>
+		<const name="TEAM_FULL" value="2219"/>
+		<const name="ALREADY_INVITE" value="2220"/>
+		<const name="ALREADY_REQUEST_TO_JOIN" value="2221"/>
+		<const name="ONLY_LEADER_CAN_ACCPET_REQUEST" value="2222"/>
+		<const name="PARAM_NOT_VALID" value="2223"/>
+		<const name="NOT_TEAM_LEADER" value="2224"/>
+		<const name="TEAM_MEMBER_NOT_IN_LEVELGROUP" value="2225"/>
+		<const name="NOT_HERO_TEAM" value="2226"/>
+		
+		<const name="TITLE_MODULE_LOCKED" value="2300"/>
+		<const name="TITLE_ALREADY_ACTIVE" value="2301"/>
+		<const name="TITLE_NOT_GET" value="2302"/>
+		<const name="TITLE_NOT_EXISTED" value="2303"/>
+		<const name="TITLE_NOT_ACTIVED" value="2304"/>
+		<const name="TITLE_EXPIRE" value="2305"/>
+		
+		<const name="EQUIP_DEPOT_IS_FULL" value="2400"/>
+		<const name="FRAGMENT_DEPOT_IS_FULL" value="2401"/>
+		<const name="ITEM_DEPOT_IS_FULL" value="2402"/>
+		<const name="TALISMAN_DEPOT_IS_FULL" value="2403"/>
+		<const name="PET_DEPOT_IS_FULL" value="2404"/>
+		<const name="XUNIBI_DEPOT_IS_FULL" value="2405"/>
+		
+		<const name="ACHIEVEMENT_NOT_COMPLETED" value="2500"/>
+		<const name="ACHIEVEMENT_GET_REWARD" value="2501"/>
+		<const name="ACHIEVEMENT_INVALID_EVOLVE_TITLE_ID" value="2502"/>
+		
+		<const name="INVALID_CONFIGID" value="2600"/>
+		<const name="INVALID_NUM" value="2601"/>
+		
+		<const name="HAS_FIND_BACK" value="2700"/>
+		<const name="NO_FIND_CONTENT" value="2701"/>
+		
+		<const name="FAMILY_NOT_EXISTED" value="2800"/>
+		<const name="FAMILY_MODULE_LOCKED" value="2801"/>
+		<const name="NAME_SHORTLEN" value="2802"/>
+		<const name="NAME_OVERLEN" value="2803"/>
+		<const name="NAME_DUPLICATED" value="2804"/>
+		<const name="FAMILY_ALREADY_IN_ONE" value="2805"/>
+		<const name="ONLY_CHIEF_VICECHIEF_CAN_ACTION" value="2806"/>
+		<const name="FAMILY_FULL" value="2807"/>
+		<const name="TEXT_INCLUDE_SENCITIVE_WORDS" value="2808"/>
+		<const name="TEXT_OVERLENT" value="2809"/>
+		<const name="NOT_IN_FAMILY" value="2810"/>
+		<const name="ONLY_CHIEF_CAN_TRANSFER_CHIEF" value="2811"/>
+		<const name="JOB_STAFF_FULL" value="2812"/>
+		<const name="FAMILY_ACTION_DISALLOWED_AFATER_QUIT" value="2813"/>
+		<const name="FAMILY_MONEY_NOT_ENOUGH" value="2814"/>
+		<const name="FAMILY_EXCEED_MAXSKILLLEVEL" value="2815"/>
+		<const name="FAMILY_SKILL_NOT_STUDYED" value="2816"/>
+		<const name="FAMILY_AWARD_ALREADY_CLAIMED" value="2817"/>
+		<const name="FAMILY_ANIMAL_ACTIVITY_EXCEED_LIMIT" value="2818"/>
+		<const name="FAMILY_ANIMAL_ACTIVITY_LAUNCH_TIME_DISALLOWED" value="2819"/>
+		<const name="FAMILY_ANIMAL_ACTIVITY_ALREADY_LAUNCHED" value="2820"/>
+		<const name="FAMILY_ANIMAL_IS_MAX_LEVEL" value="2821"/>
+		<const name="FAMILY_ANIMAL_EVOLVE_CODITION_NOT_MEET" value="2822"/>
+		<const name="FAMILY_CHIEF_CAN_NOT_RELEASED" value="2823"/>
+		<const name="FAMILY_JUST_CHIEF_CAN_RELEASE_VICE_CHIEF" value="2824"/>
+		<const name="FAMILY_ALREADY_HAS_JOB" value="2825"/>
+		<const name="FAMILY_CHIEF_CAN_NOT_APPOINT" value="2826"/>
+		<const name="FAMILY_OPERATION_PRIVILEGE_NOT_ENOUGH" value="2827"/>
+		<const name="FAMILY_LEVEL_TOO_LOW" value="2829"/>
+		<const name="FAMILY_MALL_LEVEL_TOO_LOW" value="2830"/>
+		<const name="ALREADY_IN_CROWD" value="2831"/>
+		<const name="YUANBAO_EXCEED" value="2832"/>
+		<const name="MIN_CROWD_FUND_YUANBAO_NOT_ENOUGH" value="2833"/>
+		<const name="NOT_INIT_CORWD_FAMILY" value="2834"/>
+		<const name="HAS_OPEN_FAMILY_PARTY" value="2835"/>
+		<const name="NOT_THE_OPEN_TIME" value="2836"/>
+		<const name="PARTY_TIME_HAS_PAST" value="2837"/>
+		<const name="HAS_EAT_ENOUGH_RUNE" value="2838"/>
+		<const name="NOT_THE_CALL_TIME" value="2839"/>
+		<const name="THE_PARTY_IS_DOING" value="2840"/>
+		<const name="MUST_IN_FAMILY_STATION" value="2841"/>
+		<const name="FAMILY_ANIMAL_ACTIVITY_IS_DOING" value="2842"/>
+		<const name="WRONG_LAUNCH_DATE" value="2843"/>
+		<const name="FAMILY_GOD_ANIMAL_EXP_NOT_ENOUGH" value="2844"/>
+		<const name="HAS_JOIN_OTHER_FAMILY" value="2845"/>
+		<const name="CAN_NOT_CHANGE_LINE_IN_FAMILYSTATION" value="2846"/>
+		<const name="APPLY_FAMILY_NUM_MAX" value="2847"/>
+		<const name="HAS_APPLAY_THIS_FAMILY" value="2848"/>
+		<const name="FAMILY_HAS_EXIST" value="2849"/>
+		<const name="FAMILY_REQUEST_NUM_MAX" value="2850"/>
+		<const name="ONLY_CHIEF_CAN_APPOINT_JOB" value="2851"/>
+		<const name="HAS_IN_OTHER_FAMILY" value="2852"/>
+		<const name="OTHER_FAMILY_HAS_FULL" value="2853"/>
+		<const name="OTHER_IS_IN_QUIT_TIME" value="2854"/>
+		<const name="FW_ACTIVITY_NOT_OPEN" value="2855"/>
+		<const name="FW_WAR_NOT_OPEN" value="2856"/>
+		<const name="FW_SELF_IN_WAR" value="2857"/>
+		<const name="FW_OPPO_IN_WAR" value="2858"/>
+		<const name="FW_SELF_EXCEED_WAR_NUM" value="2859"/>
+		<const name="FW_OPPO_EXXEED_WAR_NUM" value="2860"/>
+		<const name="FW_HAS_CHALLENGE" value="2861"/>
+		<const name="FW_NOT_IN_CHALLENGE" value="2862"/>
+		<const name="FW_BATTLE_END" value="2863"/>
+		<const name="FW_ONLINE_MEMBER_NOT_ENOUGH" value="2864"/>
+		<const name="FW_LEVEL_NOT_ENOUGH" value="2865"/>
+		<const name="FW_CAN_NOT_CHALLENGE_SELF" value="2866"/>
+		<const name="FDW_HAS_DECLARED" value="2867"/>
+		<const name="FDW_NOT_DECLARED" value="2868"/>
+		<const name="FDW_EXCEED_MAX_DECLARED_NUM" value="2869"/>
+		<const name="FDW_CAN_NOT_DECLARE_AFTER_OPEN" value="2870"/>
+		<const name="FCW_ALLOC_ONLY_MEMBER" value="2871"/>
+		<const name="FCW_ALLOC_NOT_ENOUGH" value="2872"/>
+		<const name="FCW_DECLARE_MONEY_NOT_ENOUGH" value="2873"/>
+		<const name="FCW_DECLARE_MOMEY_EXCCED" value="2874"/>
+		<const name="FCW_CANNOT_DECLARE" value="2875"/>
+		<const name="FCW_MODIFY_WEEK_LIMIT" value="2876"/>
+		<const name="FCW_INVALID_LOGO_NAME_LENGTH"/>
+		<const name="FCW_NOT_ADJACENT"/>
+		<const name="FCW_ECTYPE_FULL"/>
+		<const name="ONLY_CHIEF_ACTION"/>
+		<const name="NORMAL_MEMBER_CAN_NOT_ENTER"/>
+		
+		<const name="PET_MODULE_LOCKED" value="2900"/>
+		<const name="PET_NOT_FOUND" value="2901"/>
+		<const name="PET_SKIN_NOT_BUYED" value="2902"/>
+		<const name="PET_SKILL_ALREADY_MAXLEVEL" value="2903"/>
+		<const name="PET_SKILL_NOT_STUDYED" value="2904"/>
+		<const name="PET_SKIN_NOT_MATCH" value="2905"/>
+		
+		<const name="PET_FRAGMENT_NOT_ENOUGH" value="3000"/>
+		<const name="PET_ALREADY_EXIST" value="3001"/>
+		<const name="PET_SKILL_NOT_FOUND" value="3002"/>
+		<const name="PET_TALENT_NOT_FOUND" value="3003"/>
+		<const name="PET_SKILL_LEVEL_TOO_LOW" value="3004"/>
+		<const name="PET_LEVEL_TOO_LOW" value="3005"/>
+		<const name="PET_TALENT_GROUP_TOTAL_LEVEL_NOT_ENOUGH" value="3006"/>
+		<const name="PET_TALENT_ALREADY_MAXLEVEL" value="3007"/>
+		<const name="PET_ALREADY_MAXLEVEL" value="3008"/>
+		<const name="PET_STAGE_ALREADY_MAXLEVEL" value="3009"/>
+		<const name="ROLE_LEVEL_TOO_LOW" value="3010"/>
+		<const name="PET_WAKE_ALREADY_MAXLEVEL" value="3011"/>
+		<const name="PET_WAKE_FRAGMENT_NUM_NOT_ENOUGH" value="3012"/>
+		<const name="PET_WAKE_ASSIST_PET_LEVEL_TOO_HIGH" value="3013"/>
+		<const name="PET_RECYCLE_FAIL" value="3014"/>
+		<const name="PET_CANNOT_EQUIP" value="3015"/>
+		<const name="PET_CANNOT_UNEQUIP" value="3016"/>
+		<const name="PET_HAS_NOT_EQUIP" value="3017"/>
+		<const name="PET_CANNOT_ASIST" value="3018"/>
+		<const name="PET_WASH_MAX" value="3019"/>
+		
+		<const name="TALISMAN_NOT_EXISTED" value="3100"/>
+		<const name="ALREADY_EQUIPED_TALISMAN" value="3101"/>
+		<const name="TALISMAN_NUMS_NOT_ENOUGH" value="3102"/>
+		<const name="TALISMAN_WUXING_HAS_GOT_MAX" value="3103"/>
+		<const name="TALISMAN_AWAKE_LEVEL_GOT_MAX" value="3104"/>
+		<const name="CHOOSE_A_LUCKY_TYPE" value="3105"/>
+		<const name="GOT_MAX_TIME_IN_CUR_LUCKY_TYPE" value="3106"/>
+		<const name="TALISMAN_IS_INIT" value="3107"/>
+		<const name="TALISMAN_ADD_STAR_COST_TALISMAN_NOT_EXIST" value="3108"/>
+		<const name="TALISMAN_SORT_SIZE_NOT_MATCH" value="3109"/>
+		<const name="TALISMAN_SORT_NEW_POSITION_DUPLICATE" value="3110"/>
+		<const name="TALISMAN_SORT_NEW_POSITION_INVALID" value="3111"/>
+		<const name="TALISMAN_BAG_HAS_FULL" value="3112"/>
+		<const name="TALISMAN_LEVEL_TOO_LOW" value="3113"/>
+		<const name="TALISMAN_MAX_LEVEL" value="3114"/>
+		<const name="TALISMAN_CAN_NOT_EXCEED_ROLE_LEVEL" value="3115"/>
+		<const name="TALISMAN_STAR_MAX_LEVEL" value="3116"/>
+		
+		<const name="NAME_INVALID" value="4200"/>
+		<const name="NAME_DUPLICATE" value="4201"/>
+		<const name="OTHER_ERROR" value="4204"/>
+		<const name="PROFESSION_NOT_OPEN" value="4205"/>
+		<const name="GENDER_INVALID" value="4206"/>
+		<const name="NAME_SENSE" value="4207"/>
+		<const name="EXCEED_MAX_ROLE_NUM" value="4208"/>
+		
+		<const name="HUIWU_INFO_NOT_EXISTED" value="5100"/>
+		<const name="HUIWU_ALREAY_ENROLL" value="5101"/>
+		<const name="HUIWU_ENROLL_END" value="5102"/>
+		<const name="HUIWU_ENROLL_FULL" value="5103"/>
+		<const name="HUIWU_ALREADY_GUESSED" value="5104"/>
+		<const name="HUIWU_GUESS_ROLE_NOT_EXISTED" value="5105"/>
+		<const name="HUIWU_FIANL_ALREADY_BEGIN" value="5106"/>
+		
+		<const name="AMULET_PAGE_LOCKED" value="5401"/>
+		
+		<const name="HAS_MARRIED" value="3200"/>
+		<const name="MUST_DIFF_GENDER" value="3201"/>
+		<const name="NOT_HAVE_CAILI" value="3202"/>
+		<const name="IS_PROPOSING" value="3203"/>
+		<const name="NOT_YOUR_WIFE_OR_HUSBAND" value="3204"/>
+		<const name="ALREADY_HAVE_CAILI" value="3205"/>
+		<const name="NOT_HAVE_XIUSHU" value="3206"/>
+		<const name="ONLY_LUXURY_WIRTE_OATH" value="3207"/>
+		<const name="HAS_WISHED" value="3208"/>
+		<const name="OTHER_HAS_MARRIED" value="3209"/>
+		<const name="MARRIAGE_LEVEL_NOT_ENOUGH" value="3210"/>
+		
+		<const name="NOT_ENOUGH_BONUS" value="6000"/>
+		<const name="ERROR_JADE_POSITION" value="6001"/>
+		<const name="ERROR_JEWELRY_INDEX" value="6002"/>
+		<const name="JADE_MAX_LEVEL" value="6003"/>
+		
+		<const name="GD_NO_CHALLENGE_TIME" value="7001"/>
+		<const name="GD_MAX_WAVE" value="7002"/>
+		<const name="GD_MATCH_NO_ZONE_LEVEL" value="7003"/>
+		<const name="GD_MATCH_MIN_POWER_TOO_LARGE" value="7004"/>
+		<const name="GD_MATCH_ONLY_TEAM_LEADER_CAN_START" value="7005"/>
+		<const name="GD_MATCH_MEMBER_OUT_of_RANGE" value="7006"/>
+		<const name="GD_MATCH_MEMBER_IN_ECTYPE" value="7007"/>
+		<const name="GD_MATCH_MEMBER_NO_CHALLENGE_TIME" value="7008"/>
+		<const name="GD_TODAY_NOT_BEGIN" value="7009"/>
+		<const name="GD_TODAY_END" value="7010"/>
+		
+		<const name="HERO_ECTYPE_NO_AWARD_WITH_GROUPID" value="8001"/>
+		<const name="HERO_ECTYPE_NO_AWARD_WITH_ECTYPEID" value="8002"/>
+		<const name="HERO_ECTYPE_REWARD_REFRESH_MAX_TIME" value="8003"/>
+		<const name="HERO_ECTYPE_CHALLENGE_MAX" value="8004"/>
+		
+		<const name="SOME_MEMBER_IN_MATCH" value="6100"/>
+		<const name="MATCH_TIMEOUT" value="6101"/>
+		<const name="TEAM_IS_EMPTY" value="6102"/>
+		<const name="NOT_INT_MATCH" value="6103"/>
+		<const name="FORBID_MATCH" value="6104"/>
+		<const name="CAN_NOT_ENTER_ECTYPE_IN_MATCH" value="6105"/>
+		<const name="CAN_NOT_MATCH_AFTER_READY" value="6106"/>
+		<const name="MEMBER_NOT_SAME_MATCH_GROUP" value="6107"/>
+		<const name="SOME_MEMBER_LEVEL_TOO_LOW" value="6108"/>
+		<const name="ONLY_TEAM_LEADER_CAN_START" value="6109"/>
+		<const name="SOME_MEMBER_TILI_NOT_ENOUTH" value="6110"/>
+		<const name="SOME_MEMBER_IS_IN_ECTYPE" value="6111"/>
+		<const name="SOME_MEMBER_EXCEED_LIMIT" value="6112"/>
+		<const name="HAS_IN_ECTTYPE" value="6113"/>
+		<const name="SOME_MEMBER_IN_ECTYPE" value="6114"/>
+		<const name="TILI_NOT_ENOUGH_AND_CANCEL_MATCH" value="6115"/>
+		<const name="HAS_IN_MATCH" value="6116"/>
+		<const name="HAS_IN_OTHER_MATCH" value="6117"/>
+		
+		<const name="STORY_NOTE_HAS_ACTIVED" value="6201"/>
+		
+		<const name="ACTIVITY_NOT_EXIST" value="6300"/>
+		<const name="ACTIVITY_HAS_SCHEDULE" value="6301"/>
+		<const name="ACTIVITY_NOT_OPEN" value="6302"/>
+		<const name="ACTIVITY_NOT_COMPLETE" value="6303"/>
+		<const name="ACTIVITY_HAS_GET_REWARD" value="6304"/>
+		
+		<const name="ONLINE_TIME_BONUS_BONUSID_NOT_MATCH" value="6305"/>
+		<const name="ONLINE_TIME_BONUS_ONLINE_TIME_NOT_ENOUGH" value="6306"/>
+		
+		<const name="AC_NET_ERROR" value="6400"/>
+		<const name="EXCEED_MAX_TRACE_TIME" value="6401"/>
+		
+		<const name="HAS_BUY_OTHER_SPRINGBONUS" value="6501"/>
+		<const name="GET_MONEY_FAIL" value="6502"/>
+		<const name="EXCEED_MAX_GET_MONEY_TIME" value="6503"/>
+		<const name="HAS_RECEIVE_THIE_RED_PACKAGE" value="6504"/>
+		<const name="PURE_AIR_AWAKE_NOT_ENOUGH"/>
+		<const name="PURE_AIR_LEVEL_NOT_ENOUGH"/>
+		<const name="PURE_AIR_STAR_NOT_ENOUGH"/>
+		<const name="PURE_AIR_LAY_NOT_ENOUGH"/>
+		<const name="PURE_AIR_AWAKE_MAX"/>
+		<const name="PURE_AIR_LEVEL_MAX"/>
+		<const name="PURE_AIR_STAR_MAX"/>
+		<const name="PURE_AIR_LAY_MAX"/>
+
+		<const name="QILUN_LEVEL_NOT_ENOUGH"/>
+		<const name="FASHEN_TYPE_ERROR"/>
+		<const name="QILUN_REACH_MAX_LEVEL"/>
+		<const name="QILUN_REACH_MAX_BREAK_LEVEL"/>
+		<const name="BREAK_LEVEL_MAX"/>
+		<const name="QILUN_CAN_NOT_TRANSLATE"/>
+		<const name="TRANSLATE_SANMAI_ERROR"/>
+		<const name="LINGSHI_NOT_ENOUGH"/>
+		<const name="XUANJING_NOT_ENOUGH"/>
+		<const name="XIANYU_NOT_ENOUGH"/>
+		<const name="NEIDAN_NOT_ENOUGH"/>
+	</enum>
+	
+	
+	<config name="ErrorCodes" input="errorcodes.xlsx" group="client">
+		<field name="id" type="ErrorCode"/>
+		<field name="desc" type="string"/>
+	</config>
+</configs>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.controller">
+	<config name="GlobalController" input="controller.xlsx" group="server">
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="introcuction" type="string"/>
+		<field name="owner" type="string"/>
+		<field name="duration" type="float"/>持续时间，单位秒
+		<field name="waitbeforeopen" type="int"/>开启前的延迟时间
+		<field name="waitbeforeclose" type="int"/>关闭前的延迟时间
+		<field name="activity" type="Activity"/>
+		<struct name="IntervalController">
+			<field name="hour" type="int"/>
+			<field name="minute" type="int"/>
+			<field name="year" type="int"/>
+			<field name="month" type="int"/>
+			<field name="day" type="int"/>
+			<field name="intervaldays" type="int"/> 这个间隔时间，单位为天
+		</struct>
+		<struct name="MonthlyController">
+			<field name="day" type="int"/>每月第几天开启
+			<field name="hour" type="int"/>
+			<field name="minute" type="int"/>
+		</struct>
+	</config>
+	<config name="EctypeController" input="ectypecontroller.xlsx" group="server">
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="introcuction" type="string"/>
+		<field name="owner" type="string"/>
+		<field name="initalstatus" type="bool"/> TRUE=默认开启，FALSE=默认关闭
+		<field name="duration" type="float"/>持续时间，单位秒
+		<field name="waitbeforeopen" type="int"/>开启前的延迟时间
+		<field name="waitbeforeclose" type="int"/>关闭前的延迟时间
+	</config>
+	
+	
+	<struct name="Activity">
+		<struct name="Normal"/>
+	</struct>
+</configs>

@@ -1,0 +1,91 @@
+<configs namespace="cfg.dharmakaya">
+
+	<enum name="BodyType">
+		<const name="HUMAN" alias="角色" value="0"/>
+		<const name="PET1" alias="伙伴1" value="1"/>
+		<const name="PET2" alias="伙伴2" value="2"/>
+		<const name="PET3" alias="伙伴3" value="3"/>
+	</enum>
+
+	<struct name="Property">
+		<field name="gainability" type="list:cfg.equip.EquipPropertyData"/>获得的属性和属性值
+	</struct>
+
+	<struct name="localpos">
+		<field name="x" type="int"/>
+		<field name="y" type="int"/>
+	</struct>
+	
+	<struct name="BreakThroughCrit">
+		<field name="magnification" type="int"/>
+		<field name="critrate" type="float"/>
+	</struct>
+	
+	<struct name="BreakThroughCost">
+		<field name="name" type="string"/>
+		<field name="cost" type="list:cfg.cmd.condition.Condition"/>
+		<field name="giveexp" type="int"/>
+		<field name="vipfree" type="cfg.cmd.condition.VipLimitsLite"/>
+		<field name="crit" type="list:BreakThroughCrit"/>
+	</struct>	
+		
+	<struct name="DharmakayaLevelInfo">
+		<field name="level" type="int"/>
+		<field name="convertlevel" type="int"/>
+		<field name="normalupcost" type="list:cfg.cmd.condition.Condition"/>七轮升级花费
+		<field name="advupcost" type="list:cfg.cmd.condition.Condition"/> 三脉升级花费
+		<field name="getproperty" type="list:Property"/>索引是七轮三脉id
+	</struct>
+	
+	<struct name="DharmakayaStateInfo">
+		<field name="num" type="int"/>
+		<field name="name" type="string"/>
+		<field name="decs" type="string"/>
+		<field name="unlockneedlevel" type="int"/> 七轮的等级，不需要三脉
+		<field name="getproperty" type="list:Property"/> 这个list放角色到伙伴境界获得属性
+	</struct>
+	
+	<enum name="DharmakayaType">
+		<const name="QILUN" alias="七轮" value="0"/>
+		<const name="SANMAI" alias="三脉" value="1"/>
+	</enum>	
+
+	<struct name="ClientSource">
+		<field name="name" type="string"/>
+		<field name="pics" type="string"/>
+		<field name="pos" type="localpos"/>
+	</struct>
+	
+	<struct name="DharmakayaInfo">
+		<field name="num" type="int"/>
+		<field name="unlockneedlevel" type="int"/>
+		<field name="dharmakayatype" type="DharmakayaType"/>
+		<field name="clientsource" type="list:ClientSource"/>
+	</struct>	
+	
+	<config name="dharmakayabreakthrough" input="dharmakayabreakthrough.xlsx">突破的消耗都是一样的
+		<field name="breakthroughlevel" type="int"/> 
+		<field name="upexp" type="int"/>
+		<field name="dharmakayalevellimit" type="int"/>
+		<field name="propertyaddrate" type="float"/>
+	</config>
+	
+	<config name="dharmakayaconfig" input="dharmakayaconfig.xlsx" single="true">
+		<field name="stateinfo" type="list:DharmakayaStateInfo" index="num"/>
+		<field name="pointconfig" type="list:DharmakayaInfo" index="num"/> 七轮三脉每一个的配置，客户端读路径之类的
+		<field name="normaltranslaterate" type="float"/>
+		<field name="normalcost" type="cfg.cmd.condition.Condition"/>
+		<field name="yuanbaotranslaterate" type="float"/>
+		<field name="yuanbaocost" type="cfg.cmd.condition.Condition"/>
+		<field name="normalbreakcost" type="BreakThroughCost"/>
+		<field name="highbreakcost" type="BreakThroughCost"/>
+		<field name="advunlockneedlevel" type="int"/>
+		<field name="conlevelup" type="int"/>一键升级数量
+	</config>
+
+	<config name="nomallevel" input="nomallevel.xlsx">
+		<field name="id" type="int"/>索引为法身的id，每个法身可能配置不一样
+		<field name="humanstate" type="list:DharmakayaLevelInfo" index="level"/>
+	</config>		
+
+</configs>

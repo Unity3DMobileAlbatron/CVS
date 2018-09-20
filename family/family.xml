@@ -1,0 +1,347 @@
+﻿<configs namespace="cfg.family">
+	<struct name="BossInfo">
+		<field name="requireexp" type="int"/>
+		<field name="requipreplayerlvl" type="cfg.cmd.condition.MinLevel"/>
+		<field name="requirefamilylvl" type="cfg.cmd.condition.MinFamilyLevel"/>
+		<field name="monsterid" type="int"/>
+		<field name="requirefamilycapital" type="cfg.cmd.condition.FamilyMoney"/>
+		<field name="dropitem" type="cfg.cmd.action.OneItem"/>
+		<field name="dropamount" type="list:int"/>
+		<field name="luckybonus" type="cfg.cmd.action.OneItem"/>
+		<field name="lasthitbonus" type="cfg.cmd.action.OneItem"/>
+	</struct>
+	<struct name="SkillInfo">
+		<field name="property" type="cfg.equip.EquipPropertyData"/>
+		<field name="requirefamilycapital" type="cfg.cmd.condition.FamilyMoney"/>
+	</struct>
+	<struct name="OpenTime">
+		<field name="day" type="int"/>
+		<field name="hour" type="int"/>
+		<field name="minute" type="int"/>
+	</struct>
+	<struct name="BlackMarketOpenTime">
+		<field name="starthour" type="int"/>
+		<field name="startminute" type="int"/>
+		<field name="endhour" type="int"/>
+		<field name="endminute" type="int"/>
+	</struct>
+	<struct name="FamilyTask">环任务和对应的完成NPc
+		<field name="task" type="int"/>任务ID
+		<field name="npc" type="int" ref="npc"/>完成NPC
+	</struct>
+	<struct name="SpecBonus">开箱子特殊奖励
+		<field name="requiretaskamount" type="int"/>
+		<field name="bonus" type="cfg.cmd.action.MultiBonus"/>
+	</struct>
+	<config name="FamilyName" input="familyname.xlsx" single="true">
+		<field name="firstname" type="list:string"/>
+		<field name="lastname" type="list:string"/>
+	</config>
+	<enum name="FamilyJobEnum">
+			<const name="MEMBER" value="0" alias="教众"/>
+			<const name="CHIEF" value="1" alias="教主"/>
+			<const name="VICE_CHIEF" value="2"/>
+			<const name="QING_LONG_SHI" value="3"/>
+			<const name="BAI_HU_SHI" value="4"/>
+			<const name="ZHU_QUE_SHI" value="5"/>
+			<const name="XUAN_WU_SHI" value="6"/>
+			<const name="ZUO_HU_FA" value="7"/>
+			<const name="YOU_HU_FA" value="8"/>
+			<const name="JING_YING" value="9"/>
+	</enum>
+	<config name="FamilyInfo" input="familyinfo.xlsx">
+		<const name="OPEN_LEVEL" value="20"/>开启等级
+		<const name="DECLARATION_LENGTH" value="18"/>宣言长度
+		<const name="PUBLICINFO_LENGTH" value="50"/>公告长度
+		<const name="MAX_FAMILY_LEVEL" value="7"/>最大家族等级
+		<const name="MAX_LOG_SIZE" value="50"/>最大日志记录数
+		<const name="MAX_RANK_NUM" value="100"/>排行榜最大名次
+		<const name="NAME_MAX_LENGTH" value="20"/>家族名字最大长度
+		<const name="NAME_MIN_LENGTH" value="1"/>家族名字最短长度
+		<const name="ONLINE_DAY_NUM" value="0"/>族长退家族或者连续十天未上线的时候转让家族族长选择允许被选择的接替者offline的天数
+		<const name="CREATE_REQUIRE_YUANBAO" value="250"/>建立家族所需元宝，绑定元宝不可
+		<const name="MIN_CROWD_FUND_YUANBAO" value="100"/>众筹家族最少需要元宝
+		<const name="MIN_ADD_FUND_YUANBAO" value="10"/>增资最少元宝
+		<const name="MIN_ADD_FUND_YUANBAO_STEP" value="10"/>众筹出资的最小步进值
+		<const name="FUND_FAILED_COST" type="float" value="0.1"/>主动撤资扣除的元宝比例
+		<const name="FUNDING_TIME" value="43200"/>众筹持续时间
+		<const name="MAX_QUIT_NUM" value="2"/>退出两次后，再次退出家族2小时内禁止某些操作
+		<const name="DISALLOW_ACTION_HOUR_AFTER_QUIT" value="2"/>
+		<const name="MAX_APPLY_NUM" value="10"/>最大申请家族数量
+		<const name="FAMILY_MEMBER_STR" type="string" value="教众"/>
+		<const name="DEFAULT_DECLARATION" type="string" value="欢迎大家加入家族"/>
+		<const name="DEFAULT_PUBLICINFO" type="string" value="2级后烧香能换好东西，多做家族环和四灵降世，每晚定时开聚宴，记得准时上线！"/>
+		<const name="ANIMAL_ACTIVITY_WEEK_NUM" type="int" value="2"/>
+		<const name="ACTIVE_TRANSFER_RATE" type="float" value="2"/>活跃度转化为家族建设度的常量系数
+		<field name="familylvl" type="int"/>
+		<field name="requirebuildrate" type="int"/>
+		<field name="memberamount" type="int"/>
+		<field name="requirecapitanlevel" type="cfg.cmd.condition.MinLevel" group="server"/>
+
+
+	</config>
+	<config name="FamilyShop" input="familyshop.xlsx">
+		<field name="shoplevel" type="int"/>
+		<field name="shoprequirecapital" type="cfg.cmd.condition.FamilyMoney"/>
+	</config>
+	<config name="Pray" input="pray.xlsx">
+		<field name="prayid" type="int"/>
+		<field name="prayname" type="string"/>
+		<field name="familycontribution" type="cfg.cmd.action.BangGong"/>
+		<field name="familycapital" type="cfg.cmd.action.AddFamilyMoneyBuild"/>
+		<field name="daylimit" type="cfg.cmd.condition.VipLimitsLite"/>
+		<field name="cost" type="cfg.cmd.condition.FixCurrency"/>
+	</config>
+	<config name="Boss" input="boss.xlsx">
+		<const name="picktimes" value="3"/>同一只boss，掉在地上人人有份的东西单个玩家能拾取的最大个数
+		<field name="bossid" type="int"/>
+		<field name="name" type="string"/>
+		<field name="introduction" type="string"/>
+    <field name="offsety" type="int"/>
+    <field name="scale" type="int"/>
+		<field name="bossinfo" type="list:BossInfo"/>
+	</config>
+	<config name="BossChallenge" input="bosschallenge.xlsx">
+		<field name="bosslevel" type="int"/>
+		<field name="bossrequirecapital" type="cfg.cmd.condition.FamilyMoney"/>
+	</config>
+	<config name="BossFeed" input="bossfeed.xlsx">
+		<field name="feedid" type="int"/>
+		<field name="feedlimit" type="cfg.cmd.condition.VipLimits"/>
+		<field name="exp" type="int"/>
+		<field name="buildrate" type="cfg.cmd.action.AddFamilyMoneyBuild"/>
+		<field name="familycontribution" type="cfg.cmd.action.BangGong"/>
+	</config>
+	<config name="BossConfig" input="bossconfig.xlsx" single="true">
+		<field name="opentime" type="list:OpenTime"/>开启活动的时间
+		<field name="signtime" type="int"/>活动开启前的报名时间(秒)
+		<field name="battletime" type="int"/>战斗持续时间(秒)
+		<field name="monsterinfo" type="map:int:int"/>周几开神兽
+	</config>
+	<config name="FamilySkill" input="familyskill.xlsx">
+		<field name="skilllvl" type="int"/>
+		<field name="requirefamilycapital" type="cfg.cmd.condition.FamilyMoney"/>
+		<field name="requirefamilylvl" type="cfg.cmd.condition.MinFamilyLevel"/>
+	</config>
+	<config name="FamilySkillCost" input="familyskillcost.xlsx">具体的技能升级所需的资金
+		<field name="skillid" type="int"/>
+		<field name="name" type="string"/>
+		<field name="icon" type="string"/>
+		<field name="skillinfo" type="list:SkillInfo"/>
+	</config>
+	<config name="FamilyJob" input="familyjob.xlsx">
+		<field name="jobid" type="int"/>
+		<field name="name" type="FamilyJobEnum"/>
+		<field name="displayname" type="string"/>
+		<field name="enrollperm" type="bool"/>
+		<field name="kickoutperm" type="bool"/>
+		<field name="familyskillperm" type="bool"/>
+		<field name="caneditdeclaration" type="bool"/>
+		<field name="caneditannouncement" type="bool"/>
+		<field name="amount" type="list:int"/>
+		<field name="appointjobs" type="set:int"/>
+	</config>
+
+	<config name="BlackMarket" input="blackmarketconfig.xlsx" single="true">黑市
+		<field name="opentime" type="list:cfg.common.DayTimeRange"/>
+	</config>
+
+	<config name="FamilyTaskLib" input="familytasklib.xlsx" group="server">家族环任务库
+		<field name="leve" type="int"/>等级段
+		<field name="familytasklist" type="list:FamilyTask"/>普通任务
+		<field name="completetasklist" type="list:FamilyTask"/>第5环任务
+	</config>
+	<config name="FamilyTaskConfig" input="familytaskconfig.xlsx" single="true">家族环任务设置
+		<field name="openlevel" type="int"/>开启等级
+		<field name="nextliblevel" type="int"/>分档等级
+		<field name="circletaskamount" type="int"/>每环包含任务数
+		<field name="daycirclelimit" type="cfg.cmd.condition.DayLimit"/>每日最多进行的环数
+		<field name="weekbonus" type="int"/>特殊奖励所需要的周计数量
+		<field name="weekalert" type="int"/>完成几个周计数之后开始向玩家提醒剩余需要完成的周计数量
+		<field name="refreshtime" type="int"/>放弃任务之后，再刷新任务所需时间
+		<field name="completecost" type="cfg.cmd.condition.YuanBao"/>直接完成任务所需的元宝数量
+		<field name="taskbonusrate" type="list:float"/>环内任务奖励倍率，0是第一个
+		<field name="circlebonusrate" type="list:float"/>每个小环的奖励倍率，每个小环的最终任务奖励=基础奖励(familytaskreward中的exp和gold)*环奖励倍率(circlebonusrate)*环内任务奖励倍率(taskbonusrate)，金钱和经验都这么算
+		<field name="npcid" type="int" ref="npc"/>发放任务家族管理员id
+		<field name="simpleclearamount" type="int"/>一键清几个环（高配额奖励的总环数）
+		<field name="tasktalk" type="list:string" />
+	</config>
+
+	<config name="FamilyTaskReward" index="level" input="familytaskreward.xlsx">家族环任务奖励表
+		<field name="level" type="int"/>玩家等级
+		<field name="exp" type="long"/>获得经验
+		<field name="gold" type="long"/>获得金钱（这两个字段要经过乘法之后才能得到最终奖励）
+		<field name="familyexp" type="long"/>
+		<field name="familygold" type="long"/>同上
+	</config>
+
+	<config name="FamilyTaskSpecReward" input="familytaskspecreward.xlsx" group="server">家族环任务特殊奖励表
+		<field name="level" type="int"/>玩家等级
+		<field name="exp" type="int"/>特殊奖励获得经验
+		<field name="gold" type="int"/>特殊奖励获得金钱
+		<field name="exbonus" type="cfg.cmd.action.MultiBonus"/>完成20环特殊奖励
+		<field name="specbonuslist" type="list:SpecBonus"/>每周箱子奖励
+	</config>
+
+	<config name="FamilyParty" input="party.xlsx" single="true">
+	每个等级获得每一跳经验在role/exptable下配置，人和伙伴都取一样的数字
+		<field name="starttime" type="list:int" delimiter=":"/>
+		<field name="endtime" type="list:int" delimiter=":"/>
+		<field name="starttime2" type="list:int" delimiter=":"/>
+		<field name="endtime2" type="list:int" delimiter=":"/>两个时段的开始和结束时间
+		<field name="duration" type="int"/>持续时间
+		<field name="smallexpitem" type="int" group="server"/>小的经验物品获得的经验相当于几跳经验
+		<field name="bigexpitem" type="int" group="server"/>大的经验物品获得的经验相当于几跳经验
+		<field name="atkbuffid" type="int" group="server"/>仙酒（加攻击力）buff
+		<field name="spdbuffid" type="int" group="server"/>飞鞋（加速度）buff
+		<field name="hpbuffid" type="int" group="server"/>仙桃（加气血上限）buff
+		<field name="defbuffid" type="int" group="server"/>仙甲（加防御力）buff
+		<field name="bonusbox" type="cfg.cmd.action.RandomBonus" group="server"/>箱子的奖励内容
+		<field name="maxbonustimes" type="int" group="server"/>每种奖励最高吃到个数
+		<field name="familyectypeid" type="int"/>家族副本基础配置id
+		<field name="upperbound" type="int"/>最多可以吃几跳经验
+		<field name="showitem" type="cfg.cmd.action.MultiBonus"/>展示用假物品
+		<field name="effectposition" type="cfg.map.Vector3" />特效挂点
+		<field name="effectzoomin" type="cfg.map.Vector3" />特效放大比例
+	</config>
+
+	<config name="FamilyDeclaration" input="familydeclaration.xlsx" single="true">家族宣战
+		<field name="maxdeclarenum" type="int"/>最大宣战数
+		<field name="openranges" type="list:cfg.common.DayTimeRange"/>宣战开始时间
+	</config>
+
+
+
+    <namespace name="citywar">
+		 <struct name="LevelMonsters">
+			<field name="level" type="int"/>
+			<field name="monsterids" type="list:int" ref="monster"/>
+		</struct>
+		<struct name="CityLevelInfo">
+			<const name="MONEY_TYPE" value="cfg.currency.CurrencyType.BangPai"/>
+			<field name="level" type="CityLevelType"/>
+			<field name="minmoney" type="int"/>
+			<field name="maxmoney" type="int"/>
+			<field name="score" type="int"/>
+			<field name="luckybonusweight" type="int"/>神器掉落的权重
+		</struct>
+		<enum name="CityLevelType">
+			<const name="PRIMARY"  alias="低级"/>
+			<const name="MEDIUM"  alias="中级"/>
+			<const name="SENIOR" alias="高级"/>
+		</enum>
+
+		<struct name="CityInfo">
+			<field name="cityid" type="int"/>
+			<field name="name" type="string"/>
+			<field name="listitemname" type="string"/>
+			<field name="level" type="CityLevelType"/>
+			<field name="conectcity" type="list:int"/>
+		</struct>
+
+		<enum name="BattleStatus">
+			<const name="NOT_BEGIN"/>
+			<const name="BEGIN"/>
+			<const name="WIN"/>
+			<const name="FAIL"/>
+		</enum>
+        <enum name="CityWarStage">
+			<const name="BEFORE_ENROLL" value="0"/>
+			<const name="ENTROLL" value="1"/>
+			<const name="BEFORE_BATTLE" value="2"/>
+			<const name="BATTLE" value="3"/>
+			<const name="BEFORE_LUCKY_BONUS" value="4"/>
+			<const name="LUCKY_BONUS" value="5"/>
+		</enum>
+		<struct name="CitywarTip">
+			<field name="stage" type="CityWarStage"/>
+			<field name="content" type="string"/>
+		</struct>
+
+		<struct name="CityWarTower">
+			<field name="position" type="cfg.map.Vector2"/>
+			<field name="towerid" type="int"/>
+		</struct>
+
+		<enum name="OccupyState">
+			<const name="GREY" alias="灰色"/>
+			<const name="GREEN"  alias="绿色"/>
+			<const name="RED"  alias="红色"/>
+		</enum>
+
+		<struct name="Broadcast">
+			<field name="time" type="cfg.common.WeekTime"/>
+			<field name="content" type="string"/>
+		</struct>
+		
+		<struct name="ScoreBonus">
+			<field name="upperboundscore" type="int"/>
+			<field name="bonus" type="cfg.cmd.action.Bonus"/>
+		</struct>
+		
+		<config name="CityWar" input="citywar.xlsx" single="true">
+			<const name="MAX_ALLOC_LOG_NUM" value="20"/>
+			<const name="MAX_BATTLE_LOG_NUM" value="50"/>
+			<const name="LUCKY_BONUS_ALLOC_MAILID" value="21"/>
+			<const name="DECLARE_FAIL_MAILID" value="22"/>
+			<const name="DAILY_BNOUS_MAILID" value="23"/>
+			<const name="BATTLE_SUCC_ATTACK_MAILID" value="24"/>
+			<const name="BATTLE_SUCC_DEFENCE_MAILID" value="25"/>
+			<const name="BATTLE_FAIL_ATTACK_MAILID" value="26"/>
+			<const name="BATTLE_FAIL_DEFENCE_MAILID" value="27"/>
+			<const name="DEFAULT_COLOR_R" value="149"/>
+			<const name="DEFAULT_COLOR_G" value="149"/>
+			<const name="DEFAULT_COLOR_B" value="149"/>
+			<const name="LUCKY_BONUS_NEED_MIN_JOIN_FAMILY_TIME" value="604800"/>加入家族一周后才能被分配神器
+
+			<field name="ectypeid" type="int" ref="ectypebasic"/>
+			<field name="bornregion1" type="int"/>
+			<field name="bornregion2" type="int"/>
+			<field name="reviveregion1" type="int"/>
+			<field name="reviveregion2" type="int"/>
+			<field name="regionbeforebattlebegin1" type="int"/>
+			<field name="regionbeforebattlebegin2" type="int"/>
+			<field name="mainregionid" type="int"/>
+			<field name="maxbattlefamilymembernum" type="int"/>
+			<field name="revivebuffid" type="int"/>
+			<field name="countdown" type="int"/>
+			<field name="stabilitybuffid" type="int" ref="buff"/>
+			<field name="winscore" type="int"/>
+			<field name="addcapturetowerscore" type="int"/>
+			<field name="addcapturetowerscoreinterval" type="int"/>
+			<field name="scoremultiratewhilecaptureall" type="int"/>
+			<field name="maxbattlenum" type="int"/>
+			<field name="minfamilylevel" type="cfg.cmd.condition.MinFamilyLevel"/>
+			<field name="occupytime" type="int"/>
+			<field name="bornorient1" type="float"/>
+			<field name="bornorient2" type="float"/>
+			<field name="levelbosses" type="list:LevelMonsters" index="level"/>
+			<field name="levelmonsters" type="list:LevelMonsters" index="level"/>
+            <field name="towers" type="list:CityWarTower"/>
+			<field name="towerradius" type="int"/>
+			<field name="occupymodel" type="map:OccupyState:string"/>
+			<field name="enrolltime" type="cfg.common.WeekTimeRange"/>
+			<field name="battletimes" type="list:cfg.common.WeekTimeRange"/>
+			<field name="luckybonustime" type="cfg.common.WeekTime"/>
+			<field name="citylevels" type="list:CityLevelInfo" index="level"/>
+			<field name="scorebonuss" type="list:ScoreBonus"/>
+			<field name="luckybonus" type="cfg.cmd.action.Bonus"/>
+			<field name="luckybonusnum" type="int"/>
+			<field name="attackerwinmoneyrate" type="float"/>
+			<field name="defencerwinmoneyrate" type="float"/>
+			<field name="citys" type="list:CityInfo" index="cityid"/>
+			<field name="colors" type="list:string"/>
+			<field name="tips" type="list:CitywarTip"/>
+            <field name="maintips" type="string"/>
+            <field name="tipsworld" type="string"/>
+            <field name="tipsdeclare" type="string"/>
+            <field name="tipsmine" type="string"/>
+            <field name="tipsaward" type="string"/>
+			<field name="broadcasts" type="list:Broadcast"/>
+			<field name="luckbonusbroadcast" type="string"/>
+			<field name="battledefencesuccbroadcast" type="string"/>
+			<field name="battledefencefailbroadcast" type="string"/>
+			<field name="battlecaptureemptycitybroadcast" type="string"/>
+	   </config>
+	</namespace>
+</configs>

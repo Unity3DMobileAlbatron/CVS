@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.equip">
+	<import input="weapon.xml"/>
+
+	<struct name="EquipPropertyData">装备的信息
+			<field name="propertytype" type="cfg.fight.AttrId"/>
+			<field name="value" type="float"/>
+	</struct>
+	<struct name="SuitsData">
+		<field name="propertydata" type="EquipPropertyData" />
+		<field name="amountlimit" type="int" />
+	</struct>
+	<struct name="EnhanceData">
+		<field name="addpropertyid" type="cfg.fight.AttrId"/>
+		<field name="addvalues" type="list:int"/>
+	</struct>
+	<struct name="BonusData">
+		<field name="bonuslevel" type="int"/>
+		<field name="bonusvalue" type="list:EquipPropertyData"/>
+	</struct>
+	<struct name="AccessoryProperty">饰品生成的属性条目
+		<field name="propertyid" type="cfg.fight.AttrId"/>
+		<field name="weight" type="int"/>
+		<field name="minvalue" type="float"/>
+		<field name="maxvalue" type="float"/>
+	</struct>
+	<struct name="EquipSortOrder" >排列装备的依据
+  	<const name="EQUIP_SORT_ORDER" type="string" value="profession,quality,level,type"/>
+  	<const name="EQUIP_SORT_RULE" type="string"  value="desc,desc,desc,desc"/>
+	</struct>
+	<struct name="JadeEnhanceData">
+		<field name="enhancetypeid" type="int"/>
+		<field name="enhancetypename" type="string"/>
+		<field name="currency" type="cfg.cmd.condition.Currency"/>
+		<field name="minbonus" type="int"/>
+		<field name="maxbonus" type="int"/>
+		<field name="criticalrate" type="float"/>
+		<field name="criticalvalue" type="int"/>
+	</struct>
+
+	<enum name="GetDressFunction">
+		<const name="MONEY" alias="元宝"/>
+		<const name="ACTIVITY" alias="活动"/>
+		<const name="PAGE" alias="跳转页面"/>
+	</enum>
+	<config name="Equip" index="id" input="equip.xlsx">
+		<const name="MAX_APPEND_LEVEL" type="int" value="90" comment="最大追加等级"/>
+		<const name="MAX_ANNEAL_LEVEL" type="int" value="20" comment="最大炼器等级"/>
+		<const name="UPGRADE_COST_ITEM" type="int" value="10400007" comment="神器进阶消耗的物品，目前是千华龙筋"/>
+		<const name="DISASSEMBLY_CURRENCY" value="cfg.currency.CurrencyType.LingJing" comment="装备拆解获得的货币，目前是灵晶"/>
+		<const name="ABANDON_CURRENCY" value="cfg.currency.CurrencyType.YuanBao"/>洗练反悔货币类型
+		<const name="ABANDON_COST" type="int" value="10"/>洗练反悔所需货币数量
+		<const name="MIN_UPGRADE_LEVEL" type="int" value="60"/>神器进阶最低等级
+		<const name="UPGRADE_DELTA_LEVEL" type="int" value="15"/>神器进阶等级间隔
+		<const name="MAX_UPGRADE_LEVEL" type="int" value="120"/>神器进阶最高等级
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="icon" type="string"/>
+		<field name="level" type="int"/>
+		<field name="type" type="cfg.item.EItemType"/>
+		<field name="quality" type="cfg.item.EItemColor"/>
+		<field name="prize" type="int"/>
+		<field name="bindtype" type="cfg.cmd.action.BindType"/>
+		<field name="introduction" type="string"/>
+		<field name="break2lingjing" type="cfg.cmd.action.LingJing"/>拆解装备获得的灵晶
+
+		<struct name="MainEquip">四大件表
+			<field name="professionlimit" type="cfg.cmd.condition.ProfessionLimit"/>职业限制
+			<field name="nextid" type="int" />神器进阶的目标id
+			<field name="extraequipid" type="int" />神器进阶额外需要的装备id
+			<field name="upgradecurrencycost" type="cfg.cmd.condition.XuNiBi" />神器进阶消耗的虚拟币
+			<field name="carryingitemnum" type="int" />装备换算千华龙筋的价值
+			<field name="recommendrate" type="float"/>推荐指数
+			<field name="property" type="list:EquipPropertyData" />
+			<struct name="Weapon">
+				<field name="left" type="string"/>
+				<field name="right" type="string"/>
+			</struct>
+			<struct name="Cloth">
+				<field name="male" type="string"/>
+				<field name="female" type="string"/>
+			</struct>
+			<struct name="Hat"/>
+			<struct name="Shoe"/>
+		</struct>
+		<struct name="Accessory">饰品表
+			<const name="VICE_PROPERTY_NUM" type="int" value="5" comment="辅助属性的个数"/>
+			<const name="MAIN_PROP1_KEY" type="int" value="1" comment="主属性1的key"/>
+			<const name="MAIN_PROP2_KEY" type="int" value="2" comment="主属性2的key"/>
+			<field name="mainproperty" type="list:int" delimiter=","/>
+			<field name="mainproperty2" type="list:int" delimiter=","/>
+			<field name="viceproperty" type="list:int"/>
+			<field name="rankweight" type="list:int" />
+			<struct name="Bangle"/>
+			<struct name="Necklace"/>
+			<struct name="Ring"/>
+		</struct>
+	</config>
+
+	<enum name="RideType">
+		<const name="NONE" alias="无" value="0"/>
+		<const name="WALK" alias="骑行" value="1"/>
+		<const name="FLY" alias="飞行" value="2"/>
+	</enum>
+	<config name="FlyingSwordHeight" input="riding/flyingswordheight.xlsx">
+		<field name="id" type="int"/>
+		<field name="faction" type="cfg.role.EProfessionType"/>
+		<field name="gender" type="cfg.role.GenderType"/>
+		<field name="offsety" type="float"/>
+	</config>
+	<enum name="EquipTitleShowMode">
+		<const name="Normal" alias="默认显示" value="1"/>
+		<const name="ShowAfterGet" alias="获得后显示" value="2"/>
+	</enum>
+	<enum name="RideMotion">
+		<const name="Stand" value="1"/>
+		<const name="Ride" value="2"/>
+	</enum>
+	<config name="Riding" index="id" input="riding/riding.xlsx">坐骑
+		<const name="OPEN_LEVEL" type="int" value="0" comment="开启等级"/>
+		<const name="RECOVERRIDE_TIME" type="int" value="2" comment="复活或攻击后恢复骑乘时间"/>
+		<const name="PORTAL_HEIGHT" type="int" value="5" comment="传送门高度限制"/>
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="icon" type="string"/>icon资源地址
+		<field name="displayorder" type="int"/>显示顺序
+		<field desc="显示模式" name="showmode" type="EquipTitleShowMode"/>
+		<field name="modelname" type="string" ref="model" desc = "ref:character/model.xlsx"/>
+		<field name="introduction" type="string"/>坐骑说明
+		<field name="battleproperty" type="list:EquipPropertyData"/>
+		<field name="gain" type="string"/>获取途径说明
+		<field name="gainpage" type="string"/>跳转至获取的页面
+		<field name="quickbuy" type="bool"/>是否可以快捷购买
+		<field name="viplimit" type="cfg.cmd.condition.MinVipLevel"/>vip等级限制
+		<field name="price" type="cfg.cmd.condition.YuanBao"/>价格
+		<field name="ridingmotion" type="RideMotion"/>骑乘时的动作
+		<field name="quality" type="cfg.item.EitemColor"/>品质
+		<field name="speedbuff" type="float"/>提升速度
+		<field name="ridingheight" type="float"/>坐骑高度
+		<field name="initalminhigh" type="float"/>高度下限
+		<field name="initalmaxhigh" type="float"/>高度上限
+		<field name="upspeed" type="float"/>上升速度
+		<field name="downspeed" type="float"/>下降速度
+		<field name="ridespeed" type="float"/>骑行速度
+		<field name="flyspeed" type="float"/>飞行速度
+		<field name="initialheightinride" type="float"/>骑行初始化高度
+		<field name="initialheightinfly" type="float"/>飞行初始化高度
+		<field name="riggingpoint" type="string"/>骨骼绑定点
+		<field name="scale" type="float"/>模型缩放比例（UI）
+		<field name="rotationy" type="float"/>旋转角度(UI)
+		<field name="height" type="float"/>模型高度(UI)
+		<field name="rotateplayer" type="bool"/>是否需要旋转角色(UI)
+		<field name="rotation" type="list:float" delimiter=","/>人物旋转
+	</config>
+	<config name="Dress" input="dress/dress.xlsx">时装
+		<const name="DEFAULT_DRESSID" type="int" value="55000001" />
+		<const name="OPEN_LEVEL" type="int" value="10" comment="开启等级"/>
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="icon" type="string"/>icon资源地址
+		<field name="displayorder" type="int"/>显示顺序
+		<field desc="显示模式" name="showmode" type="EquipTitleShowMode"/>
+		<field name="modelname" type="map:int:string"/>模型路径
+		<field name="introduction" type="string"/>时装说明
+		<field name="gainfunction" type="GetDressFunction"/>获取途径说明
+		<field name="quickbuy" type="bool"/>是否可以快捷购买
+		<field name="viplimit" type="cfg.cmd.condition.MinVipLevel"/>vip等级限制
+		<field name="price" type="cfg.cmd.condition.YuanBao"/>价格
+		<field name="sex" type="cfg.role.GenderType"/>
+		<field name="gainpage" type="string"/>跳转至获取的页面
+		<field name="quality" type="cfg.item.EitemColor"/>品质
+		<field name="propertylist" type="list:EquipPropertyData"/>
+	</config>
+	<config name="AmuletConfig" input="amulet/amuletconfig.xlsx" single="true">护符配置表
+		<const name="AMULET_PROP_COUNT_PER_PAGE" type="int" value="6" />每页护符所包含的属性条数
+		<const name="AMULET_PAGE_COUNT" type="int" value="3" />总护符页数
+		<const name="AMULET_DAY_WASH_COUNT_CMD_ID" type="int" value="0" />护符每日洗练的cmd id
+		<const name="STATE_UNLOCK" type="int"  value="0" comment="未锁定"/>
+		<const name="STATE_LOCK" type="int"  value="1" comment="锁定"/>
+		<const name="STATE_UN_OPEN" type="int"  value="0" comment="未开启"/>
+		<const name="STATE_OPEN" type="int"  value="1" comment="开启"/>
+		<field name="lockcost" type="list:cfg.cmd.condition.Item"/>锁定护符需要的消耗
+		<field name="expandlevel" type="list:int"/>护符开页面所需的玩家等级，从第一页到第三页
+		<field name="qualityjudge" type="list:int"/>护符品质判定数组。比第一个数小的是白，然后是绿，蓝，紫，橙，比最后一个数大的是红
+		<field name="icon" type="list:string"/>护符图标
+		<field name="washcost" type="cfg.cmd.condition.VipLimits2"/>每天头几次用虚拟币洗,后面都用元宝洗
+		<field name="lockitemid" type="int"/>锁定护符道具ID
+	</config>
+	<config name="Jade" index="jadelvl" input="jade/jadebasicstatus.xlsx">玉佩配置表
+		<field name="jadelvl" type="int"/>
+		<field name="icon" type="string"/>
+		<field name="requirelvl" type="cfg.cmd.condition.MinLevel"/>
+		<field name="requireitem" type="cfg.cmd.condition.Item"/>
+		<field name="percent" type="float"/>
+		<field name="maxbonus" type="int"/>
+	</config>
+	<config name="EquipSuits" input="suits.xlsx">套装属性表
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="includeid" type="list:int"/>
+		<field name="suitsbonus" type="list:SuitsData"/>
+	</config>
+
+	<config name="EnhanceConfig" input="equipenhance/enhanceconfig.xlsx">炼器和灌注最大等级
+		<field name="level" type="int"/>装备的等级
+		<field name="anneallimit" type="int"/>该等级装备的最大炼器等级
+		<field name="appendlimit" type="int"/>该等级装备的最大灌注等级
+	</config>
+	<config name="EquipAnneal" input="equipenhance/equipanneal.xlsx">炼器表
+		<const name="FAIL_REDUCE_NUMBER" type="list:int" value="0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1" comment="炼器失败时候掉级数量"/>
+		<const name="FAIL_REDUCE_BASELEVEL" type="int" value="5" comment="炼器失败时候掉级的基数，大于该级别才掉级"/>
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="adddata" type="list:EnhanceData"/>
+	</config>
+
+	<config name="EquipAppend" input="equipenhance/equipappend.xlsx">追加表
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="adddata" type="list:EnhanceData"/>
+	</config>
+
+	<config name="AnnealRate" input="equipenhance/annealrate.xlsx">炼器成功率表
+		<const name="RATE_BASE_NUMBER" type="int" value="10000" comment="成功概率的分子底数，配置表里都是整数"/>
+		<field name="level" type="int"/>
+		<field name="rate" type="int"/>
+	</config>
+
+	<config name="AppendCost" input="equipenhance/appendcost.xlsx">灌注消耗表
+		<const name="COST_ITEM_ID" type="int" value="10400006" comment="消耗物品的id，目前是灌注符"/>
+		<const name="ACCESSORY_COST_ITEM_ID" type="int" value="10400037" comment="消耗物品的id，目前是饰品灌注符"/>
+		<field name="type" type="cfg.item.EItemType"/>
+		<field name="itemcost" type="list:int"/>
+		<field name="expenses" type="list:int"/>
+	</config>
+
+	<config name="AnnealCost" input="equipenhance/annealcost.xlsx">炼器消耗表
+		<const name="COST_ITEM_ID" type="int" value="10400001" comment="消耗物品的id，目前是炼器符"/>
+		<const name="ACCESSORY_COST_ITEM_ID" type="int" value="10400036" comment="消耗物品的id，目前是饰品炼器符"/>
+		<field name="type" type="cfg.item.EItemType"/>
+		<field name="itemcost" type="list:int"/>
+		<field name="expenses" type="list:int"/>
+	</config>
+	<config name="AnnealItemCost" input="equipenhance/annealitemcost.xlsx">炼器消耗道具相关表
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="itemcost" type="list:int"/>
+	</config>
+
+	<config name="AnnealItemEffect" input="equipenhance/annealitemeffect.xlsx">炼器相关道具效果表
+		<const name="RATE_BASE_NUMBER" type="int" value="10000" comment="成功概率的分子底数，配置表里都是整数"/>
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="lostcontrol" type="int"/>
+		<field name="effect" type="list:int"/>
+	</config>
+
+	<config name="AnnealItemUseLimit" input="equipenhance/annealitemuselimit.xlsx">炼器相关道具使用限制表
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="uselimit" type="list:bool"/>
+	</config>
+
+	<config name="AnnealBonus" input="equipenhance/annealbonus.xlsx">炼器附加属性表
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="bonus" type="list:BonusData"/>
+	</config>
+	<config name="AmuletSkillLvl" input="amulet/amuletskilllvl.xlsx">护符属性池表
+		<field name="skillid" type="int"/>
+		<field name="skillid2" type="int"/>
+		<field name="carrer" type="cfg.role.EProfessionType"/>
+		<field name="weightlist" type="list:int"/>
+	</config>
+	<config name="AmuletWash" input="amulet/amuletwash.xlsx" single="true">洗护符概率表
+		<field name="probablilty" type="list:int"/>
+	</config>
+	<struct name="FramentSortOrder" >
+  	<const name="ITEM_SORT_ORDER" type="string" value="profession,quality,level,eitemtype"/>
+  	<const name="ITEM_SORT_RULE" type="string"  value="desc,desc,desc,desc"/>
+  </struct>
+	<config name="Fragment" index="id" input="fragment.xlsx">装备碎片表
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="icon" type="string"/>
+		<field name="level" type="int"/>
+		<field name="quality" type="cfg.item.EItemColor"/>
+		<field name="prize" type="int"/>
+		<field name="professionlimit" type="cfg.cmd.condition.ProfessionLimit"/>职业限制
+		<field name="bindtype" type="cfg.cmd.action.BindType"/>
+		<field name="introduction" type="string"/>
+		<field name="maxpile" type="int"/>
+		<field name="cansell" type="bool"/>
+		<field name="equipID" type="int"/>
+		<field name="number" type="int"/>
+	</config>
+
+	<config name="AccessoryGenerate" index="groupid" input="accessory/accessorygenerate.xlsx" group="server">饰品基本属性生成表
+		<field name="groupid" type="int"/>
+		<field name="whatisthis" type="string"/>
+		<field name="propertylist" type="list:AccessoryProperty"/>
+	</config>
+
+	<config name="AccessoryColor" index="level" input="accessory/accessorycolor.xlsx" >饰品属性颜色判定
+		<const name="JUDGE_COLOR_LIST" type="list:float" value="0.2,0.35,0.45,0.6,0.75"/>判定饰品属性条目颜色用列表
+		<const name="JUDGE_COLOR_MAIN" type="float" value="5"/>计算饰品主属性的颜色的时候，要除以这个数字
+		<field name="level" type="int"/>
+		<field name="standard" type="list:EquipPropertyData"/>
+	</config>
+
+	<config name="AccessoryConfig" input="accessory/accessoryconfig.xlsx" single="true">
+		<field name="washcost" type="cfg.cmd.condition.XuNiBi"/>
+		<field name="abandoncost" type="cfg.cmd.condition.YuanBao"/>
+	</config>
+	<config name="JewelryLvlUp" index="jewelrylvl" input="jade/jewelrylvlup.xlsx">玉佩升级
+		<field name="jewelrylvl" type="int"/>
+		<field name="requireexp" type="int"/>
+		<field name="basicvalue" type="float"/>
+	</config>
+	<config name="JadeEnhance" input="jade/jadeenhance.xlsx" single="true">玉佩培养和猎命有关配置
+		<field name="enhancedata" type="list:JadeEnhanceData" index="enhancetypeid"/>玉佩培养方式和结果
+		<field name="searchcost" type="cfg.cmd.condition.XuNiBi"/>猎取宝珠所需虚拟币
+		<field name="holeopenlevel" type="list:int"/>玉佩镶嵌孔的开启等级，0为第一个，依此类推
+		<field name="enhanceitemid" type="cfg.cmd.condition.OneItem"/>培养丹的ID
+		<field name="level4cost" type="cfg.cmd.condition.YuanBao"/>召唤第4档猎命师所花费元宝
+		<field name="packlarge" type="int"/>宝珠背包的大小
+		<field name="openlevel" type="int"/>
+		<field name="gettertexture" type="list:string"/>猎命师资源路径
+	</config>
+	<config name="Jewelry" input="jade/jewelry.xlsx">宝珠表
+		<field name="jewelryid" type="int"/>
+		<field name="jewelryname" type="string"/>宝珠名称
+		<field name="icon" type="string"/>宝珠图标路径
+		<field name="introduce" type="string"/>
+		<field name="quality" type="cfg.item.EItemColor"/>宝珠的品质
+		<field name="propertytype" type="cfg.fight.AttrId"/>宝珠天生的属性品质
+		<field name="basicvalue" type="float"/>宝珠的属性初值
+		<field name="maturerate" type="float"/>宝珠属性成长率
+		<field name="quatilyexp" type="int"/>宝珠天生携带的经验
+	</config>
+	<config name="JewelryLvlLimit" input="jade/jewelrylvllimit.xlsx">人物等级对应宝珠等级上限表
+		<field name="level" type="int"/>人物等级
+		<field name="jewelrylvl" type="list:int"/>最大宝珠等级
+	</config>
+	<config name="JewelryGet" input="jade/jewelryget.xlsx">猎命转移概率和获取概率表
+		<field name="getlevel" type="int"/>
+		<field name="uprate" type="float"/>转移到下一档次猎命师的概率
+		<field name="downrate" type="float"/>转移到前一档次猎命师的概率，和上面的数值加起来不会超过1。剩下的部分是猎命师不转移的概率。
+		<field name="ratelist" type="list:float"/>获取猎命宝珠的概率，从0开始依次是白、绿、蓝、紫、橙。
+	</config>
+
+	<config name="EquipBindSfx" index="equipid" input="sfx/EquipBindSfx.xlsx" group="client">武器和装备挂载特效表
+		<field name="equipid" type="int"/>
+		<field name="sfxlist" type="list:int"/>
+	</config>
+	<config name="sfxInfo" index="sfxid" input="sfx/sfxInfo.xlsx" group="client">装备特效信息表
+		<field name="sfxid" type="int"/>
+		<field name="sfxtype" type="int"/>
+		<field name="attachpoint" type="string"/>
+		<field name="path" type="string"/>
+	</config>
+
+	<config name="GemStoneConfig" input="gemstoneconfig.xlsx">
+		<field name="slotid" type="int"/>
+		<field name="slottype" type="cfg.item.EItemType"/>
+		<field name="openlevel" type="cfg.cmd.condition.MinLevel"/>
+		<field name="gemstonetype1" type="cfg.item.GemStoneType1"/>
+		<field name="gemstonetype2" type="cfg.item.GemStoneType2"/>
+	</config>
+	
+	<config name="GemStoneTypes2PropertyText" input="gemstonetypes2propertytext.xlsx" group="client">
+		<field name="id" type="int"/>
+		<field name="gemstonetype1" type="cfg.item.GemStoneType1"/>
+		<field name="gemstonetype2" type="cfg.item.GemStoneType2"/>
+		<field name="allowedproptexts" type="list:string"/>
+	</config>
+</configs>

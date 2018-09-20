@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.fight">
+
+	<enum name="AttrId">
+		<const name="HP_VALUE" value="0"/> 当前血量
+		<const name="MP_VALUE" value="1"/> 当前蓝量
+		<const name="EXCELLENT_RATE" value="2"/> 卓越一击率
+		<const name="EXCELLENT_RESIST_RATE" value="3"/>卓越一击抗率
+		<const name="EXCELLENT_VALUE" value="4"/> 卓越一击伤害比例
+		<const name="EXCELLENT_RESIST_VALUE" value="5"/>卓越一击免伤比例
+		<const name="CRIT_RATE" value="6"/> 暴击率
+		<const name="CRIT_RESIST_RATE" value="7"/>免暴率
+		<const name="CRIT_VALUE" value="8"/>暴击伤害比例
+		<const name="CRIT_RESIST_VALUE" value="9"/>暴击免伤比例
+		<const name="ATTACK_MULTI_RATE" value="10"/> 攻击伤害比例
+		<const name="DEFENCE_MUTLI_RATE" value="11"/> 防御伤害比例
+		<const name="ABNORMAL_RESIST_RATE" value="12"/> 异常抗性率
+		<const name="ABNORMAL_HIT_RATE" value="13"/>异常命中率
+		<const name="HP_HEAL_RATE" value="14"/> 治疗率
+		<const name="LUCKY_VALUE" value="15"/>幸运值
+
+		<const name="HP_FULL_VALUE" value="16"/> 最大血量值
+		<const name="MP_FULL_VALUE" value="17"/> 最大魔量值
+		<const name="ATTACK_VALUE_MIN" value="18"/> 最小攻击力
+		<const name="ATTACK_VALUE_MAX" value="19"/> 最大攻击力
+		<const name="DEFENCE" value="20"/> 防御值
+
+		<const name="MOVE_SPEED" value="21"/> 移动速度
+		<const name="HIT_RATE" value="22"/> 击中率
+		<const name="HIT_RESIST_RATE" value="23"/>闪避率
+
+		<const name="ADDITIONAL_DAMAGE" value="24"/>技能附加伤害
+
+		<const name="DAMAGE_TO_HUMAN" value="25"/>对人伤害百分比加成，默认为0，负数减伤正数加伤
+		<const name="DAMAGE_TO_PET" value="26"/>对伙伴伤害百分比加成，默认为0，负数减伤正数加伤
+		<const name="RESIST_DAMAGE_FROM_HUMAN" value="27"/>受到人伤害百分比减免，默认为0，负数受到伤害增加，正数受到伤害减少
+		<const name="RESIST_DAMAGE_FROM_PET" value="28"/>受到伙伴伤害百分比减免，默认为0，负数受到伤害增加，正数受到伤害减少
+		比如目标是人，攻击者是伙伴的话，最终伤害*（1+攻击者的DAMAGE_TO_HUMAN-防御者的RESIST_DAMAGE_FROM_PET）
+		
+		<const name="MODEL_SCALE" value="29"/>
+		<!-- 新增属性请加在这儿 开始 -->	
+		<const name="BATTLE_POWER_RATE" value="30"/>战斗力加成，最终战斗力=战斗力*(1+BATTLE_POWER_RATE)
+		<const name="DEFENCE2" value="31"/>伤害防护
+		<const name="ATTACK2" value="32"/>伤害精通
+
+
+
+		<!-- 新增属性请加在这儿 结束 -->
+		<const name="BASE_ATTR_END"/>
+		<const name="EXT_ATTR_START" value="64"/>
+
+	<!-- 百分比属性，不属于基础属性，计算完基本属性之后当成%buff附加-->
+		<const name="HP_VALUE_PERCENT" value="64"/>
+		<const name="MP_VALUE_PERCENT"/>
+		<const name="HP_FULL_VALUE_PERCENT"/>
+		<const name="MP_FULL_VALUE_PERCENT"/>
+		<const name="ATTACK_VALUE_MIN_PERCENT"/>
+		<const name="ATTACK_VALUE_MAX_PERCENT"/>
+		<const name="DEFENCE_PERCENT"/>
+		<!--下面两条属性，最小攻击和最大攻击都加，一条是直接加，一条是百分比-->
+		<const name="ATTACK_VALUE"/>
+		<const name="ATTACK_VALUE_PERCENT"/>
+
+
+		<const name="HIT_RATE_PERCENT"/>
+		<const name="HIT_RESIST_RATE_PERCENT"/>
+		<const name="MOVE_SPEED_PERCENT"/>
+
+		<!--buff用到的百分比，丢在最外层叠加-->
+		<const name="HP_FULL_VALUE_PERCENT_2"/>
+		<const name="MP_FULL_VALUE_PERCENT_2"/>
+		<const name="ATTACK_VALUE_MIN_PERCENT_2"/>
+		<const name="ATTACK_VALUE_MAX_PERCENT_2"/>
+		<const name="DEFENCE_PERCENT_2"/>
+		<!--下面两条属性，最小攻击和最大攻击都加，一条是直接加，一条是百分比-->
+		<const name="ATTACK_VALUE_PERCENT_2"/>
+		<const name="HIT_RATE_PERCENT_2"/>
+		<const name="HIT_RESIST_RATE_PERCENT_2"/>
+		<const name="MOVE_SPEED_PERCENT_2"/>
+
+		<const name="ALL_BASIC_ATTR_PERCENT" />全属性，包括最大HP，最大MP，最小攻击，最大攻击，防御，命中，躲闪七条
+
+		<const name="EXT_ATTR_END"/>
+
+
+		<!--    以下属性只在服务器使用 -->
+		<const name="HP_DEC" />
+		<const name="MP_DEC" />
+		<const name="HP_HEAL"/>
+		<const name="CALC_ATTACK_MULTI_RATE"/>
+		<const name="CALC_ATTR_NUM" />
+
+	</enum>
+	<enum name="AttackType">
+		<const name="NORMAL" value="1"/>
+		<const name="METAL" value="2"/>
+		<const name="WOOD" value="3"/>
+		<const name="EARTH" value="4"/>
+		<const name="WATER" value="5"/>
+		<const name="FIRE" value="6"/>
+	</enum>
+	<enum name="AgentType">
+		<const name="PLAYER" value="1"/>必须是2的指数倍
+		<const name="MONSTER" value="2"/>
+		<const name="NPC" value="4"/>
+		<const name="ITEM" value="8"/>
+		<const name="MINE" value="16"/>矿物
+		<const name="FAKE_PLAYER" value="32"/>假角色
+		<const name="PET" value="64"/>宠物
+		<const name="RUNE" value="128"/>符咒
+	</enum>
+
+	<enum name="AbilityType">
+		<const name="NORMAL_ATTACK" />
+		<const name="SKILL_ATTACK" />
+		<const name="MOVE" />
+		<const name="BEATTACKED" />
+		<const name="AI"/>
+		<const name="BEHEAL"/>
+		<const name="NOT_IMMUNE_DEBUFF"/>
+		<const name="NOT_POSITIVE_BUFF"/>
+	</enum>
+	<enum name="CampType">
+		<const name="ENEMY"  alias="敌方"/>
+		<const name="PLAYER" alias="友方"/>
+		<const name="PLAYER_RED" alias="红方"/>
+		<const name="PLAYER_BLUE" alias="蓝方"/>
+		<const name="PLAYER1"/>
+		<const name="PLAYER2"/>
+		<const name="MINETOWER" alias="基地"/>
+		<const name="GOODMAN" alias="剧情副本中的友方monster"/>
+	</enum>
+
+	<enum name="Relation">
+		<const name="ENEMY"/>
+		<const name="FRIEND"/>
+		<const name="SELF"/>
+	</enum>
+
+	<config name="CampRelation" input="camprelation.xlsx">
+		<field name="camp" type="CampType"/>
+		<field name="relations" type="list:Relation"/>
+	</config>
+	<enum name="StateType">
+		<!-- 不用于buff的 内置状态    -->
+		<const name="ENTER_PROTECT" alias="进地图初始保护"/>
+		<const name="NOT_FIGHT" alias="不可战斗状态"/>
+		<const name="DORMANT" alias="休眠状态"/>
+		<const name="CANNOT_MOVE" alias="不可移动"/>
+		<const name="CANNOT_SKILL" alias="不可释放技能"/>
+		<const name="PLAY_CG" alias="播放cg状态"/>
+		<const name="RIDE_WALK" alias="骑行"/>
+		<const name="RIDE_FLY" alias="飞行"/>
+		<const name="PK_PROTECT" alias="PK保护"/>
+		<const name="SKILL_REVIVE" alias="被动复活"/>
+
+		<!-- buff 状态 -->
+		<const name="FAINT" alias="眩晕"/>
+		<const name="FREEZE" alias="冰冻"/>
+		<const name="SILENCE" alias="沉默"/>
+		<const name="ITEM_FORBID" alias="禁食"/>
+		<const name="INVINCIBLE" alias="金身"/>
+		<const name="THERPAY_FORBID" alias="禁疗"/>
+		<const name="HARMFUL_FORBID" alias="异常免疫"/>
+		<const name="WEAK" alias="虚弱"/>
+		<const name="STATE_TYPE_NUM"/>
+	</enum>
+
+	<config name="State" index="id" input="state.xlsx" output="state.data">
+		<field name="id" type="StateType"/>
+		<field name="useinbuff" type="bool"/>是否能用于buff
+		<field name="modelpath" type="string" />模型路径，没有写null
+		<field name="abilities" type="list:bool"/>
+	</config>
+
+	<struct name="Attr">
+		<field name="hp" type="float"/>
+		<field name="mp" type="float"/>
+		<field name="attackvaluemin" type="float"/>
+		<field name="attackvaluemax" type="float"/>
+		<field name="defence" type="float"/>
+		<field name="hitrate" type="float"/>
+		<field name="hitresistrate" type="float"/>
+		<field name="critrate" type="float"/>
+		<field name="critvalue" type="float"/>
+		<field name="critresistrate" type="float"/>
+		<field name="critresistvalue" type="float"/>
+		<field name="excellentrate" type="float"/>
+		<field name="excellentvalue" type="float"/>
+		<field name="excellentresistrate" type="float"/>
+		<field name="excellentresistvalue" type="float"/>
+		<field name="lucky" type="float"/>
+		<field name="attackmultirate" type="float"/>
+		<field name="defencemultirate" type="float"/>
+
+		<field name="abnormalresistrate" type="float"/>
+		<field name="abnormalhitrate" type="float"/>
+
+		<field name="movespeed" type="float"/>
+		<field name="heal" type="float"/>
+		<field name="damagetohuman" type="float"/>
+		<field name="damagetopet" type="float"/>
+		<field name="resistdamagefromhuman" type="float"/>
+		<field name="resistdamagefrompet" type="float"/>
+	</struct>
+
+	<struct name="BasicAttr">
+		<field name="hp" type="float"/>
+		<field name="mp" type="float"/>
+		<field name="attackvaluemin" type="float"/>
+		<field name="attackvaluemax" type="float"/>
+		<field name="defence" type="float"/>
+		<field name="hitrate" type="float"/>
+		<field name="hitresistrate" type="float"/>
+	</struct>
+		<struct name="ExpandAttr">
+		<!--下面的属性是高级属性-->
+		<field name="critrate" type="float"/>
+		<field name="critvalue" type="float"/>
+		<field name="critresistrate" type="float"/>
+		<field name="critresistvalue" type="float"/>
+		<field name="excellentrate" type="float"/>
+		<field name="excellentvalue" type="float"/>
+		<field name="excellentresistrate" type="float"/>
+		<field name="excellentresistvalue" type="float"/>
+		<field name="lucky" type="float"/>
+		<field name="attackmultirate" type="float"/>
+		<field name="defencemultirate" type="float"/>
+		<field name="abnormalresistrate" type="float"/>
+		<field name="abnormalhitrate" type="float"/>
+		<!--下面的属性是扩展属性，不给玩家展示-->
+		<field name="movespeed" type="float"/>
+		<field name="heal" type="float"/>
+		<field name="damagetohuman" type="float"/>
+		<field name="damagetopet" type="float"/>
+		<field name="resistdamagefromhuman" type="float"/>
+		<field name="resistdamagefrompet" type="float"/>
+	</struct>
+
+	<enum name="DisplayType">
+		<const name="NORMAL" value="1" alias="普通"/>普通显示，保留小数点后1位
+		<const name="ROUND" value="2" alias="四舍五入"/>整数，四舍五入
+		<const name="PERCENT" value="3" alias="百分比"/>百分比显示，保留小数点后1位，多余部分四舍五入（精确到0.001）
+	</enum>
+	<struct name="AttrIdType">
+		<field name="type" type="AttrId"/>
+	</struct>
+	<config name="AttrSequence" input="attrseq.xlsx" single="true" group="client">
+		<field name="basic" type="list:AttrIdType"/>
+		<field name="advance" type="list:AttrIdType"/>
+	</config>
+
+	<config name="BattlePower" input="battlepowerconfig.xlsx" single="true">
+		<field name="hp" type="float"/>
+		<field name="mp" type="float"/>
+		<field name="minatk" type="float"/>
+		<field name="maxatk" type="float"/>
+		<field name="defence" type="float"/>
+		<field name="hit" type="float"/>
+		<field name="hitresist" type="float"/>
+		<field name="crit" type="float"/>
+		<field name="excellent" type="float"/>
+		<field name="luck" type="float"/>
+		<field name="abnormal" type="float"/>
+		<field name="skilllevel" type="float"/>
+		<field name="addtionaldamage" type="float"/>
+		<field name="talismanawakebonus" type="float"/>
+		<field name="talismanrate" type="float"/>
+		<field name="defence2" type="float"/>
+		<field name="attack2" type="float"/>
+	</config>
+
+	<config name="StatusText" index="attrtype" input="statustext.xlsx">
+		<field name="attrtype" type="AttrId"/>
+		<field name="text" type="string"/>
+		<field name="displaytype" type="DisplayType"/>
+		<field name="spritename" type="string"/>
+	</config>
+
+	<enum name="PKState">
+		<const name="PEACE" value="1"/>
+		<const name="FAMILY_AND_TEAM" value="2"/>
+		<const name="TEAM" value="3"/>
+	</enum>
+
+	<enum name="FlytextOffset">
+		<const name="HORIZONTAL" value="300"/>
+		<const name="VERTICAL" value="300"/>
+	</enum>
+	
+	<config name="FightConfig" input="fightconfig.xlsx" single="true" extern="true" group="server"/>
+</configs>

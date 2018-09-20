@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.character">
+
+	<enum name="ModelType">
+		<const name="Base" alias="模型基类"  value="0"/>
+		<const name="Player" alias="玩家"  value="1"/>
+		<const name="Monster" alias="怪物"  value="2"/>
+		<const name="Npc" alias="NPC"  value="3"/>
+		<const name="Pet" alias="伙伴"  value="4"/>
+		<const name="Dress" alias="时装"  value="5"/>
+		<const name="Talisman" alias="法宝通用角色"  value="6"/>
+		<const name="Effect" alias="特效" value="7"/>
+		<const name="Item" alias="物体" value="8"/>
+		<const name="Equip" alias="装备外观" value="9"/>
+		<const name="Mineral" alias="矿物" value="10"/>
+		<const name="Boss"  value="11"/>
+		<const name="Riding" alias="坐骑" value="12"/>
+		<const name="Fabao" alias="法宝" value="13"/>
+		<const name="Rune" alias="符咒" value="14"/>
+		<const name="CharacterCG" alias="CG" value="15"/>
+
+		<const name="NoAnimation" alias="无动作模型" value="97"/>
+		<const name="Template" alias="模板" value="98"/>
+		<const name="Other" alias="其它"  value="99"/>
+
+	</enum>
+	<enum name="ApertureColorType">
+		<const name="Red" alias="红" value="0"/>
+		<const name="Yellow" alias="黄" value="1"/>
+		<const name="Blue" alias="蓝" value="2"/>
+	</enum>
+	<config name="Model" index="modelname" input="model.xlsx">
+		<field name="modeltype" type="ModelType" desc ="模型类型"/>
+		<field name="modelname" type="string" desc ="模型名称"/>
+		<field name="headicon" type="string" desc ="头像"/>
+		<field name="portrait" type="string" desc ="半身像"/>
+		<field name="modelpath" type="string" desc ="资源路径" refpath="..\GameWindows4.2.0\Data\character\c_*.bundle;..\GameWindows4.2.0\Data\sfx\s_*.bundle;..\GameWindows4.2.0\Data\texture\t_*.bundle;..\GameWindows4.2.0\Data\audio\a_*.bundle"/>
+		<field name="avatarid" type="string" desc ="贴图" refpath="..\GameWindows4.2.0\Data\avatar\armour_*.bundle"/>
+		<field name="bodyradius" type="float" desc ="碰撞半径"/>
+		<field name="bodyheight" type="float" desc ="碰撞高度" group="server"/>
+		<field name="namehighshift" type="float" desc ="模型名字高度偏移值"/>
+		<field name="modelscale" type="float" desc ="缩放"/>
+		<field name="uimodelscalemodify" type="float" desc ="UI模型比例修正"/>
+		<field name="aperturecolor" type="ApertureColorType" desc="光圈颜色"/>
+		<field name="aperturescale" type="float" desc="光圈尺寸"/>
+	</config>
+
+	<config name="shadow" index="modelpath" input="shadow.xlsx" group="client">
+		<field name="modelpath" type="string"/>
+		<field name="bneedshadow" type="bool"/>
+		<field name="scale" type="cfg.map.Vector3"/>
+	</config>
+
+</configs>

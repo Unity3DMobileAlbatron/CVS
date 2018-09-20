@@ -1,0 +1,89 @@
+<configs namespace="cfg.exchange">
+
+	<struct name="Const">
+		<const name="MAX_EXCHANGE_ITEM_NUM" value="50"/>
+		<const name="MAX_EXCHANGE_SAVE_LOG_NUM" value="200"/>
+		<const name="MAX_EXCHANGE_SHOW_LOG_NUM" value="50"/>
+		<const name="BUY_COST_CURRENTCY_TYPE" value="cfg.currency.CurrencyType.YuanBao"/>
+		<const name="NUM_OF_PAGE" value="20"/>
+		<const name="DEFAULT_SORT_TYPE" value="cfg.exchange.OrderByType.LEVEL"/>
+		<const name="DEFAULT_SORT_ORDER" value="cfg.exchange.SortOrder.DESC"/>
+		<const name="OPEN_LEVEL" value="0"/>
+		<const name="EXCHANGE_TAX" type="float" value="0.05"/>
+		<const name="EXCHANGE_UNSHELVE_TIME" value="172800"/>
+		<const name="UNSHELVE_MAILID" value="17"/>
+	</struct>
+
+	<enum name="OrderByType">
+		<const name="LEVEL"/>
+		<const name="APRICE"/>
+		<const name="TOTAL_PRICE"/>
+		
+		<const name="TYPE_NUM"/>
+	</enum>
+	
+	<enum name="SortOrder">
+		<const name="ASC"/>
+		<const name="DESC"/>
+	</enum>
+	
+	<enum name="Category">
+		<const name="ALL"/>
+		<const name="WEAPON" alias="武器"/>
+			<const name="QINGYUNMENG_WEAPON"/>
+			<const name="GUIWANGZONG_WEAPON"/>
+			<const name="TIANYINSI_WEAPON"/>
+			
+		<const name="CLOTH" alias="衣服"/>
+			<const name="QINGYUNMENG_CLOTH"/>
+			<const name="GUIWANGZONG_CLOTH"/>
+			<const name="TIANYINSI_CLOTH"/>
+		<const name="HAT" alias="帽子"/>
+			<const name="QINGYUNMENG_HAT"/>
+			<const name="GUIWANGZONG_HAT"/>
+			<const name="TIANYINSI_HAT"/>
+		<const name="SHOE" alias="鞋子"/>
+			<const name="QINGYUNMENG_SHOE"/>
+			<const name="GUIWANGZONG_SHOE"/>
+			<const name="TIANYINSI_SHOE"/>
+		
+		
+		<const name="ACCESSORY"/>
+			<const name="BANGLE" alias="手镯" /> 
+			<const name="NECKLACE" alias="项链"/>
+			<const name="RING" alias="戒指"/>
+		<const name="MATERIAL"/>
+		
+		<const name="TALISMAN"/>
+		<const name="AMULET"/>
+		<const name="PET"/>
+		
+		
+		
+		
+		<const name="TYPE_NUM"/>
+	</enum>
+		<config name="Exchange" index="id" input="exchange.xlsx">
+		<field name="id" type="int"/>
+		<field name="name" type="string"/>
+		<field name="index" type="Category"/>
+		<field name="defaultyuanbao" type="int"/>默认推荐价格
+	</config>
+	<config name="ExchangeIndex" index="id" input="exchangeindex.xlsx">
+		<field name="id" type="int"/>
+		<field name="name" type="Category"/>
+		<field name="displayname" type="string"/>
+		<field name="parentindex" type="Category"/>
+	</config>
+	
+	<config name="ExchangeLimit" input="exchangelimit.xlsx" single="true">
+		<field name="buylimit" type="cfg.cmd.condition.LevelLimit"/>
+		<field name="selllimit" type="cfg.cmd.condition.LevelLimit"/>
+	</config>
+
+	<enum name="EXCHANGE_CMDID">
+		<const name="Buy" value="1"/>
+		<const name="Sell" value="0"/>
+	</enum>
+
+</configs>

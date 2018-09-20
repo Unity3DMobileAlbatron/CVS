@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf8"?>
+
+<configs namespace="cfg.equip.weapon">
+
+    <config name="weapon" index="id" input="weapon/weapon.xlsx">
+        <field name="id" type="int"/>
+        <field name="weaponname" type="string"/>
+        <field name="lpath" type="string"/>
+		<field name="rpath" type="string"/>
+    </config>
+</configs>
